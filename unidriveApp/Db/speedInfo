@@ -1,0 +1,95 @@
+#
+# these parameters gleaned from motors.config, the velocity selector speed part
+# supplemental descriptions are from spiceUnidriveNamespace.xml
+#
+parameter_01.06=7000.0
+<Parameter><objecttype> 1 </objecttype><description>Maximum reference clamp</description><name>Maximum reference clamp_(0106)</name><addrLow> 6 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_01.14=3
+<Parameter><objecttype> 1 </objecttype><description>Reference selector</description><name>Reference selector_(0114)</name><addrLow> 14 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_01.30=0
+<Parameter><objecttype> 1 </objecttype><description>Skip reference band 1</description><name>Skip reference band 1_(0130)</name><addrLow> 30 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_02.04=0
+<Parameter><objecttype> 1 </objecttype><description>Ramp mode select</description><name>Ramp mode select_(0204)</name><addrLow> 4 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_02.11=70.000
+<Parameter><objecttype> 1 </objecttype><description>Acceleration rate 1</description><name>Acceleration rate 1_(0211)</name><addrLow> 11 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_02.21=69.998
+<Parameter><objecttype> 1 </objecttype><description>Deceleration rate 1</description><name>Deceleration rate 1_(0221)</name><addrLow> 21 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_03.32=1
+<Parameter><objecttype> 1 </objecttype><description>Drive encoder marker flag</description><name>Drive encoder marker flag_(0332)</name><addrLow> 32 </addrLow><datatype>VT_BOOL</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_03.36=8
+<Parameter><objecttype> 1 </objecttype><description>Drive encoder supply voltage</description><name>Drive encoder supply voltage_(0336)</name><addrLow> 36 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_04.13=35
+<Parameter><objecttype> 1 </objecttype><description>Current controller Kp gain</description><name>Current controller Kp gain_(0413)</name><addrLow> 13 </addrLow><datatype>VT_UI2</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_04.14=222
+<Parameter><objecttype> 1 </objecttype><description>Current controller Ki gain</description><name>Current controller Ki gain_(0414)</name><addrLow> 14 </addrLow><datatype>VT_UI2</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.06=170.0
+<Parameter><objecttype> 1 </objecttype><description>Rated frequency</description><name>Rated frequency_(0506)</name><addrLow> 6 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.07=10.50
+<Parameter><objecttype> 1 </objecttype><description>Motor rated current</description><name>Motor rated current_(0507)</name><addrLow> 7 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.08=10000
+<Parameter><objecttype> 1 </objecttype><description>Rated load rpm _ rated speed</description><name>Rated load rpm _ rated speed_(0508)</name><addrLow> 8 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.09=170
+<Parameter><objecttype> 1 </objecttype><description>Rated voltage</description><name>Rated voltage_(0509)</name><addrLow> 9 </addrLow><datatype>VT_UI2</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.10=0.900
+<Parameter><objecttype> 1 </objecttype><description>Rated power factor</description><name>Rated power factor_(0510)</name><addrLow> 10 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.11=1
+<Parameter><objecttype> 1 </objecttype><description>Number of motor poles</description><name>Number of motor poles_(0511)</name><addrLow> 11 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_05.18=12
+<Parameter><objecttype> 1 </objecttype><description>Maximum switching frequency</description><name>Maximum switching frequency_(0518)</name><addrLow> 18 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_06.30=1
+<Parameter><objecttype> 1 </objecttype><description>Sequencing bit_ Run forward</description><name>Sequencing bit_ Run forward_(0630)</name><addrLow> 30 </addrLow><datatype>VT_BOOL</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_07.15=6
+<Parameter><objecttype> 1 </objecttype><description>T8 analog input 3 mode</description><name>T8 analog input 3 mode_(0715)</name><addrLow> 15 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_08.25=1.45
+<Parameter><objecttype> 1 </objecttype><description>T28 digital input 5 destination</description><name>T28 digital input 5 destination_(0825)</name><addrLow> 25 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_08.26=1.46
+<Parameter><objecttype> 1 </objecttype><description>T29 digital input 6 destination</description><name>T29 digital input 6 destination_(0826)</name><addrLow> 26 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_11.01=6.42
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_11 set up</description><name>Parameter 0_11 set up_(1101)</name><addrLow> 1 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Control word</description><name>Control word_(0642)</name><addrLow> 42 </addrLow><datatype>VT_UI2</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_11.02=1.21
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_12 set up</description><name>Parameter 0_12 set up_(1102)</name><addrLow> 2 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Preset reference 1</description><name>Preset reference 1_(0121)</name><addrLow> 21 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
+
+parameter_11.03=11.40
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_13 set up</description><name>Parameter 0_13 set up_(1103)</name><addrLow> 3 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>SMARTCARD data checksum</description><name>SMARTCARD data checksum_(1140)</name><addrLow> 40 </addrLow><datatype>VT_UI2</datatype><accessrights>READ</accessrights></Parameter>
+
+parameter_11.04=3.02
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_14 set up</description><name>Parameter 0_14 set up_(1104)</name><addrLow> 4 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Speed feedback</description><name>Speed feedback_(0302)</name><addrLow> 2 </addrLow><datatype>VT_R8</datatype><accessrights>READ</accessrights></Parameter>
+
+parameter_11.05=6.23
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_15 set up</description><name>Parameter 0_15 set up_(1105)</name><addrLow> 5 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Run time_ hours_mins</description><name>Run time_ hours_mins_(0623)</name><addrLow> 23 </addrLow><datatype>VT_R4</datatype><accessrights>READ</accessrights></Parameter>
+
+parameter_11.06=6.22
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_16 set up</description><name>Parameter 0_16 set up_(1106)</name><addrLow> 6 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Run time_ years_days</description><name>Run time_ years_days_(0622)</name><addrLow> 22 </addrLow><datatype>VT_R4</datatype><accessrights>READ</accessrights></Parameter>
+
+parameter_11.07=4.01
+<Parameter><objecttype> 1 </objecttype><description>Parameter 0_17 set up</description><name>Parameter 0_17 set up_(1107)</name><addrLow> 7 </addrLow><datatype>VT_R4</datatype><accessrights>READWRITE</accessrights></Parameter>
+<Parameter><objecttype> 1 </objecttype><description>Current magnitude</description><name>Current magnitude_(0401)</name><addrLow> 1 </addrLow><datatype>VT_R8</datatype><accessrights>READ</accessrights></Parameter>
+
