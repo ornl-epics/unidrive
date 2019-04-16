@@ -1,16 +1,14 @@
 
 record(ai, "$(s):$(ta):$(ss):MaxReferenceRDB") {
-   field(DOL, "7000.0")
    field(DTYP, "asynFloat64")
-#   field(OUT, "@asyn(mod23,0106,1000)FLOAT32_BE")
-   field(OUT, "@asyn(mod23,0106,1000)INT32_BE")
+#   field(INP, "@asyn(modRW23,0106,1000)FLOAT32_BE")
+   field(INP, "@asyn(modRW23,0106,1000)INT32_BE")
 }
 
 record(longin, "$(s):$(ta):$(ss):MaxReferenceRDBL") {
-   field(DOL, "7000.0")
    field(DTYP, "asynInt32")
-#   field(OUT, "@asyn(mod23,0106,1000)FLOAT32_BE")
-   field(OUT, "@asyn(mod23,0106,1000)INT32_BE")
+#   field(INP, "@asyn(modRW23,0106,1000)FLOAT32_BE")
+   field(INP, "@asyn(modRW23,0106,1000)INT32_BE")
 }
 
 
