@@ -11,4 +11,10 @@ record(longin, "$(s):$(ta):$(ss):MaxReferenceRDBL") {
    field(INP, "@asyn(modRW23,0106,1000)INT32_BE")
 }
 
+record(asyn, "$(s):$(ta):$(ss):AsynRec") {
+    field(DTYP,"asynRecordDevice")
+    field(PORT,"modRW23")
+}
+
+
 
