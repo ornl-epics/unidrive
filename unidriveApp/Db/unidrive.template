@@ -1,20 +1,40 @@
-
-record(ai, "$(s):$(ta):$(ss):MaxRefRDB_F32") {
+record(ai, "$(s):$(ta):$(ss):MaxRefRDB_AI") {
    field(DESC, "param 0106")
-   field(DTYP, "asynFloat64")
-   field(INP, "@asyn(modR3,32873,1000)FLOAT32_BE")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16489,-32,1000)INT32_BE")
 }
 
-record(ai, "$(s):$(ta):$(ss):MaxRefRDB_I32") {
+record(ao, "$(s):$(ta):$(ss):MaxRef_AO") {
    field(DESC, "param 0106")
-   field(DTYP, "asynFloat64")
-   field(INP, "@asyn(modR3,16489,1000)INT32_BE")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16489,-32,1000)INT32_BE")
 }
 
 record(longin, "$(s):$(ta):$(ss):MaxRefRDB_LI") {
    field(DESC, "param 0106")
+   field(SCAN, "10 second")
    field(DTYP, "asynInt32")
    field(INP, "@asyn(modR3,16489,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):MaxRefRDB") 
+}
+
+record(calc, "$(s):$(ta):$(ss):MaxRefRDB") {
+   field(INPA, "$(s):$(ta):$(ss):MaxRefRDB_LI NPP MS") 
+   field(CALC, "A/10.0")
+   field(EGU, "rpm")
+}
+
+record(stringin, "$(s):$(ta):$(ss):RefSel") {
+   field(DESC, "param 114")
+   field(DTYP, "asynOctet")
+   field(INP, "@asyn(modR3,16489,1000)STRING_HIGH")
 }
 
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
