@@ -33,9 +33,18 @@ record(calc, "$(s):$(ta):$(ss):MaxRefRDB") {
 
 record(longin, "$(s):$(ta):$(ss):RefSel") {
    field(DESC, "param 114. Said to be text")
+   field(SCAN, "10 second")
    field(DTYP, "asynInt32")
-   field(INP, "@asyn(modR3,16489,1000)INT32_BE")
+   field(INP, "@asyn(modR3,113,1000)INT32_BE")
 }
+
+record(longout, "$(s):$(ta):$(ss):RefSelSet") {
+   field(DESC, "param 114. Said to be text")
+   field(DTYP, "asynInt32")
+   field(OUT, "@asyn(modR6,113,1000)INT32_BE")
+}
+
+
 
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
     field(DTYP,"asynRecordDevice")
