@@ -2,24 +2,24 @@
 record(ai, "$(s):$(ta):$(ss):MaxRefRDB_F32") {
    field(DESC, "param 0106")
    field(DTYP, "asynFloat64")
-   field(INP, "@asyn(modR3,32874,1000)FLOAT32_BE")
+   field(INP, "@asyn(modR3,32873,1000)FLOAT32_BE")
 }
 
 record(ai, "$(s):$(ta):$(ss):MaxRefRDB_I32") {
    field(DESC, "param 0106")
    field(DTYP, "asynFloat64")
-   field(INP, "@asyn(modR3,16490,1000)INT32_BE")
+   field(INP, "@asyn(modR3,16489,1000)INT32_BE")
 }
 
 record(longin, "$(s):$(ta):$(ss):MaxRefRDB_LI") {
    field(DESC, "param 0106")
    field(DTYP, "asynInt32")
-   field(INP, "@asyn(modR3,16490,1000)INT32_BE")
+   field(INP, "@asyn(modR3,16489,1000)INT32_BE")
 }
 
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
     field(DTYP,"asynRecordDevice")
-    field(PORT,"modRW23")
+    field(PORT,"modR3")
 }
 
 
