@@ -31,10 +31,10 @@ record(calc, "$(s):$(ta):$(ss):MaxRefRDB") {
    field(EGU, "rpm")
 }
 
-record(stringin, "$(s):$(ta):$(ss):RefSel") {
-   field(DESC, "param 114")
-   field(DTYP, "asynOctet")
-   field(INP, "@asyn(modR3,16489,1000)STRING_HIGH")
+record(longin, "$(s):$(ta):$(ss):RefSel") {
+   field(DESC, "param 114. Said to be text")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,16489,1000)INT32_BE")
 }
 
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
