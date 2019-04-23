@@ -1,4 +1,4 @@
-record(ai, "$(s):$(ta):$(ss):MaxRefRDB_AI") {
+record(ai, "$(s):$(ta):$(ss):MaxRef") {
    field(DESC, "param 0106")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
@@ -8,7 +8,7 @@ record(ai, "$(s):$(ta):$(ss):MaxRefRDB_AI") {
    field(INP, "@asynMask(modR3,16489,-32,1000)INT32_BE")
 }
 
-record(ao, "$(s):$(ta):$(ss):MaxRef_AO") {
+record(ao, "$(s):$(ta):$(ss):MaxRefSet") {
    field(DESC, "param 0106")
    field(DTYP, "asynInt32")
    field(LINR, "SLOPE")
@@ -17,25 +17,22 @@ record(ao, "$(s):$(ta):$(ss):MaxRef_AO") {
    field(OUT, "@asynMask(modW16,16489,-32,1000)INT32_BE")
 }
 
+#
+# example of longin
+#
 record(longin, "$(s):$(ta):$(ss):MaxRefRDB_LI") {
    field(DESC, "param 0106")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
    field(INP, "@asyn(modR3,16489,1000)INT32_BE")
-   field(FLNK, "$(s):$(ta):$(ss):MaxRefRDB") 
 }
 
-record(calc, "$(s):$(ta):$(ss):MaxRefRDB") {
-   field(INPA, "$(s):$(ta):$(ss):MaxRefRDB_LI NPP MS") 
-   field(CALC, "A/10.0")
-   field(EGU, "rpm")
-}
 
 record(longin, "$(s):$(ta):$(ss):RefSel") {
    field(DESC, "param 114. Said to be text")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
-   field(INP, "@asyn(modR3,113,1000)INT32_BE")
+   field(INP, "@asyn(modR3,113,1000)INT32_LE")
 }
 
 record(longout, "$(s):$(ta):$(ss):RefSelSet") {
