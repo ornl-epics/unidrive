@@ -38,7 +38,7 @@ record(longin, "$(s):$(ta):$(ss):RefSel") {
 record(longout, "$(s):$(ta):$(ss):RefSelSet") {
    field(DESC, "param 114. Said to be text")
    field(DTYP, "asynInt32")
-   field(OUT, "@asyn(modR6,113,1000)INT32_BE")
+   field(OUT, "@asyn(modW6,113,1000)INT32_BE")
 }
 
 
