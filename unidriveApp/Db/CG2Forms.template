@@ -1,0 +1,49 @@
+record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedCalc")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedCalc") {
+   field(INPA, "$(s):$(ta):$(ss):Lambda:Set")
+   field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP")
+   field(INPC, "0") 		# c1
+   field(INPD, "0") 		# c2
+   field(INPE, "26807.72")	# c3
+   field(INPF, "-2234")		# c4
+   field(INPG, "0")		# c5
+   field(CALC, "(E+F*(B-G))/(A-(C+D*B))
+}
+
+record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
+}
+
+record(calc, "$(s):$(ta):$(ss):TiltCalc") {
+   field(INPA, "$(s):$(ta):$(ss):DLambda:Set")
+   field(INPB, "0")		# c5
+   field(CALC, "(17.0-2.25/A)/2.4+B")
+}
+
+#
+# calculate wavelength from tilt and speed readbacks
+#
+record(calc, "$(s):$(ta):$(ss):WaveLengthCalc") {
+   field(INPA, "$(s):$(ta):$(ss):Speed CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):Tilt CPP MS")
+   field(INPC, "0") 		# c1
+   field(INPD, "0") 		# c2
+   field(INPE, "26807.72")	# c3
+   field(INPF, "-2234")		# c4
+   field(INPG, "0")		# c5
+   field(CALC, "C+D*B+(E+F*(B-G))/A")
+}
+
+#
+# calculate dLambda from tilt
+#
+record(calc, "$(s):$(ta):$(ss):DLamdaCalc") {
+   field(INPA, "$(s):$(ta):$(ss):Tilt CPP MS")
+   field(INPB, "0") 		# c5
+   field(CALC, "2.25/(17-2.4*(A-B))")
+}

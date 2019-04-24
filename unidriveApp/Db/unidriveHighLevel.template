@@ -1,0 +1,26 @@
+record(mbbo, "$(s):$(ta):$(ss):SpeedMode") {
+   field(ONST, "Speed")
+   field(TWST, "Lambda")
+   info(autosaveFields, "VAL")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Lambda"
+substitute "EGU=A"
+substitute "OUT=$(s):$(ta):$(ss):Lambda:Set"
+substitute "IN=$(s):$(ta):$(ss):AtVelocity"
+substitute "TOL=0.001"	
+substitute "TO=300"
+substitute "ST=15"
+include "putCallback.template"
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=DLambda"
+substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
+substitute "IN=$(s):$(ta):$(ss):AtVelocity"
+substitute "TOL=0.1"	
+substitute "TO=300"
+substitute "ST=15"
+include "putCallback.template"
+
+
