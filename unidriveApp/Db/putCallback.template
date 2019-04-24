@@ -18,7 +18,6 @@
 # EGU: units of setpoint default = ' '
 # OUT: controlled external PV to set 
 # IN: flag PV for expected to go true when operation complete.
-# TOL: tolerance between IN and setpoint to finish, default = 0.1
 # TO: timeout in seconds, defaults to 0 (no timeout).
 # ST: settling time in seconds: value must meet tolerance this long. Default 0,
 #     which means it must meet tolerance once.
