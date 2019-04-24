@@ -14,6 +14,11 @@ substitute "TO=300"
 substitute "ST=15"
 include "putCallback.template"
 
+record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedCalc")
+}
+
 substitute "P=$(s):$(ta):$(ss)"
 substitute "C=DLambda"
 substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
@@ -22,5 +27,10 @@ substitute "TOL=0.1"
 substitute "TO=300"
 substitute "ST=15"
 include "putCallback.template"
+
+record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
+}
 
 
