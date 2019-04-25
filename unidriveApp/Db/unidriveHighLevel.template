@@ -4,6 +4,21 @@ record(mbbo, "$(s):$(ta):$(ss):SpeedMode") {
    info(autosaveFields, "VAL")
 }
 
+record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedCalc")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtVelocity") {
+   field(INPA, "$(s):$(ta):$(ss):DLamdaCalc CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
+   field(INPC, "0.1")
+   field(INPD, "$(s):$(ta):$(ss):WaveLengthCalc CPP MS")
+   field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
+   field(INPF, "0.1")
+   field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
+}
+
 substitute "P=$(s):$(ta):$(ss)"
 substitute "C=Lambda"
 substitute "EGU=A"
@@ -13,22 +28,25 @@ substitute "TO=300"
 substitute "ST=15"
 include "putCallback.template"
 
-record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
+record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
-   field(FLNK, "$(s):$(ta):$(ss):SpeedCalc")
+   field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtDLambda") {
+   field(INPA, "$(s):$(ta):$(ss):DLamdaCalc CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
+   field(INPC, "0.1")
+   field(CALC, "ABS(A-B)<C")
 }
 
 substitute "P=$(s):$(ta):$(ss)"
 substitute "C=DLambda"
 substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
-substitute "IN=$(s):$(ta):$(ss):AtVelocity"
+substitute "IN=$(s):$(ta):$(ss):AtDLambda"
 substitute "TO=300"
 substitute "ST=15"
 include "putCallback.template"
 
-record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
-   field(EGU, "A")
-   field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
-}
 
 

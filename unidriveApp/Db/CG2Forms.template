@@ -6,7 +6,7 @@ record(calc, "$(s):$(ta):$(ss):SpeedCalc") {
    field(INPE, "26807.72")	# c3
    field(INPF, "-2234")		# c4
    field(INPG, "0")		# c5
-   field(CALC, "(E+F*(B-G))/(A-(C+D*B))
+   field(CALC, "(E+F*(B-G))/(A-(C+D*B))")
 }
 
 record(calc, "$(s):$(ta):$(ss):TiltCalc") {
