@@ -16,6 +16,17 @@ record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
    field(ONAM, "At Speed")
 }
 
+record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
+   field(DESC, "param 0301")
+   field(SCAN, "1 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16684,-32,1000)INT32_BE")
+}
+
+
 
 record(ai, "$(s):$(ta):$(ss):UD:MaxRef") {
    field(DESC, "param 0106")
