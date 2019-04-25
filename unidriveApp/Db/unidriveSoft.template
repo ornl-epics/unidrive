@@ -1,0 +1,13 @@
+record(calc, "$(s):$(ta):$(ss):AtSpeedCalc") {
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveEnabled CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS") 
+   field(CALC, "A&&B")
+   field(FLNK, "$(s):$(ta):$(ss):AtSpeed")
+}
+
+record(bi, "$(s):$(ta):$(ss):AtSpeed") {
+   field(INP, "$(s):$(ta):$(ss):AtSpeedCalc NPP MS")
+   field(ZNAM, "Not At Speed")
+   field(ONAM, "At Speed")
+}
+
