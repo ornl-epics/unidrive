@@ -11,6 +11,7 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 DB += unidrive.template
+DB += unidriveSoft.template
 DB += unidriveHighLevel.db
 DB += CG2Forms.template CG3Forms.template
 
