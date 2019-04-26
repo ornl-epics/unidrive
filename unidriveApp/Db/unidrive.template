@@ -9,7 +9,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
 record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(DESC, "param 0615")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR3,614,1,1000)UINT16")
+   field(OUT, "@asynMask(modR6,614,1,1000)UINT16")
    field(ONAM, "Enabled")
    field(ZNAM, "Disabled")
    field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled")
@@ -40,6 +40,20 @@ record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
    field(SCAN, "1 second")
    field(ZNAM, "Trip")
    field(ONAM, "OK")
+}
+
+record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
+   field(DESC, "param 1020")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1019,1000)UINT16")
+   field(SCAN, "1 second")
+}
+
+record(longin, "$(s):$(ta):$(ss):UD:Trip9") {
+   field(DESC, "param 1029")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1028,1000)UINT16")
+   field(SCAN, "1 second")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
