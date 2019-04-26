@@ -1,11 +1,12 @@
 record(mbbo, "$(s):$(ta):$(ss):SpeedMode") {
-   field(ONST, "Speed")
-   field(TWST, "Lambda")
+   field(ZRST, "Speed")
+   field(ONST, "Lambda")
    info(autosaveFields, "VAL")
 }
 
 record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
    field(EGU, "A")
+   alias("$(s):$(ta):$(ss):Lambda:Reqd")
    field(FLNK, "$(s):$(ta):$(ss):SpeedCalc")
 }
 
@@ -31,6 +32,7 @@ include "putCallback.template"
 record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
    field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
+   alias("$(s):$(ta):$(ss):DLambda:Reqd")
 }
 
 record(calc, "$(s):$(ta):$(ss):AtDLambda") {
