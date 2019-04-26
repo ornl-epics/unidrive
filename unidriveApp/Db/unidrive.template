@@ -12,7 +12,7 @@ record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(OUT, "@asynMask(modR3,615,1,1000)UINT16")
    field(ONAM, "Enabled")
    field(ZNAM, "Disabled")
-   field(FLNK, ""$(s):$(ta):$(ss):UD:DriveEnabled")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
@@ -63,7 +63,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(ESLO, "0.1")
    field(EOFF, "0.0")
    field(OUT, "@asynMask(modW16,16489,-32,1000)INT32_BE")
-   field(FLNK, "$(s):$(ta):$(ss):MaxRef")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
@@ -101,7 +101,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
    field(FRST, "Pad")
    field(FVVL, "5")
    field(FVST, "Prc")
-   field(FLNK, "$(s):$(ta):$(ss):RefSel")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RefSel")
 }
    
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
