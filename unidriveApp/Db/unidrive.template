@@ -98,6 +98,26 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef")
 }
 
+record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
+   field(DESC, "param 0121")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16504,-32,1000)INT32_BE")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
+   field(DESC, "param 0121")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16504,-32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Preset1")
+}
+
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
    field(DESC, "param 0114")
    field(SCAN, "10 second")
