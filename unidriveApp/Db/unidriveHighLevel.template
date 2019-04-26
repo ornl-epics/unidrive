@@ -50,5 +50,45 @@ substitute "TO=300"
 substitute "ST=15"
 include "putCallback.template"
 
+record(ao, "$(s):$(ta):$(ss):Speed:Set") {
+   field(EGU, "A")
+   alias("$(s):$(ta):$(ss):Speed:Reqd")
+}
 
+record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
+   field(INPA, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
+   field(INPC, "$(s):$(ta):$(ss):Speed:Set CPP MS")
+   field(INPD, "0.1")
+   field(CALC, "A&&(ABS(B-C)<D)")
+}
 
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Speed"
+substitute "EGU=RPM"
+substitute "OUT=$(s):$(ta):$(ss):Speed:Set"
+substitute "IN=$(s):$(ta):$(ss):AtSpeedHL"
+substitute "TO=300"
+substitute "ST=15"
+include "putCallback.template"
+
+record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
+   field(EGU, "A")
+   alias("$(s):$(ta):$(ss):Tilt:Reqd")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtTilt") {
+   field(INPA, "$(s):$(ta):$(ss):TM:Tilt.RBV CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):Tilt:Set CPP MS")
+   field(INPC, "0.1")
+   field(CALC, "ABS(A-B)<C")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Tilt"
+substitute "EGU=Deg"
+substitute "OUT=$(s):$(ta):$(ss):Tilt:Set"
+substitute "IN=$(s):$(ta):$(ss):AtTilt"
+substitute "TO=300"
+substitute "ST=15"
+include "putCallback.template"
