@@ -12,7 +12,7 @@ record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(OUT, "@asynMask(modW6,614,1,1000)UINT16")
    field(ONAM, "Enabled")
    field(ZNAM, "Disabled")
-   field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled.PROC CA")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
@@ -33,6 +33,15 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
    field(ONAM, "OK")
 }
 
+record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
+   field(DESC, "param 1002")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,1001,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ZNAM, "Inverter On")
+   field(ONAM, "Inverter Off")
+}
+
 record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
    field(DESC, "param 1003")
    field(DTYP, "asynUInt32Digital")
@@ -46,14 +55,81 @@ record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
    field(DESC, "param 1020")
    field(DTYP, "asynInt32")
    field(INP, "@asyn(modR3,1019,1000)UINT16")
-   field(SCAN, "1 second")
+   field(SCAN, "10 second")
 }
-
+record(longin, "$(s):$(ta):$(ss):UD:Trip1") {
+   field(DESC, "param 1021")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1020,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip2") {
+   field(DESC, "param 1022")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1021,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip3") {
+   field(DESC, "param 1023")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1022,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip4") {
+   field(DESC, "param 1024")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1023,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip5") {
+   field(DESC, "param 1025")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1024,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip6") {
+   field(DESC, "param 1026")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1025,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip7") {
+   field(DESC, "param 1027")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1026,1000)UINT16")
+   field(SCAN, "10 second")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip8") {
+   field(DESC, "param 1028")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1027,1000)UINT16")
+   field(SCAN, "10 second")
+}
 record(longin, "$(s):$(ta):$(ss):UD:Trip9") {
    field(DESC, "param 1029")
    field(DTYP, "asynInt32")
    field(INP, "@asyn(modR3,1028,1000)UINT16")
-   field(SCAN, "1 second")
+   field(SCAN, "10 second")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
+   field(DESC, "param 0622 run time years.days")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,621,16,1000)UINT16")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
+   field(DESC, "param 0623 run time hours.mins")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,622,16,1000)UINT16")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
@@ -115,7 +191,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
    field(ESLO, "0.1")
    field(EOFF, "0.0")
    field(OUT, "@asynMask(modW16,16504,-32,1000)INT32_BE")
-   field(FLNK, "$(s):$(ta):$(ss):UD:Preset1")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Preset1.PROC CA")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
@@ -153,7 +229,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
    field(FRST, "Pad")
    field(FVVL, "5")
    field(FVST, "Prc")
-   field(FLNK, "$(s):$(ta):$(ss):UD:RefSel")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RefSel.PROC CA")
 }
    
 record(asyn, "$(s):$(ta):$(ss):AsynRec") {
