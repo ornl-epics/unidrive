@@ -9,7 +9,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
 record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(DESC, "param 0615")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR6,614,1,1000)UINT16")
+   field(OUT, "@asynMask(modW6,614,1,1000)UINT16")
    field(ONAM, "Enabled")
    field(ZNAM, "Disabled")
    field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled")
@@ -95,7 +95,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(ESLO, "0.1")
    field(EOFF, "0.0")
    field(OUT, "@asynMask(modW16,16489,-32,1000)INT32_BE")
-   field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef.PROC CA")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
