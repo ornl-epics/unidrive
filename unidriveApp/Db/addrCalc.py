@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+import sys;
 
 class paramProps(object):
    paramDict = {}
@@ -34,5 +37,13 @@ paramProps(139, 32, 1)
 keys = paramProps.paramDict.keys()
 keys.sort()
 
-for item in keys:
-   print item, paramProps.paramDict[item].bits, paramProps.paramDict[item].dp
+#for item in keys:
+#   print item, paramProps.paramDict[item].bits, paramProps.paramDict[item].dp
+
+if len(sys.argv) != 2:
+   sys.stderr.write("Usage: python %s address\n" % sys.argv[0])
+   raise SystemExit(1)
+
+print 0x4000 + int(sys.argv[1]) - 1
+
+
