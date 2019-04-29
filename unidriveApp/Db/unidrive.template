@@ -44,7 +44,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
 record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
    field(DESC, "param 0114")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR3,113,7,1000)UINT16")
+   field(OUT, "@asynMask(modW6,113,7,1000)UINT16")
    field(DOL, "3")
 #  field(PINI, "YES")
    field(ZRVL, "0")
@@ -119,7 +119,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
    field(ONVL, "1")
    field(TWST, "Boost")
    field(TWVL, "2")
-   field(OUT, "@asynMask(modW6,203,3,1000)UINT16")
+   field(OUT, "@asynMask(modW6_1,203,3,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RampMode.PROC CA")
 }
 
@@ -133,7 +133,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
    field(ONVL, "1")
    field(TWST, "Boost")
    field(TWVL, "2")
-   field(INP, "@asynMask(modR3,203,3,1000)UINT16")
+   field(INP, "@asynMask(modR3_1,203,3,1000)UINT16")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
@@ -243,7 +243,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
 record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
    field(DESC, "param 0336")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR3,335,2,1000)UINT16")
+   field(OUT, "@asynMask(modW6,335,2,1000)UINT16")
    field(DOL, "1")
 #  field(PINI, "YES")
    field(ZRVL, "0")
@@ -417,7 +417,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedPFSet") {
 record(longin, "$(s):$(ta):$(ss):UD:MotorPoles") {
    field(DESC, "param 0511")
    field(DTYP, "asynInt32")
-   field(INP, "@asyn(modR3,510,1000)UINT16")
+   field(INP, "@asyn(modR3_1,510,1000)UINT16")
    field(SCAN, "10 second")
 }
 
@@ -426,7 +426,7 @@ record(longout, "$(s):$(ta):$(ss):UD:MotorPolesSet") {
    field(DTYP, "asynInt32")
    field(DOL, "1")
 #  field(PINI, "YES")
-   field(OUT, "@asyn(modR3,510,1000)UINT16")
+   field(OUT, "@asyn(modW6_1,510,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:MotorPoles.PROC CA")
 }
 
@@ -434,7 +434,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:MaxSFreq") {
    field(DESC, "param 0518")
    field(SCAN, "10 second")
    field(DTYP, "asynUInt32Digital")
-   field(INP, "@asynMask(modR3,517,7,1000)UINT16")
+   field(INP, "@asynMask(modR3_1,517,7,1000)UINT16")
    field(ZRVL, "0")
    field(ZRST, "3 kHz")
    field(ONVL, "1")
@@ -452,7 +452,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:MaxSFreq") {
 record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
    field(DESC, "param 0518")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR3,517,7,1000)UINT16")
+   field(OUT, "@asynMask(modW6_1,517,7,1000)UINT16")
    field(DOL, "4")
 #  field(PINI, "YES")
    field(ZRVL, "0")
@@ -560,7 +560,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:AI3Mode") {
 record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
    field(DESC, "param 0715")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modR3,714,15,1000)UINT16")
+   field(OUT, "@asynMask(modW6,714,15,1000)UINT16")
    field(DOL, "6")
 #  field(PINI, "YES")
    field(ZRVL, "0")
