@@ -3,30 +3,39 @@
 # supplemental descriptions are from spiceUnidriveNamespace.xml
 #
 parameter_01.06=7000.0
+# done tested
 <Parameter><objecttype> 1 </objecttype><description>Maximum reference clamp</description><name>Maximum reference clamp_(0106)</name><addrLow> 6 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_01.14=3
+# done tested
 <Parameter><objecttype> 1 </objecttype><description>Reference selector</description><name>Reference selector_(0114)</name><addrLow> 14 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_01.30=0
+# done
 <Parameter><objecttype> 1 </objecttype><description>Skip reference band 1</description><name>Skip reference band 1_(0130)</name><addrLow> 30 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_02.04=0
+# done
 <Parameter><objecttype> 1 </objecttype><description>Ramp mode select</description><name>Ramp mode select_(0204)</name><addrLow> 4 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_02.11=70.000
+# done
 <Parameter><objecttype> 1 </objecttype><description>Acceleration rate 1</description><name>Acceleration rate 1_(0211)</name><addrLow> 11 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_02.21=69.998
+# done
 <Parameter><objecttype> 1 </objecttype><description>Deceleration rate 1</description><name>Deceleration rate 1_(0221)</name><addrLow> 21 </addrLow><datatype>VT_R8</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_03.32=1
+# done
 <Parameter><objecttype> 1 </objecttype><description>Drive encoder marker flag</description><name>Drive encoder marker flag_(0332)</name><addrLow> 32 </addrLow><datatype>VT_BOOL</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_03.36=8
+# done
 <Parameter><objecttype> 1 </objecttype><description>Drive encoder supply voltage</description><name>Drive encoder supply voltage_(0336)</name><addrLow> 36 </addrLow><datatype>VT_UI1</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_04.13=35
+# done
 <Parameter><objecttype> 1 </objecttype><description>Current controller Kp gain</description><name>Current controller Kp gain_(0413)</name><addrLow> 13 </addrLow><datatype>VT_UI2</datatype><accessrights>READWRITE</accessrights></Parameter>
 
 parameter_04.14=222
