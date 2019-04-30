@@ -161,7 +161,7 @@ record(ai, "$(s):$(ta):$(ss):UD:MaxRef") {
    field(LINR, "SLOPE")
    field(ESLO, "0.1")
    field(EOFF, "0.0")
-   field(INP, "@asynMask(modR3,16489,-32,1000)INT32_BE")
+   field(INP, "@asynMask(modR3,16489,32,1000)UINT32_BE")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
@@ -170,7 +170,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(LINR, "SLOPE")
    field(ESLO, "0.1")
    field(EOFF, "0.0")
-   field(OUT, "@asynMask(modW16,16489,-32,1000)INT32_BE")
+   field(OUT, "@asynMask(modW16,16489,32,1000)UINT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef.PROC CA")
 }
 
