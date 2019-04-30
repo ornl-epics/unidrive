@@ -563,7 +563,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
    field(FLNK, "$(s):$(ta):$(ss):UD:AI3Mode.PROC CA")
 }
 
-record(ai, "$(s):$(ta):$(ss):UD:T28DI5Dest") {
+record(ai, "$(s):$(ta):$(ss):UD:DI5Dest") {
    field(DESC, "param 0825")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
@@ -573,7 +573,7 @@ record(ai, "$(s):$(ta):$(ss):UD:T28DI5Dest") {
    field(INP, "@asynMask(modR3,824,16,1000)UINT16")
 }
 
-record(ao, "$(s):$(ta):$(ss):UD:T28DI5DestSet") {
+record(ao, "$(s):$(ta):$(ss):UD:DI5DestSet") {
    field(DESC, "param 0825")
    field(DTYP, "asynInt32")
    field(DOL, "1.45")
@@ -582,10 +582,10 @@ record(ao, "$(s):$(ta):$(ss):UD:T28DI5DestSet") {
    field(ESLO, "0.01")
    field(EOFF, "0.0")
    field(OUT, "@asynMask(modW6,824,16,1000)UINT16")
-   field(FLNK, "$(s):$(ta):$(ss):UD:T28DI5Dest.PROC CA")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DI5Dest.PROC CA")
 }
 
-record(ai, "$(s):$(ta):$(ss):UD:T29DI6Dest") {
+record(ai, "$(s):$(ta):$(ss):UD:DI6Dest") {
    field(DESC, "param 0826")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
@@ -595,7 +595,7 @@ record(ai, "$(s):$(ta):$(ss):UD:T29DI6Dest") {
    field(INP, "@asynMask(modR3,825,16,1000)UINT16")
 }
 
-record(ao, "$(s):$(ta):$(ss):UD:T29DI6DestSet") {
+record(ao, "$(s):$(ta):$(ss):UD:DI6DestSet") {
    field(DESC, "param 0826")
    field(DTYP, "asynInt32")
    field(DOL, "1.46")
@@ -604,7 +604,7 @@ record(ao, "$(s):$(ta):$(ss):UD:T29DI6DestSet") {
    field(ESLO, "0.01")
    field(EOFF, "0.0")
    field(OUT, "@asynMask(modW6,825,16,1000)UINT16")
-   field(FLNK, "$(s):$(ta):$(ss):UD:T29DI6Dest.PROC CA")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DI6Dest.PROC CA")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
