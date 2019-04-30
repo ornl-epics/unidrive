@@ -102,7 +102,7 @@ record(ao, "$(s):$(ta):$(ss):UD:SkipRef1Set") {
    field(FLNK, "$(s):$(ta):$(ss):UD:SkipRef1.PROC CA")
 }
 
-record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSel") {
+record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
    field(DESC, "param 0204")
    field(DTYP, "asynInt32")
    field(DOL, "0")
