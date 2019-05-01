@@ -230,7 +230,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
    field(DESC, "param 0336")
    field(SCAN, "10 second")
    field(DTYP, "asynUInt32Digital")
-   field(INP, "@asynMask(modR3,335,2,1000)UINT16")
+   field(INP, "@asynMask(modR3,335,3,1000)UINT16")
    field(ZRVL, "0")
    field(ZRST, "5V")
    field(ONVL, "1")
@@ -243,7 +243,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
 record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
    field(DESC, "param 0336")
    field(DTYP, "asynUInt32Digital")
-   field(OUT, "@asynMask(modW6,335,2,1000)UINT16")
+   field(OUT, "@asynMask(modW6,335,3,1000)UINT16")
    field(DOL, "1")
 #  field(PINI, "YES")
    field(ZRVL, "0")
@@ -467,7 +467,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
    field(FRST, "12 kHz")
    field(FVVL, "5")
    field(FVST, "16 kHz")
-   field(FLNK, "$(s):$(ta):$(ss):UD:RefSel.PROC CA")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MaxSFreq.PROC CA")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
