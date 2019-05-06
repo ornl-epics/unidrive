@@ -49,8 +49,8 @@ record(seq, "$(s):$(ta):$(ss):ActiveBr") {
 }
 
 record(calc, "$(s):$(ta):$(ss):ZeroSetTst") {
-   field(INPA, "$(s):$(ta):$(ss):Speed:Set NPP MS")
-   field(INPB, "0.001")
+   field(INPA, "$(s):$(ta):$(ss):UD:Preset1 NPP MS")
+   field(INPB, "0.01")
    field(CALC, "A>B?3:4")
    field(FLNK, "$(s):$(ta):$(ss):ZeroSetBr")
 }
