@@ -657,8 +657,8 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
    field(DTYP, "asynUInt32Digital")
    field(INP, "@asynMask(modR3,1001,1,1000)UINT16")
    field(SCAN, "1 second")
-   field(ZNAM, "Inverter On")
-   field(ONAM, "Inverter Off")
+   field(ZNAM, "Inverter Off")
+   field(ONAM, "Inverter On")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
@@ -666,8 +666,8 @@ record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
    field(DTYP, "asynUInt32Digital")
    field(INP, "@asynMask(modR3,1002,1,1000)UINT16")
    field(SCAN, "1 second")
-   field(ZNAM, "Trip")
-   field(ONAM, "OK")
+   field(ZNAM, "Turning")
+   field(ONAM, "Zero Speed")
 }
 
 record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
