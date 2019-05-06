@@ -1,18 +1,22 @@
-record(calc, "$(s):$(ta):$(ss):SpeedCalc") {
-   field(INPA, "$(s):$(ta):$(ss):Lambda:Set")
-   field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP")
+record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
+   field(INPA, "$(s):$(ta):$(ss):Lambda:Set NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP MS")
    field(INPC, "0") 		# c1
    field(INPD, "0") 		# c2
    field(INPE, "26807.72")	# c3
    field(INPF, "-2234")		# c4
    field(INPG, "0")		# c5
    field(CALC, "(E+F*(B-G))/(A-(C+D*B))")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):TiltCalc") {
-   field(INPA, "$(s):$(ta):$(ss):DLambda:Set")
+record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
+   field(INPA, "$(s):$(ta):$(ss):DLambda:Set NPP MS")
    field(INPB, "0")		# c5
    field(CALC, "(17.0-2.25/A)/2.4+B")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "CG2:Mot:vs_tilt PP")
 }
 
 #
@@ -20,7 +24,7 @@ record(calc, "$(s):$(ta):$(ss):TiltCalc") {
 #
 record(calc, "$(s):$(ta):$(ss):WaveLengthCalc") {
    field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):TM:Tilt.RBV CPP MS")
+   field(INPB, "CG2:Mot:vs_tilt.RBV CPP MS")
    field(INPC, "0") 		# c1
    field(INPD, "0") 		# c2
    field(INPE, "26807.72")	# c3
@@ -33,7 +37,7 @@ record(calc, "$(s):$(ta):$(ss):WaveLengthCalc") {
 # calculate dLambda from tilt
 #
 record(calc, "$(s):$(ta):$(ss):DLamdaCalc") {
-   field(INPA, "$(s):$(ta):$(ss):TM:Tilt.RBV CPP MS")
+   field(INPA, "CG2:Mot:vs_tilt.RBV CPP MS")
    field(INPB, "0") 		# c5
    field(CALC, "2.25/(17-2.4*(A-B))")
 }

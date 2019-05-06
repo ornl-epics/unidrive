@@ -79,7 +79,7 @@ record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
 }
 
 record(calc, "$(s):$(ta):$(ss):AtTilt") {
-   field(INPA, "$(s):$(ta):$(ss):TM:Tilt.RBV CPP MS")
+   field(INPA, "$(s):Mot:vs_tilt.RBV CPP MS")
    field(INPB, "$(s):$(ta):$(ss):Tilt:Set CPP MS")
    field(INPC, "0.1")
    field(CALC, "ABS(A-B)<C")
