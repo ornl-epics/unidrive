@@ -51,8 +51,9 @@ substitute "ST=15"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):Speed:Set") {
-   field(EGU, "A")
+   field(EGU, "rpm")
    alias("$(s):$(ta):$(ss):Speed:Reqd")
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
