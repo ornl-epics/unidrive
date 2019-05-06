@@ -31,7 +31,7 @@ record(calc, "$(s):$(ta):$(ss):ZeroTimer") {
    field(CALC, "A?0:VAL+1;A:=0")
 }
 
-record(calc, "$(s):$(ta):$(ss):SpeedScan") {
+record(calc, "$(s):$(ta):$(ss):ActiveScan") {
    field(SCAN, "1 second")
    field(INPA, "$(s):$(ta):$(ss):UD:DriveActive NPP MS")
    field(CALC, "A?3:4")
@@ -40,7 +40,7 @@ record(calc, "$(s):$(ta):$(ss):SpeedScan") {
 
 record(seq, "$(s):$(ta):$(ss):ActiveBr") {
    field(SELM, "Mask")
-   field(SELL, "$(s):$(ta):$(ss):SpeedScan")
+   field(SELL, "$(s):$(ta):$(ss):ActiveScan")
    # begin drive active links
    field(LNK1, "$(s):$(ta):$(ss):RunTimeSecs.PROC PP")
    field(LNK2, "$(s):$(ta):$(ss):ZeroSpdTst.PROC PP")
