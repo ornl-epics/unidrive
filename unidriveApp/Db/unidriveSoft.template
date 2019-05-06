@@ -11,3 +11,92 @@ record(bi, "$(s):$(ta):$(ss):AtSpeed") {
    field(ONAM, "At Speed")
 }
 
+record(calc, "$(s):$(ta):$(ss):RunTimeSecs") {
+   field(CALC, "VAL+1")
+   field(PINI, "YES")
+   field(FLNK, "$(s):$(ta):$(ss):RunTimeHrs")
+   field(EGU, "S")
+   info(autosaveFields, "VAL")
+}
+
+record(calc, "$(s):$(ta):$(ss):RunTimeHrs") {
+   field(INPA, "$(s):$(ta):$(ss):RunTimeSecs NPP MS")
+   field(CALC, "A/3600")
+   field(ADEL, "0.1")
+   field(EGU, "H")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroTimer") {
+   field(CALC, "A?0:VAL+1;A:=0")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedScan") {
+   field(SCAN, "1 second")
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveActive NPP MS")
+   field(CALC, "A?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ActiveBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ActiveBr") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):SpeedScan")
+   # begin drive active links
+   field(LNK1, "$(s):$(ta):$(ss):RunTimeSecs.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroSpdTst.PROC PP")
+   # begin drive inactive links
+   field(LNK3, "$(s):$(ta):$(ss):ZeroSetTst.PROC PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroSetTst") {
+   field(INPA, "$(s):$(ta):$(ss):Speed:Set NPP MS")
+   field(INPB, "0.001")
+   field(CALC, "A>B?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroSetBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroSetBr") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):ZeroSetTst")
+   # begin speed set > 0 links
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):UD:DriveEnable PP")
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+   # begin speed set to 0 links
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroSpdTst") {
+   field(INPA, "$(s):$(ta):$(ss):UD:ZeroSpeed NPP MS")
+   field(CALC, "A?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroSpdBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroSpdBr") {
+   field(SELM, "Mask")
+   # begin zero-speed links
+   field(SELL, "$(s):$(ta):$(ss):ZeroSpdTst")
+   field(LNK1, "$(s):$(ta):$(ss):ZeroTimer.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimerTst.PROC PP")
+   # begin non-zero speed links
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroTimerTst") {
+   field(INPA, "$(s):$(ta):$(ss):ZeroTimer NPP MS")
+   field(CALC, "A>5?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroTimerBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroTimerBr") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):ZeroTimerTst")
+   # begin zerotimer > 5 links
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):UD:DriveEnable PP")
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+   # No actions for zerotimer <= 5
+}
+   
