@@ -13,7 +13,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(DESC, "param 0106")
    field(DTYP, "asynInt32")
    field(DOL, "7000.0")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "1")
    field(ESLO, "0.1")
@@ -46,7 +46,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
    field(DTYP, "asynUInt32Digital")
    field(OUT, "@asynMask(modW6,113,7,1000)UINT16")
    field(DOL, "3")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(ZRVL, "0")
    field(ZRST, "A1.A2")
    field(ONVL, "1")
@@ -99,7 +99,7 @@ record(ao, "$(s):$(ta):$(ss):UD:SkipRef1Set") {
    field(DESC, "param 0130")
    field(DTYP, "asynInt32")
    field(DOL, "0.0")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "1")
    field(ESLO, "0.1")
@@ -112,7 +112,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
    field(DESC, "param 0204")
    field(DTYP, "asynInt32")
    field(DOL, "0")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(ZRST, "Fast Ramp")
    field(ZRVL, "0")
    field(ONST, "Standard")
@@ -151,7 +151,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Accel1Set") {
    field(DESC, "param 0211")
    field(DTYP, "asynInt32")
    field(DOL, "70.000")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "3")
    field(ESLO, "0.001")
@@ -175,7 +175,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Decel1Set") {
    field(DESC, "param 0221")
    field(DTYP, "asynInt32")
    field(DOL, "69.998")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "3")
    field(ESLO, "0.001")
@@ -219,7 +219,7 @@ record(bo, "$(s):$(ta):$(ss):UD:MarkerFlagSet") {
    field(DESC, "param 0332")
    field(DTYP, "asynUInt32Digital")
    field(DOL, "1")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asynMask(modW6,331,1,1000)UINT16")
    field(ONAM, "Set")
    field(ZNAM, "Reset")
@@ -245,7 +245,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
    field(DTYP, "asynUInt32Digital")
    field(OUT, "@asynMask(modW6,335,3,1000)UINT16")
    field(DOL, "1")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(ZRVL, "0")
    field(ZRST, "5V")
    field(ONVL, "1")
@@ -277,7 +277,7 @@ record(ao, "$(s):$(ta):$(ss):UD:KpSet") {
    field(DESC, "param 0413")
    field(DTYP, "asynInt32")
    field(DOL, "35")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asynMask(modW6,412,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Kp.PROC CA")
 }
@@ -293,7 +293,7 @@ record(ao, "$(s):$(ta):$(ss):UD:KiSet") {
    field(DESC, "param 0414")
    field(DTYP, "asynInt32")
    field(DOL, "222")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asynMask(modW6,413,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Ki.PROC CA")
 }
@@ -313,7 +313,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedFreqSet") {
    field(DESC, "param 0506")
    field(DTYP, "asynInt32")
    field(DOL, "170.0")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "1")
    field(ESLO, "0.1")
@@ -339,7 +339,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedCurrSet") {
    field(DTYP, "asynInt32")
    field(EGU, "A")
    field(DOL, "10.50")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -365,7 +365,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedSpdSet") {
    field(DTYP, "asynInt32")
    field(EGU, "rpm")
    field(DOL, "10000")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -385,7 +385,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedVoltSet") {
    field(DESC, "param 0509")
    field(DTYP, "asynInt32")
    field(DOL, "170.0")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asynMask(modW6,508,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedVolt.PROC CA")
 }
@@ -405,7 +405,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedPFSet") {
    field(DESC, "param 0510")
    field(DTYP, "asynInt32")
    field(DOL, "0.9")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "3")
    field(ESLO, "0.001")
@@ -425,7 +425,7 @@ record(longout, "$(s):$(ta):$(ss):UD:MotorPolesSet") {
    field(DESC, "param 0511")
    field(DTYP, "asynInt32")
    field(DOL, "1")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asyn(modW6,510,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:MotorPoles.PROC CA")
 }
@@ -454,7 +454,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
    field(DTYP, "asynUInt32Digital")
    field(OUT, "@asynMask(modW6,517,7,1000)UINT16")
    field(DOL, "4")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(ZRVL, "0")
    field(ZRST, "3 kHz")
    field(ONVL, "1")
@@ -519,11 +519,15 @@ record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
    field(ZNAM, "Other")
 }
 
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
 record(bo, "$(s):$(ta):$(ss):UD:RunFwdSet") {
    field(DESC, "param 0630")
    field(DTYP, "asynUInt32Digital")
    field(DOL, "1")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(OUT, "@asynMask(modW6,629,1,1000)UINT16")
    field(ONAM, "Forward")
    field(ZNAM, "Other")
@@ -562,7 +566,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
    field(DTYP, "asynUInt32Digital")
    field(OUT, "@asynMask(modW6,714,15,1000)UINT16")
    field(DOL, "6")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(ZRVL, "0")
    field(ZRST, "0-20")
    field(ONVL, "1")
@@ -597,11 +601,15 @@ record(ai, "$(s):$(ta):$(ss):UD:DI5Dest") {
    field(INP, "@asynMask(modR3,824,16,1000)UINT16")
 }
 
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
 record(ao, "$(s):$(ta):$(ss):UD:DI5DestSet") {
    field(DESC, "param 0825")
    field(DTYP, "asynInt32")
    field(DOL, "1.45")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -621,11 +629,15 @@ record(ai, "$(s):$(ta):$(ss):UD:DI6Dest") {
    field(INP, "@asynMask(modR3,825,16,1000)UINT16")
 }
 
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
 record(ao, "$(s):$(ta):$(ss):UD:DI6DestSet") {
    field(DESC, "param 0826")
    field(DTYP, "asynInt32")
    field(DOL, "1.46")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -731,6 +743,11 @@ record(longin, "$(s):$(ta):$(ss):UD:Trip9") {
    field(SCAN, "10 second")
 }
 
+#
+# No menu 0 registers are used in this application, so I'm not sure what the
+# point of these Param00xx configurations is.  They were in legacy 
+# initialization.
+#
 record(ai, "$(s):$(ta):$(ss):UD:Param0011") {
    field(DESC, "param 1101")
    field(SCAN, "10 second")
@@ -746,7 +763,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0011Set") {
    field(DESC, "param 1101")
    field(DTYP, "asynInt32")
    field(DOL, "6.42")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -770,7 +787,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0012Set") {
    field(DESC, "param 1102")
    field(DTYP, "asynInt32")
    field(DOL, "1.21")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -794,7 +811,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0013Set") {
    field(DESC, "param 1103")
    field(DTYP, "asynInt32")
    field(DOL, "11.40")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -818,7 +835,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0014Set") {
    field(DESC, "param 1104")
    field(DTYP, "asynInt32")
    field(DOL, "3.02")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -842,7 +859,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0015Set") {
    field(DESC, "param 1105")
    field(DTYP, "asynInt32")
    field(DOL, "6.23")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -866,7 +883,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0017Set") {
    field(DESC, "param 1107")
    field(DTYP, "asynInt32")
    field(DOL, "4.01")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
@@ -890,7 +907,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
    field(DESC, "param 1101")
    field(DTYP, "asynInt32")
    field(DOL, "6.22")
-#  field(PINI, "YES")
+   field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "2")
    field(ESLO, "0.01")
