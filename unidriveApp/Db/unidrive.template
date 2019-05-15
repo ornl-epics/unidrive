@@ -199,6 +199,7 @@ record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
    field(DESC, "param 0302")
    field(SCAN, "1 second")
    field(DTYP, "asynInt32")
+   field(EGU, "rpm")
    field(LINR, "SLOPE")
    field(PREC, "1")
    field(ESLO, "0.1")
