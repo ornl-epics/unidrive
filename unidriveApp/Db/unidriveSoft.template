@@ -86,12 +86,12 @@ record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRange") {
    field(CALC, "A < 7")
    field(OOPT, "When Non-zero")
    field(OUT, "$(s):$(ta):$(ss):WarmupTimer.PROC PP")
-   field(FLNK, "$(s):$(ta):$(ss):SpeedConstrainRaiseCalc") 
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") 
 }
 
 record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") {
    field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraintTimer NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):WarmupTimer NPP MS")
    field(CALC, "(A==1&&B>=10800)||(A>1&&B>3600)")
    field(IVOA, "Don't drive outputs")
    field(OOPT, "When Non-zero")

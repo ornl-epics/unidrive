@@ -17,7 +17,7 @@ record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
    field(INPB, "0")		# c5
    field(CALC, "(2.25/A-17.0)/2.4+B")
    field(IVOA, "Don't drive outputs")
-   field(OUT, "CG3:Mot:vs_tilt PP")
+   field(OUT, "$(s):Mot:vs_tilt PP")
 }
 
 #
