@@ -1,3 +1,123 @@
+
+record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
+   field(EGU, "rpm")
+}
+
+record(longin, "$(s):$(ta):$(ss):SpeedConstraint") {
+   field(DOL, "0")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedCommand") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
+   field(CALC, "A<=(1000*B)?A:B*1000.0")
+   field(IVOA, "Don't drive outputs")  
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedScan") {
+   field(SCAN, "1 second")
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
+   field(CALC, "B==0?7:8")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):SpeedScanBr PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SpeedScanBr") {
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):SpeedScan")
+   # begin initialization links
+   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
+   field(DOL2, "$(s):$(ta):$(ss):UD:SpeedFbk")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedHistory NPP")
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):UpTimer.A PP")
+   # begin run time links
+   field(LNK4, "$(s):$(ta):$(ss):SpeedHistory.PROC PP")
+}
+
+record(calc, ""$(s):$(ta):$(ss):UpTimer") {
+   field(INPA, "0")
+   field(CALC, "A?0:VAL+1;A:=0")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedHistory") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk")
+   field(CALC, "VAL*0.99+A*0.1")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintTest")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
+   field(CALC, "MIN(7,(MAX(1,ceil(A/1000.0))))")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedConstraintTest") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedDesired NPP MS")
+   field(CALC, "B>=(1000.0*A)?1:6")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):SpeedConstraintBr") {
+   field(SELL, "$(s):$(ta):$(ss):SpeedConstraintTest")
+   field(SELM, "Mask")
+   # begin speeddesired >= greater than constrained
+   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintRange.PROC PP")
+   # begin speeddesired < greater than constrained
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):UpTimer.A PP")
+   field(LNK3, "$(s):$(ta):$(ss):ConstraintFromHistory.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):ConstraintFromHistory") {
+   field(INPA, $(s):$(ta):$(ss):SpeedHistory NPP MS")
+   field(INPB, $(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(CALC, "max(1, min(B, ceil(A/1000.0)))")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRange") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint")
+   field(CALC, "A < 7")
+   field(OOPT, "When Non-zero")
+   field(OUT, "$(s):$(ta):$(ss):UpTimer.PROC PP")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstrainRaiseCalc") 
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraintTimer NPP MS")
+   field(CALC, "(A==1&&B>=10800)||(A>1&&B>3600)")
+   field(IVOA, "Don't drive outputs")
+   field(OOPT, "When Non-zero")
+   field(OUT, "$(s):$(ta):$(ss):SpeedConstraintRaise PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(CALC, "A+1")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq") {
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):UpTimer.A PP")
+   field(DOL2, "$(s):$(ta):$(ss):SpeedConstraintRaise")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
+   field(CALC, "A<=(B*1000)?A:(B*1000)")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+}
 record(calc, "$(s):$(ta):$(ss):AtSpeedCalc") {
    field(INPA, "$(s):$(ta):$(ss):UD:DriveEnabled CPP MS")
    field(INPB, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS") 
