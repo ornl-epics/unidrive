@@ -29,6 +29,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
    field(DESC, "param 0114")
    field(SCAN, "10 second")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RefSelSet")
    field(DTYP, "asynUInt32Digital")
    field(INP, "@asynMask(modR3,113,7,1000)UINT16")
    field(ZRVL, "0")
@@ -78,6 +79,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16504,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Preset1Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
@@ -102,6 +104,7 @@ record(ai, "$(s):$(ta):$(ss):UD:SkipRef1") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,129,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:SkipRef1Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:SkipRef1Set") {
@@ -135,6 +138,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
+   field(SIOL, "$(s):$(ta):$(ss):UD:RampModeSet")
    field(DESC, "param 0204")
    field(DTYP, "asynInt32")
    field(SCAN, "10 second")
@@ -158,6 +162,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16594,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Accel1Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Accel1Set") {
@@ -184,6 +189,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Decel1") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16604,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Decel1Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Decel1Set") {
