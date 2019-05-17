@@ -92,6 +92,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
    field(OUT, "@asynMask(modW16,16504,-32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:Preset1.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Ramp PP")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:SkipRef1") {
@@ -155,6 +156,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
 record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
    field(DESC, "param 0211")
    field(SCAN, "10 second")
+   field(EGU, "rpm/m")
    field(DTYP, "asynInt32")
    field(LINR, "SLOPE")
    field(PREC, "3")
@@ -168,6 +170,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
 record(ao, "$(s):$(ta):$(ss):UD:Accel1Set") {
    field(DESC, "param 0211")
    field(DTYP, "asynInt32")
+   field(EGU, "rpm/m")
    field(DOL, "70.000")
    field(PINI, "YES")
    field(LINR, "SLOPE")
@@ -183,6 +186,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Decel1") {
    field(DESC, "param 0221")
    field(SCAN, "10 second")
    field(DTYP, "asynInt32")
+   field(EGU, "rpm/m")
    field(LINR, "SLOPE")
    field(PREC, "3")
    field(ESLO, "0.001")
@@ -196,6 +200,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Decel1Set") {
    field(DESC, "param 0221")
    field(DTYP, "asynInt32")
    field(DOL, "69.998")
+   field(EGU, "rpm/m")
    field(PINI, "YES")
    field(LINR, "SLOPE")
    field(PREC, "3")
@@ -211,11 +216,13 @@ record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
    field(SCAN, "1 second")
    field(DTYP, "asynInt32")
    field(LINR, "SLOPE")
+   field(EGU, "rpm")
    field(PREC, "1")
    field(ESLO, "0.1")
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16684,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
@@ -229,6 +236,25 @@ record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16685,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+}
+
+record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
+   field(EGU, "rpm/s")
+   field(INPA, "$(s):$(ta):$(ss):UD:Accel1 CPP")
+   field(CALC, "A/60.0")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed.OROC")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
+   field(SCAN, "1 second")
+   field(OROC, "1")
+   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed PP")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Sim:Speed") {
+   field(EGU, "rpm")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:MarkerFlag") {
