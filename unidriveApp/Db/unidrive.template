@@ -29,7 +29,6 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
    field(DESC, "param 0114")
    field(SCAN, "10 second")
-   field(SIOL, "$(s):$(ta):$(ss):UD:RefSelSet")
    field(DTYP, "asynUInt32Digital")
    field(INP, "@asynMask(modR3,113,7,1000)UINT16")
    field(ZRVL, "0")
@@ -45,6 +44,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
    field(FVVL, "5")
    field(FVST, "Prc")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RefSelSet")
 }
 
 record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
@@ -139,7 +139,6 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
-   field(SIOL, "$(s):$(ta):$(ss):UD:RampModeSet")
    field(DESC, "param 0204")
    field(DTYP, "asynInt32")
    field(SCAN, "10 second")
@@ -151,6 +150,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
    field(TWVL, "2")
    field(INP, "@asynMask(modR3_1,203,3,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RampModeSet")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
@@ -255,6 +255,13 @@ record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
 
 record(ao, "$(s):$(ta):$(ss):UD:Sim:Speed") {
    field(EGU, "rpm")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
+}
+
+record(calc, "$(s):$(ta):$(ss):UD:Sim:AtSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   field(INPB, "$(s):$(ta):$(ss):UD:Preset1Set")
+   field(CALC, "ABS(A-B)<1.0")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:MarkerFlag") {
@@ -265,6 +272,7 @@ record(bi, "$(s):$(ta):$(ss):UD:MarkerFlag") {
    field(ONAM, "Set")
    field(ZNAM, "Reset")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MarkerFlagSet") 
 }
 
 record(bo, "$(s):$(ta):$(ss):UD:MarkerFlagSet") {
@@ -292,6 +300,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
    field(TWST, "15V")
    field(THVL, "3")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:SuppVSet")
 }
 
 record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
@@ -320,6 +329,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Current") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16784,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "6.0")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Kp") {
@@ -328,6 +338,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Kp") {
    field(DTYP, "asynInt32")
    field(INP, "@asynMask(modR3,412,16,1000)INT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:KpSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:KpSet") {
@@ -346,6 +357,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Ki") {
    field(DTYP, "asynInt32")
    field(INP, "@asynMask(modR3,413,16,1000)INT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:KiSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:KiSet") {
@@ -368,6 +380,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RatedFreq") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,505,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedFreqSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:RatedFreqSet") {
@@ -395,6 +408,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RatedCurr") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16890,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedCurrSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:RatedCurrSet") {
@@ -423,6 +437,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RatedSpd") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,16891,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedSpdSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:RatedSpdSet") {
@@ -446,6 +461,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RatedVolt") {
    field(DTYP, "asynInt32")
    field(INP, "@asynMask(modR3,508,16,1000)INT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedVoltSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:RatedVoltSet") {
@@ -468,6 +484,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RatedPF") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,509,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedPFSet")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:RatedPFSet") {
@@ -490,6 +507,7 @@ record(longin, "$(s):$(ta):$(ss):UD:MotorPoles") {
    field(INP, "@asyn(modR3_1,510,1000)UINT16")
    field(SCAN, "10 second")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MotorPolesSet")
 }
 
 record(longout, "$(s):$(ta):$(ss):UD:MotorPolesSet") {
@@ -520,6 +538,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:MaxSFreq") {
    field(FVVL, "5")
    field(FVST, "16 kHz")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MaxSFreqSet")
 }
 
 record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
@@ -552,6 +571,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
    field(ONAM, "Enabled")
    field(ZNAM, "Disabled")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnable")
 }
 
 record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
@@ -564,9 +584,23 @@ record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
 }
 
+record(calc, "$(s):$(ta):$(ss):UD:Sim:YD") {
+   field(INPA, "1")
+   field(INPB, "90")
+   field(PREC, "3")
+   field(CALC, "A+B/1000.0")
+   info(autosaveFields, "A,B")
+}
+record(calc, "$(s):$(ta):$(ss):UD:Sim:HM") {
+   field(INPA, "3")
+   field(INPB, "23")
+   field(CALC, "A+B/100.0")
+   field(PREC, "2")
+   info(autosaveFields, "A,B")
+}
+
 record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
    field(DESC, "param 0622 run time years.days")
-   field(SCAN, "10 second")
    field(DTYP, "asynInt32")
    field(LINR, "SLOPE")
    field(PREC, "3")
@@ -574,6 +608,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,621,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
@@ -586,6 +621,8 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,622,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM PP")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RunTimeYD")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
@@ -596,6 +633,7 @@ record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
    field(ONAM, "Forward")
    field(ZNAM, "Other")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1")
 }
 
 #
@@ -640,6 +678,7 @@ record(mbbi, "$(s):$(ta):$(ss):UD:AI3Mode") {
    field(NIVL, "9")
    field(NIST, "th.diSp")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:AI3ModeSet")
 }
 
 record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
@@ -682,6 +721,7 @@ record(ai, "$(s):$(ta):$(ss):UD:DI5Dest") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,824,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1.45")
 }
 
 #
@@ -712,6 +752,7 @@ record(ai, "$(s):$(ta):$(ss):UD:DI6Dest") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,825,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1.46")
 }
 
 #
@@ -740,6 +781,7 @@ record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
    field(ZNAM, "Not At Speed")
    field(ONAM, "At Speed")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
@@ -750,6 +792,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
    field(ZNAM, "Trip")
    field(ONAM, "OK")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
@@ -760,6 +803,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
    field(ZNAM, "Inverter Off")
    field(ONAM, "Inverter On")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnabled")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
@@ -770,8 +814,17 @@ record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
    field(ZNAM, "Turning")
    field(ONAM, "Zero Speed")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed")
 }
 
+record(calc, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):UD:Sim:Speed CPP")
+   field(CALC, "ABS(A)<1.0")
+}
+
+#
+# simulation of trip queueing not implemented
+#
 record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
    field(DESC, "param 1020")
    field(DTYP, "asynInt32")
@@ -858,6 +911,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0011") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1100,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0011Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0011Set") {
@@ -884,6 +938,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0012") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1101,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0012Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0012Set") {
@@ -910,6 +965,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0013") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1102,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0013Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0013Set") {
@@ -936,6 +992,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0014") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1103,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0014Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0014Set") {
@@ -962,6 +1019,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0015") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1104,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0015Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0015Set") {
@@ -988,6 +1046,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0017") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1106,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0017Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0017Set") {
@@ -1014,6 +1073,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Param0016") {
    field(EOFF, "0.0")
    field(INP, "@asynMask(modR3,1105,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0016Set")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
