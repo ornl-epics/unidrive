@@ -2,6 +2,8 @@ record(bo, "$(s):$(ta):$(ss):Simulate") {
    field(ONAM, "Simulate")
    field(ZNAM, "Normal")
    field(OSV, "MAJOR")
+   field(DOL, "1")
+   info(autsaveFields, "VAL")
 }
 
 record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
