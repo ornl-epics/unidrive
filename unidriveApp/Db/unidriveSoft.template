@@ -51,7 +51,7 @@ record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
 
 record(calc, "$(s):$(ta):$(ss):SpeedHistory") {
    field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk")
-   field(CALC, "VAL*0.99+A*0.1")
+   field(CALC, "VAL*0.99+A*0.01")
    field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintTest")
 }
 
