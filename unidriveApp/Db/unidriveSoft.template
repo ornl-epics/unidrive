@@ -32,7 +32,7 @@ record(calcout, "$(s):$(ta):$(ss):ConstraintScan") {
 }
 
 record(seq, "$(s):$(ta):$(ss):ConstraintScanBr") {
-   field(SELM, "Specified")
+   field(SELM, "Mask")
    field(SELL, "$(s):$(ta):$(ss):ConstraintScan")
    # begin initialization links
    field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
