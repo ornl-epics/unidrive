@@ -244,7 +244,7 @@ record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
    field(INPA, "$(s):$(ta):$(ss):UD:Accel1 CPP")
    field(CALC, "A/60.0")
    field(IVOA, "Don't drive outputs")
-   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed.OROC")
+   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Ramp.OROC")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
