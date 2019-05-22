@@ -115,7 +115,8 @@ record(seq, "$(s):$(ta):$(ss):ConstraintDownBr") {
 
 record(calcout, "$(s):$(ta):$(ss):CooldownTest") {
    field(INPA, "$(s):$(ta):$(ss):CooldownTimer NPP MS")
-   field(CALC, "A>=3600")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(CALC, "(B>2&&A>=3600)||(A>=10800)")
    field(OOPT, "When Non-zero")
    field(OUT, "$(s):$(ta):$(ss):ConstraintDownSeq.PROC PP")
 }
