@@ -94,7 +94,7 @@ record(seq, "$(s):$(ta):$(ss):SpeedConstraintBr") {
 record(calcout, "$(s):$(ta):$(ss):ConstraintFromHistory") {
    field(INPA, "$(s):$(ta):$(ss):SpeedHistory NPP MS")
    field(INPB, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(CALC, "max(1, min(B, ceil(A/1000.0)))")
+   field(CALC, "max(1, min(B, 1+ceil(A/1000.0)))")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
 }
@@ -138,12 +138,10 @@ record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
 }
 
 record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq") {
-   field(DOL1, "$(s):$(ta):$(ss):UD:SpeedFbk")
-   field(LNK1, "$(s):$(ta):$(ss):SpeedHistory NPP")
-   field(DO2, "1")
-   field(LNK2, "$(s):$(ta):$(ss):WarmupTimer.A PP")
-   field(DOL3, "$(s):$(ta):$(ss):SpeedConstraintRaise")
-   field(LNK3, "$(s):$(ta):$(ss):SpeedConstraint PP")
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   field(DOL2, "$(s):$(ta):$(ss):SpeedConstraintRaise")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
 }
 
 record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
