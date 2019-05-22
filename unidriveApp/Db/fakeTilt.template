@@ -1,0 +1,5 @@
+#
+# ao record used because it has an RBV field.
+#
+record(ao, "$(s):Mot:vs_tilt") {
+}
