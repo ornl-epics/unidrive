@@ -9,7 +9,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
    field(CALC, "(E+F*(B-G))/(A-(C+D*B))")
    field(IVOA, "Don't drive outputs")
    #field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
-   field(OUT, "$(s):$(ta):$(ss):SpeedDesired PP")
+   field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
 }
 
 record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
@@ -17,7 +17,8 @@ record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
    field(INPB, "0")		# c5
    field(CALC, "(17.0-2.25/A)/2.4+B")
    field(IVOA, "Don't drive outputs")
-   field(OUT, "$(s):Mot:vs_tilt PP")
+   field(OUT, "$(s):$(ta):$(ss):Tilt:Req PP")
+
 }
 
 #
