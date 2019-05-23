@@ -77,10 +77,25 @@ include "putCallback.template"
 record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Tilt:Reqd")
+   field(OUT, "BL104:Mot:vs_tilt PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):AtTilt") {
+record(calc, "$(s):$(ta):$(ss):TiltMon") {
    field(INPA, "$(s):Mot:vs_tilt.RBV CPP MS")
+   field(INPB, "$(s):Mot:vs_tilt.OVAL CPP MS")
+   field(CALC, "1")
+   field(FLNK, "$(s):$(ta):$(ss):TiltRBV")
+}
+
+record(ai, "$(s):$(ta):$(ss):TiltRBV") {
+   field(INP, "$(s):Mot:vs_tilt.RBV")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):Mot:vs_tilt.OVAL")
+}
+
+
+record(calc, "$(s):$(ta):$(ss):AtTilt") {
+   field(INPA, "$(s):$(ta):$(ss):TiltRBV")
    field(INPB, "$(s):$(ta):$(ss):Tilt:Set CPP MS")
    field(INPC, "0.1")
    field(CALC, "ABS(A-B)<C")
