@@ -23,7 +23,7 @@ record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
 #
 # calculate wavelength from tilt and speed readbacks
 #
-record(calc, "$(s):$(ta):$(ss):WaveLengthCalc") {
+record(calc, "$(s):$(ta):$(ss):WavelengthCalc") {
    field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
    field(INPB, "$(s):$(ta):$(ss):TiltRBV CPP MS")
    field(INPC, "-0.0022") 		# c1
@@ -37,7 +37,7 @@ record(calc, "$(s):$(ta):$(ss):WaveLengthCalc") {
 #
 # calculate dLambda from tilt
 #
-record(calc, "$(s):$(ta):$(ss):DLamdaCalc") {
+record(calc, "$(s):$(ta):$(ss):DLambdaCalc") {
    field(INPA, "$(s):$(ta):$(ss):TiltRBV CPP MS")
    field(INPB, "0") 		# c5
    field(CALC, "2.25/(17+2.4*(A-B))")
