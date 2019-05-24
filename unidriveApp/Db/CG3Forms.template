@@ -7,7 +7,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
    field(INPF, "0.0")			# c4
    field(INPG, "0.0")			# c5
    field(IVOA, "Don't drive outputs")
-   field(CALC, "(E+F*(B-G))/(A-(C+D*B))
+   field(CALC, "(E+F*(B-G))/(A-(C+D*B))")
    #field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
    field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
 }

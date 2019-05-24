@@ -3,8 +3,8 @@
 # a flag that will be true if the setpoint has been reached, rather than a 
 # readback to be compared with the setpoint.
 #
-# There is a timeout; the error indication is that the setpoint will be set to 
-# -1.0 instead of being left at the requested value.
+# There is a timeout; the error indication is that  $(P):$(C):Fault will be 
+# set to 1.
 #
 # There is a reset PV for manual recovery; error indication is as for timeout.
 #
@@ -36,33 +36,27 @@ record(ao, "$(P):$(C):Req") {
    info(archive, "Monitor, 00:00:01, VAL")
    info(autosaveFields, "VAL")
    field(PREC, "2")
-   field(FLNK, "$(P):$(C)ValidTest")
-}
-
-record(calcout, "$(P):$(C)ValidTest") {
-   field(INPA, "$(P):$(C):Req")
-   field(CALC, "A>-0.5")
-   field(IVOA, "Don't drive outputs")
-   field(OOPT, "When Non-zero")
-   field(OUT, "$(P):$(C)BusySet.PROC PP")
+   field(FLNK, "$(P):$(C)BusySet")
 }
 
 record(seq, "$(P):$(C)BusySet") {
    field(DOL1, "$(P):$(C):Req")
    field(LNK1, "$(P):$(C)Output PP")
-   field(DO2, "1")
-   field(LNK2, "$(P):$(C):Busy PP")
+   field(DO2, "0")
+   field(LNK2, "$(P):$(C):Fault PP")
+   field(DO3, "1")
+   field(LNK3, "$(P):$(C):Busy PP")
+}
+
+record(bi, "$(P):$(C):Fault") {
+   field(ZNAM, "OK")
+   field(ONAM, "Fault")
+   field(OSV, "MAJOR")
 }
 
 record(busy, "$(P):$(C):Busy") {
    field(ONAM, "Busy")
    field(ZNAM, "Ready")
-}
-
-# Next PV used by older GUI
-record(bo, "$(P):$(C):Failure") {
-   field(DOL, "1")
-   field(OUT, "$(P):$(C):Reset PP")
 }
 
 record(bo, "$(P):$(C):Reset") {
@@ -169,8 +163,8 @@ record(ao, "$(P):$(C)Output") {
 record(seq, "$(P):$(C)Fail") {
    field(DO1, "0")
    field(LNK1, "$(P):$(C):Reset PP")	# clear reset button
-   field(DO2, "-1.0")
-   field(LNK2, "$(P):$(C):Req PP")	# setpoint to failure value
+   field(DO2, "1")
+   field(LNK2, "$(P):$(C):Fault PP")	# set fault indicator
    field(FLNK, "$(P):$(C)ClearBusy")
 }
 
