@@ -18,10 +18,10 @@ record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
 }
 
 record(calc, "$(s):$(ta):$(ss):AtVelocity") {
-   field(INPA, "$(s):$(ta):$(ss):DLamdaCalc CPP MS")
+   field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
    field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
    field(INPC, "0.1")
-   field(INPD, "$(s):$(ta):$(ss):WaveLengthCalc CPP MS")
+   field(INPD, "$(s):$(ta):$(ss):WavelengthCalc CPP MS")
    field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
    field(INPF, "0.1")
    field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
@@ -43,7 +43,7 @@ record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
 }
 
 record(calc, "$(s):$(ta):$(ss):AtDLambda") {
-   field(INPA, "$(s):$(ta):$(ss):DLamdaCalc CPP MS")
+   field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
    field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
    field(INPC, "0.1")
    field(CALC, "ABS(A-B)<C")
