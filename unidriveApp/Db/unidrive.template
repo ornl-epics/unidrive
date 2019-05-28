@@ -793,6 +793,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
    field(ONAM, "OK")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "1")
+   field(SIMS, "INVALID")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
