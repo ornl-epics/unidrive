@@ -26,7 +26,7 @@ record(fanout, "$(s):$(ta):$(ss):Lambda:SetFan") {
    field(LNK2, "$(s):$(ta):$(ss):SpeedCalc")
 }
 
-record(calc, "$(s):$(ta):$(ss):AtVelocity") {
+record(calc, "$(s):$(ta):$(ss):AtLambda") {
    field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
    field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
    field(INPC, "0.1")
@@ -40,28 +40,26 @@ substitute "P=$(s):$(ta):$(ss)"
 substitute "C=Lambda"
 substitute "EGU=A"
 substitute "OUT=$(s):$(ta):$(ss):Lambda:Set"
-substitute "IN=$(s):$(ta):$(ss):AtVelocity"
+substitute "IN=$(s):$(ta):$(ss):AtLambda"
 substitute "TO=36000"
 substitute "ST=15"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
-   field(FLNK, "$(s):$(ta):$(ss):TiltCalc")
+   field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
    alias("$(s):$(ta):$(ss):DLambda:Reqd")
 }
 
-record(calc, "$(s):$(ta):$(ss):AtDLambda") {
-   field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
-   field(INPC, "0.1")
-   field(CALC, "ABS(A-B)<C")
+record(fanout, "$(s):$(ta):$(ss):DLambda:SetFan") {
+   field(LNK1, "$(s):$(ta):$(ss):TiltCalc")
+   field(LNK2, "$(s):$(ta):$(ss):Lambda:Req")
 }
 
 substitute "P=$(s):$(ta):$(ss)"
 substitute "C=DLambda"
 substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
-substitute "IN=$(s):$(ta):$(ss):AtDLambda"
+substitute "IN=$(s):$(ta):$(ss):AtLambda"
 substitute "TO=36000"
 substitute "ST=15"
 include "putCallback.template"
