@@ -10,9 +10,11 @@ record(calc, "$(s):$(ta):$(ss):AlarmSum") {
    field(HHSV, "MAJOR")
 }
 
+# used for display control only
 record(mbbo, "$(s):$(ta):$(ss):SpeedMode") {
    field(ZRST, "Speed")
    field(ONST, "Lambda")
+   field(DOL, "1")
    info(autosaveFields, "VAL")
 }
 
