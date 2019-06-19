@@ -77,7 +77,7 @@ record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
    field(INPA, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS")
    field(INPB, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Speed:Set CPP MS")
-   field(INPD, "0.1")
+   field(INPD, "1.0")
    field(CALC, "A&&(ABS(B-C)<D)")
 }
 
