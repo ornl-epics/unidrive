@@ -13,7 +13,7 @@ include $(TOP)/configure/CONFIG
 DB += unidrive.template
 DB += unidriveSoft.template
 DB += unidriveHighLevel.db
-DB += CG2Forms.template CG3Forms.template
+DB += VSCalcs.template
 DB += fakeTilt.template
 
 #----------------------------------------------------

@@ -1,0 +1,156 @@
+record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
+   field(INPA, "$(s):$(ta):$(ss):Lambda:Set NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP MS")
+   field(INPC, "0") 		# c1
+   field(INPD, "0") 		# c2
+   field(INPE, "26807.72")	# c3
+   field(INPF, "-2234")		# c4
+   field(INPG, "0")		# c5
+   field(CALC, "(E+F*(B-G))/(A-(C+D*B))")
+   field(IVOA, "Don't drive outputs")
+   #field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+   field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
+   field(INPA, "$(s):$(ta):$(ss):DLambda:Set NPP MS")
+   field(INPB, "0")		# c5
+   field(CALC, "(17.0-2.25/A)/2.4+B")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):Tilt:Req PP")
+}
+
+#
+# calculate wavelength from tilt and speed readbacks
+#
+record(calc, "$(s):$(ta):$(ss):WavelengthCalc") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):TiltRBV CPP MS")
+   field(INPC, "0") 		# c1
+   field(INPD, "0") 		# c2
+   field(INPE, "26807.72")	# c3
+   field(INPF, "-2234")		# c4
+   field(INPG, "0")		# c5
+   field(CALC, "C+D*B+(E+F*(B-G))/A")
+}
+
+#
+# calculate dLambda from tilt
+#
+record(calc, "$(s):$(ta):$(ss):DLambdaCalc") {
+   field(INPA, "$(s):$(ta):$(ss):TiltRBV CPP MS")
+   field(INPB, "0") 		# c5
+   field(CALC, "2.25/(17-2.4*(A-B))")
+}
+
+record(ai, "$(s):$(ta):$(ss):Offset") {
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):Slope") {
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):OffsetSave") {
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):SlopeSave") {
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS1") {
+   field(ASG, "BEAMLINE")
+   field(VAL, "-2234")		
+}
+
+record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS1") {
+   field(VAL, "26807.72")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS2") {
+   field(ASG, "BEAMLINE")
+   field(VAL, "-2234")		
+}
+
+record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS2") {
+   field(VAL, "26807.72")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS3") {
+   field(ASG, "BEAMLINE")
+   field(VAL, "-2234")		
+}
+
+record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS3") {
+   field(VAL, "26807.72")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):VSNum") {
+   field(ASG, "BEAMLINE")
+   field(ZRST, "Undefined")
+   field(ONST, "VS1")
+   field(TWST, "VS2")
+   field(THST, "VS3")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetToDefaults") {
+   field(ASG, "BEAMLINE")
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):VSNum")
+   field(LNK1, "$(s):$(ta):$(ss):SetToDefaults1")
+   field(LNK2, "$(s):$(ta):$(ss):SetToDefaults2")
+   field(LNK3, "$(s):$(ta):$(ss):SetToDefaults3")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetToDefaults1") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS1")
+   field(LNK1, "$(s):$(ta):$(ss):Slope PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS1")
+   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetToDefaults2") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS2")
+   field(LNK1, "$(s):$(ta):$(ss):Slope PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS2")
+   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetToDefaults3") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS3")
+   field(LNK1, "$(s):$(ta):$(ss):Slope PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS3")
+   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SaveFit") {
+   field(ASG, "BEAMLINE")
+   field(DOL1, "$(s):$(ta):$(ss):Slope")
+   field(LNK1, "$(s):$(ta):$(ss):SlopeSave PP")
+   field(DOL2, "$(s):$(ta):$(ss):Offset")
+   field(LNK2, "$(s):$(ta):$(ss):OffsetSave PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):RestoreFit") {
+   field(ASG, "BEAMLINE")
+   field(DOL1, "$(s):$(ta):$(ss):SlopeSave")
+   field(LNK1, "$(s):$(ta):$(ss):Slope PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetSave")
+   field(LNK2, "$(s):$(ta):$(ss):Offset PP")
+}
+
+
