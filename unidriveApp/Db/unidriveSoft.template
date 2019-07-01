@@ -35,16 +35,16 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCommand") {
    field(OUT, "$(s):$(ta):$(ss):NewSpeedFlag PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):SpeedScan") {
+record(calc, "$(s):$(ta):$(ss):SpeedModeScan") {
    field(SCAN, "1 second")
    field(INPA, "$(s):$(ta):$(ss):WarmupMode")
    field(CALC, "A?1:6")
-   field(FLNK, "$(s):$(ta):$(ss):SpeedScanSeq")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedModeScanSeq")
 }
 
-record(seq, "$(s):$(ta):$(ss):SpeedScanSeq") {
+record(seq, "$(s):$(ta):$(ss):SpeedModeScanSeq") {
    field(SELM, "Mask")
-   field(SELL, "$(s):$(ta):$(ss):SpeedScan")
+   field(SELL, "$(s):$(ta):$(ss):SpeedModeScan")
    field(LNK1, "$(s):$(ta):$(ss):EnterWarmup.PROC PP")
    field(DO2, "7")
    field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
