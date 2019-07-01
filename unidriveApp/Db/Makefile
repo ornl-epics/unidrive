@@ -14,6 +14,7 @@ DB += unidrive.template
 DB += unidriveSoft.template
 DB += unidriveHighLevel.db
 DB += VSCalcs.template
+DB += VSCalcParams.template
 DB += fakeTilt.template
 
 #----------------------------------------------------

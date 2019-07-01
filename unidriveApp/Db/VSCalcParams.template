@@ -75,21 +75,21 @@ record(seq, "$(s):$(ta):$(ss):SetToDefaults1") {
    field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS1")
    field(LNK1, "$(s):$(ta):$(ss):Slope PP")
    field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS1")
-   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+   field(LNK2, "$(s):$(ta):$(ss):Offset PP")
 }
 
 record(seq, "$(s):$(ta):$(ss):SetToDefaults2") {
    field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS2")
    field(LNK1, "$(s):$(ta):$(ss):Slope PP")
    field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS2")
-   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+   field(LNK2, "$(s):$(ta):$(ss):Offset PP")
 }
 
 record(seq, "$(s):$(ta):$(ss):SetToDefaults3") {
    field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS3")
    field(LNK1, "$(s):$(ta):$(ss):Slope PP")
    field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS3")
-   field(LNK1, "$(s):$(ta):$(ss):Offset PP")
+   field(LNK2, "$(s):$(ta):$(ss):Offset PP")
 }
 
 record(seq, "$(s):$(ta):$(ss):SaveFit") {
