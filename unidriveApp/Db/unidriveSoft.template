@@ -13,156 +13,149 @@ record(longout, "$(s):$(ta):$(ss):SpeedConstraint") {
    field(DOL, "0")
 }
 
+record(bo, "$(s):$(ta):$(ss):WarmupMode") {
+   field(ZNAM, "Normal")
+   field(ONAM, "Warmup")
+}
+
+record(bo, "$(s):$(ta):$(ss):WarmupSave") {
+   field(ZNAM, "Normal")
+   field(ONAM, "Warmup")
+}
+
+record(bo, "$(s):$(ta):$(ss):NewSpeedFlag") {
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+}
+
 record(calcout, "$(s):$(ta):$(ss):SpeedCommand") {
    field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
-   field(CALC, "A<=(1000*B)?A:B*1000.0")
+   field(CALC, "1")
    field(IVOA, "Don't drive outputs")  
-   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+   field(OUT, "$(s):$(ta):$(ss):NewSpeedFlag PP")
 }
 
-record(calcout, "$(s):$(ta):$(ss):ConstraintScan") {
+record(calc, "$(s):$(ta):$(ss):SpeedScan") {
    field(SCAN, "1 second")
-   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
-   field(CALC, "B==0?7:8")
-   field(IVOA, "Don't drive outputs")
-   field(OUT, "$(s):$(ta):$(ss):ConstraintScanBr PP")
+   field(INPA, "$(s):$(ta):$(ss):WarmupMode")
+   field(CALC, "A?1:6")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedScanSeq")
 }
 
-record(seq, "$(s):$(ta):$(ss):ConstraintScanBr") {
+record(seq, "$(s):$(ta):$(ss):SpeedScanSeq") {
    field(SELM, "Mask")
-   field(SELL, "$(s):$(ta):$(ss):ConstraintScan")
-   # begin initialization links
-   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
+   field(SELL, "$(s):$(ta):$(ss):SpeedScan")
+   field(LNK1, "$(s):$(ta):$(ss):EnterWarmup.PROC PP")
+   field(DO2, "7")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
+   field(LNK3, "$(s):$(ta):$(ss):EnterNormal.PROC PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):EnterNormal") {
+   field(INPA, "$(s):$(ta):$(ss):WarmupSave")
+   field(CALC, "A?7:4")
+   field(FLNK, "$(s):$(ta):$(ss):EnterNormalSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):EnterNormalSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):EnterNormal")
+   # begin was warming up
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):WarmupSave PP")
    field(DO2, "1")
-   field(LNK2, "$(s):$(ta):$(ss):CooldownTimer.A NPP")
-   field(DO3, "1")
-   field(LNK3, "$(s):$(ta):$(ss):WarmupTimer.A PP")
-   # begin run time links
-   field(LNK4, "$(s):$(ta):$(ss):SpeedConstraintTest.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   # both cases go here
+   field(LNK3, "$(s):$(ta):$(ss):DriveSpeed.PROC PP")
 }
 
-# set greater than one to speed up cooldown and warmup timers for testing
-record(ao, "$(s):$(ta):$(ss):TimerInc") {
-   field(DOL, "1.0")
+record(calcout, "$(s):$(ta):$(ss):DriveSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):NewSpeedFlag")
+   field(CALC, "A")
+   field(OOPT, "When Non-zero")
+   field(OUT, "$(s):$(ta):$(ss):DriveSpeedSeq.PROC PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
-   field(INPA, "0")
-   field(INPB, "$(s):$(ta):$(ss):TimerInc") 
-   field(CALC, "A?0:VAL+B;A:=0")
-}
-
-record(calc, "$(s):$(ta):$(ss):CooldownTimer") {
-   field(INPA, "0")
-   field(INPB, "$(s):$(ta):$(ss):TimerInc") 
-   field(CALC, "A?0:VAL+B;A:=0")
-}
-
-record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {
-   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
-   field(CALC, "MIN(7,(MAX(1,ceil(A/1000.0))))")
-   field(IVOA, "Don't drive outputs")
-   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
-}
-
-record(calc, "$(s):$(ta):$(ss):SpeedConstraintTest") {
-   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedDesired NPP MS")
-   field(CALC, "B>(1000.0*A)?3:28")
-   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintBr")
-}
-
-record(bi, "$(s):$(ta):$(ss):WarmingUp") {
-   field(OSV, "MINOR")
-   field(ONAM, "Warming Up")
-   field(ZNAM, "OK")
-}
-
-record(seq, "$(s):$(ta):$(ss):SpeedConstraintBr") {
-   field(SELL, "$(s):$(ta):$(ss):SpeedConstraintTest")
+record(seq, "$(s):$(ta):$(ss):DriveSpeedSeq") {
    field(SELM, "Mask")
-   # begin speeddesired > than constrained
-   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintRange.PROC PP")
+   field(SELL, "$(s):$(ta):$(ss):EnterNormal")
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(DOL2, "$(s):$(ta):$(ss):SpeedDesired")
+   field(LNK2, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+}
+   
+record(calc, "$(s):$(ta):$(ss):EnterWarmup") {
+   field(INPA, "$(s):$(ta):$(ss):WarmupSave")
+   field(CALC, "A?1:30")
+   field(FLNK, "$(s):$(ta):$(ss):EnterWarmupSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):EnterWarmup") 
+   field(LNK1, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
    field(DO2, "1")
-   field(LNK2, "$(s):$(ta):$(ss):WarmingUp PP")
-   # begin speeddesired <= constrained
-   field(DO3, "1")
-   field(LNK3, "$(s):$(ta):$(ss):WarmupTimer.A PP")
-   field(DO4, "0")
-   field(LNK4, "$(s):$(ta):$(ss):WarmingUp PP")
-   field(LNK5, "$(s):$(ta):$(ss):ConstraintDownTest.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):WarmupSave PP")
+   field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
+   field(DO4, "1")
+   field(LNK4, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   field(LNK5, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):ConstraintDownTest") {
-   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(CALC, "B>1&&A<((B-1)*1000)?3:4")
-   field(FLNK, "$(s):$(ta):$(ss):ConstraintDownBr")
-}
-
-record(seq, "$(s):$(ta):$(ss):ConstraintDownBr") {
-   field(SELL, "$(s):$(ta):$(ss):ConstraintDownTest")
-   field(SELM, "Mask")
-   # begin running low speed
-   field(LNK1, "$(s):$(ta):$(ss):CooldownTimer.PROC PP")
-   field(LNK2, "$(s):$(ta):$(ss):CooldownTest.PROC PP")
-   # begin running at constraint
-   field(DO3, "1")
-   field(LNK3, "$(s):$(ta):$(ss):CooldownTimer.A PP")
-}
-
-record(calcout, "$(s):$(ta):$(ss):CooldownTest") {
-   field(INPA, "$(s):$(ta):$(ss):CooldownTimer NPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(CALC, "(B>2&&A>=3600)||(A>=10800)")
-   field(OOPT, "When Non-zero")
-   field(OUT, "$(s):$(ta):$(ss):ConstraintDownSeq.PROC PP")
-}
-
-record(seq, "$(s):$(ta):$(ss):ConstraintDownSeq") {
-   field(DO1, "1")
-   field(LNK1, "$(s):$(ta):$(ss):CooldownTimer.A PP")
-   field(FLNK, "$(s):$(ta):$(ss):ConstraintLower")
-}
-
-record(calcout, "$(s):$(ta):$(ss):ConstraintLower") {
-   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
-   field(CALC, "max(1, A-1)")
-   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
-}
-
-record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRange") {
-   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint")
-   field(CALC, "A < 7")
-   field(OOPT, "When Non-zero")
-   field(OUT, "$(s):$(ta):$(ss):WarmupTimerCalc.PROC PP")
-}
-
-record(calc, "$(s):$(ta):$(ss):WarmupTimerCalc") {
-   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk")
+record(calc, "$(s):$(ta):$(ss):DoWarmup") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")	# for validity test
    field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
-   field(CALC, "A < (B*1000-10)?1:2")
-   field(FLNK, "$(s):$(ta):$(ss):WarmupTimerBr")
+   field(CALC, "B<7?(A<(1000*B)?1:6):8")
+   field(FLNK, "$(s):$(ta):$(ss):DoWarmupSeq")
 }
 
-record(seq, "$(s):$(ta):$(ss):WarmupTimerBr") {
-   field(SELL, "$(s):$(ta):$(ss):WarmupTimerCalc")
+record(seq, "$(s):$(ta):$(ss):DoWarmupSeq") {
    field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):DoWarmup")
+   # begin actions for speeds less than constrained
    field(DO1, "1")
    field(LNK1, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   # begin actions for speeds greater than constrained
    field(LNK2, "$(s):$(ta):$(ss):WarmupTimer.PROC PP")
-   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") 
+   field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc.PROC PP")
+   # no action for constraint >= 7
 }
 
-record(calcout, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") {
+record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") {
    field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
    field(INPB, "$(s):$(ta):$(ss):WarmupTimer NPP MS")
-   field(CALC, "(A==1&&B>=10800)||(A>1&&B>3600)")
-   field(IVOA, "Don't drive outputs")
+   field(CALC, "((A==1&&B>=10800)||(A>1&&B>3600))?1:2")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseBr")
+}
+
+
+record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseBr") {
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc")
+   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintRaise.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):CheckSpeed.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):CheckSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):NewSpeedFlag")
+   field(CALC, "A")
    field(OOPT, "When Non-zero")
-   field(OUT, "$(s):$(ta):$(ss):SpeedConstraintRaise PP")
+   field(OUT, "$(s):$(ta):$(ss):CheckSpeedSeq.PROC PP") 
+}
+
+record(seq, "$(s):$(ta):$(ss):CheckSpeedSeq") {
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedOutCalc.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
+   field(CALC, "A<=(B*1000)?A:(B*1000)")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
@@ -176,15 +169,29 @@ record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq") {
    field(LNK1, "$(s):$(ta):$(ss):WarmupTimer.A PP")
    field(DOL2, "$(s):$(ta):$(ss):SpeedConstraintRaise")
    field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK4, "$(s):$(ta):$(ss):CheckSpeed.PROC PP")
 }
 
-record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
-   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
-   field(CALC, "A<=(B*1000)?A:(B*1000)")
-   field(IVOA, "Don't drive outputs")
-   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+# set greater than one to speed up cooldown and warmup timers for testing
+record(ao, "$(s):$(ta):$(ss):TimerInc") {
+   field(DOL, "1.0")
 }
+
+record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
+   field(INPA, "0")
+   field(INPB, "$(s):$(ta):$(ss):TimerInc") 
+   field(CALC, "A?0:VAL+B;A:=0")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
+   field(CALC, "MIN(7,(MAX(1,ceil(A/1000.0))))")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
+}
+
 record(calc, "$(s):$(ta):$(ss):AtSpeedCalc") {
    field(INPA, "$(s):$(ta):$(ss):UD:DriveEnabled CPP MS")
    field(INPB, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS") 
