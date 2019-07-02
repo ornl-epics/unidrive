@@ -110,7 +110,7 @@ record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
 record(calc, "$(s):$(ta):$(ss):DoWarmup") {
    field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")	# for validity test
    field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
-   field(CALC, "B<7?(A<(1000*B)?1:6):8")
+   field(CALC, "B<7?(A<(1000*B-10)?1:6):8")
    field(FLNK, "$(s):$(ta):$(ss):DoWarmupSeq")
 }
 

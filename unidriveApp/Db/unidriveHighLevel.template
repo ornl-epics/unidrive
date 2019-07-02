@@ -35,7 +35,7 @@ record(calc, "$(s):$(ta):$(ss):AtLambda") {
    field(INPC, "0.1")
    field(INPD, "$(s):$(ta):$(ss):WavelengthCalc CPP MS")
    field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
-   field(INPF, "0.1")
+   field(INPF, "5.0")
    field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
 }
 
