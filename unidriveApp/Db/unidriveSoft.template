@@ -115,7 +115,7 @@ record(calc, "$(s):$(ta):$(ss):DoWarmup") {
 }
 
 record(seq, "$(s):$(ta):$(ss):DoWarmupSeq") {
-   field(SELM, "Specified")
+   field(SELM, "Mask")
    field(SELL, "$(s):$(ta):$(ss):DoWarmup")
    # begin actions for speeds less than constrained
    field(DO1, "1")
