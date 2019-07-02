@@ -178,15 +178,11 @@ record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq") {
    field(LNK4, "$(s):$(ta):$(ss):CheckSpeed.PROC PP")
 }
 
-# set greater than one to speed up cooldown and warmup timers for testing
-record(ao, "$(s):$(ta):$(ss):TimerInc") {
-   field(DOL, "1.0")
-}
-
+# warmup timer increments 100 times faster in simulate mode
 record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
    field(INPA, "0")
-   field(INPB, "$(s):$(ta):$(ss):TimerInc") 
-   field(CALC, "A?0:VAL+B;A:=0")
+   field(INPB, "$(s):$(ta):$(ss):Simulate") 
+   field(CALC, "A?0:B?VAL+100:VAL+1;A:=0")
 }
 
 record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {

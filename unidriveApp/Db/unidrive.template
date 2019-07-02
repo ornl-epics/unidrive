@@ -248,7 +248,8 @@ record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
-   field(SCAN, "1 second")
+   # SCAN being .1 second speeds up time by 10 in simulation mode
+   field(SCAN, ".1 second")
    field(OROC, "1")
    field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed PP")
 }
