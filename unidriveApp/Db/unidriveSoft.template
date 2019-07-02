@@ -87,20 +87,24 @@ record(seq, "$(s):$(ta):$(ss):DriveSpeedSeq") {
    
 record(calc, "$(s):$(ta):$(ss):EnterWarmup") {
    field(INPA, "$(s):$(ta):$(ss):WarmupSave")
-   field(CALC, "A?1:30")
+   field(CALC, "A?1:62")
    field(FLNK, "$(s):$(ta):$(ss):EnterWarmupSeq")
 }
 
 record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
    field(SELM, "Mask")
    field(SELL, "$(s):$(ta):$(ss):EnterWarmup") 
+   # begin continue in warmup mode
    field(LNK1, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
+   # begin switch to warmup mode
    field(DO2, "1")
    field(LNK2, "$(s):$(ta):$(ss):WarmupSave PP")
    field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
    field(DO4, "1")
    field(LNK4, "$(s):$(ta):$(ss):WarmupTimer.A PP")
    field(LNK5, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
+   field(DO6, "1")
+   field(LNK6, "$(s):$(ta):$(ss):NewSpeedFlag PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):DoWarmup") {
