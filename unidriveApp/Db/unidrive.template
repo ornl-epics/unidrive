@@ -590,14 +590,14 @@ record(calc, "$(s):$(ta):$(ss):UD:Sim:YD") {
    field(INPB, "90")
    field(PREC, "3")
    field(CALC, "A+B/1000.0")
-   info(autosaveFields, "A,B")
+   info(autosaveFields, "A B")
 }
 record(calc, "$(s):$(ta):$(ss):UD:Sim:HM") {
    field(INPA, "3")
    field(INPB, "23")
    field(CALC, "A+B/100.0")
    field(PREC, "2")
-   info(autosaveFields, "A,B")
+   info(autosaveFields, "A B")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
