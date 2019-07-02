@@ -13,9 +13,11 @@ record(ai, "$(s):$(ta):$(ss):Slope") {
 
 record(ai, "$(s):$(ta):$(ss):OffsetDefault") {
    field(PREC, "2")
+   info(autosaveFields, "VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):SlopeDefault") {
+   info(autosaveFields, "VAL")
 }
 
 record(seq, "$(s):$(ta):$(ss):SetDefaults") {
