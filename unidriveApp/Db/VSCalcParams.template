@@ -1,6 +1,7 @@
 record(ai, "$(s):$(ta):$(ss):Offset") {
    field(ASG, "BEAMLINE")
    info(autosaveFields, "VAL")
+   field(PREC, "2")
    info(archive, "Monitor, 00:00:10, VAL")
 }
 
@@ -8,6 +9,43 @@ record(ai, "$(s):$(ta):$(ss):Slope") {
    field(ASG, "BEAMLINE")
    info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:10, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):OffsetDefault") {
+   field(PREC, "2")
+}
+
+record(ai, "$(s):$(ta):$(ss):SlopeDefault") {
+}
+
+record(seq, "$(s):$(ta):$(ss):SetDefaults") {
+   field(ASG, "BEAMLINE")
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):VSNum")
+   field(LNK1, "$(s):$(ta):$(ss):SetDefaults1.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):SetDefaults2.PROC PP")
+   field(LNK3, "$(s):$(ta):$(ss):SetDefaults3.PROC PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetDefaults1") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS1")
+   field(LNK1, "$(s):$(ta):$(ss):SlopeDefault PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS1")
+   field(LNK2, "$(s):$(ta):$(ss):OffsetDefault PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetDefaults2") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS2")
+   field(LNK1, "$(s):$(ta):$(ss):SlopeDefault PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS2")
+   field(LNK2, "$(s):$(ta):$(ss):OffsetDefault PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):SetDefaults3") {
+   field(DOL1, "$(s):$(ta):$(ss):SlopeDefaultVS3")
+   field(LNK1, "$(s):$(ta):$(ss):SlopeDefault PP")
+   field(DOL2, "$(s):$(ta):$(ss):OffsetDefaultVS3")
+   field(LNK2, "$(s):$(ta):$(ss):OffsetDefault PP")
 }
 
 record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS1") {
@@ -22,7 +60,7 @@ record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS1") {
 
 record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS2") {
    field(ASG, "BEAMLINE")
-   field(VAL, "-2234")		
+   field(VAL, "-2235")		
 }
 
 record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS2") {
@@ -32,7 +70,7 @@ record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS2") {
 
 record(ai, "$(s):$(ta):$(ss):SlopeDefaultVS3") {
    field(ASG, "BEAMLINE")
-   field(VAL, "-2234")		
+   field(VAL, "-2236")		
 }
 
 record(ai, "$(s):$(ta):$(ss):OffsetDefaultVS3") {
@@ -48,15 +86,16 @@ record(mbbo, "$(s):$(ta):$(ss):VSNum") {
    field(THST, "VS3")
    info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:10, VAL")
+   field(FLNK, "$(s):$(ta):$(ss):SetDefaults")
 }
 
 record(seq, "$(s):$(ta):$(ss):SetToDefaults") {
    field(ASG, "BEAMLINE")
    field(SELM, "Specified")
    field(SELL, "$(s):$(ta):$(ss):VSNum")
-   field(LNK1, "$(s):$(ta):$(ss):SetToDefaults1")
-   field(LNK2, "$(s):$(ta):$(ss):SetToDefaults2")
-   field(LNK3, "$(s):$(ta):$(ss):SetToDefaults3")
+   field(LNK1, "$(s):$(ta):$(ss):SetToDefaults1.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):SetToDefaults2.PROC PP")
+   field(LNK3, "$(s):$(ta):$(ss):SetToDefaults3.PROC PP")
 }
 
 record(seq, "$(s):$(ta):$(ss):SetToDefaults1") {
