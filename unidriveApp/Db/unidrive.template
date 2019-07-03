@@ -80,6 +80,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
    field(INP, "@asynMask(modR3,16504,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Preset1Set")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
@@ -93,6 +94,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
    field(FLNK, "$(s):$(ta):$(ss):UD:Preset1.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Ramp PP")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:SkipRef1") {
@@ -223,6 +225,7 @@ record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
    field(INP, "@asynMask(modR3,16684,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
@@ -237,6 +240,7 @@ record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
    field(INP, "@asynMask(modR3,16685,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
@@ -331,6 +335,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Current") {
    field(INP, "@asynMask(modR3,16784,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "6.0")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Kp") {
@@ -573,6 +578,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
    field(ZNAM, "Disabled")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnable")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
@@ -583,6 +589,7 @@ record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(ZNAM, "Disabled")
    field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(calc, "$(s):$(ta):$(ss):UD:Sim:YD") {
@@ -610,6 +617,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
    field(INP, "@asynMask(modR3,621,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
@@ -624,6 +632,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM PP")
    field(FLNK, "$(s):$(ta):$(ss):UD:RunTimeYD")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
@@ -783,6 +792,7 @@ record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
    field(ONAM, "At Speed")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
@@ -795,6 +805,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "1")
    field(SIMS, "INVALID")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
@@ -806,6 +817,7 @@ record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
    field(ONAM, "Inverter On")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnabled")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
@@ -817,6 +829,7 @@ record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
    field(ONAM, "Zero Speed")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(calc, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed") {
@@ -833,6 +846,8 @@ record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
    field(INP, "@asyn(modR3,1019,1000)UINT16")
    field(SCAN, "10 second")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   # archiving trip0 should be sufficient
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 record(longin, "$(s):$(ta):$(ss):UD:Trip1") {
    field(DESC, "param 1021")
@@ -1092,10 +1107,3 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
 }
    
-record(asyn, "$(s):$(ta):$(ss):AsynRec") {
-    field(DTYP,"asynRecordDevice")
-    field(PORT,"modR3")
-}
-
-
-
