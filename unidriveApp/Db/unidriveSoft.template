@@ -214,6 +214,42 @@ record(calc, "$(s):$(ta):$(ss):RunTimeSecs") {
    info(autosaveFields, "VAL")
 }
 
+record(calc, "$(s):$(ta):$(ss):HardwareHrs") {
+   field(INPA, "$(s):$(ta):$(ss):UD:RunTimeYD")
+   field(INPB, "$(s):$(ta):$(ss):UD:RunTimeHM CPP")
+   field(EGU, "h")
+   field(CALC, "(A-Floor(A)*24+floor(A)*24*365+B")
+}
+ 
+record(ai, "$(s):$(ta):$(ss):StartHrs") {
+   field(EGU, "h")
+   info(autosaveFields, "VAL")
+}
+
+# enter a starting number of hours (it could be zero) to start the timer.
+record(ao, "$(s):$(ta):$(ss):EnterHrs") {
+   field(EGU, "h")
+   field(PREC, "1")
+   field(FLNK, "$(s):$(ta):$(ss):StartRunTimer")
+}
+
+record(calcout, "$(s):$(ta):$(ss):StartRunTimer") {
+   field(INPA, "$(s):$(ta):$(ss):HardwareHrs")
+   field(INPB, "$(s):$(ta):$(ss):EnterHrs")
+   field(CALC, "A-B")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):StartHrs PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):RunTime") {
+   field(EGU, "h")
+   field(INPA, "$(s):$(ta):$(ss):HardwareHrs CPP")
+   field(INPB, record(ai, "$(s):$(ta):$(ss):StartHrs CPP") 
+   field(CALC, "A-B")
+   field(PREC, "1")
+}
+
+
 record(calc, "$(s):$(ta):$(ss):RunTimeHrs") {
    field(INPA, "$(s):$(ta):$(ss):RunTimeSecs NPP MS")
    field(CALC, "A/3600")
