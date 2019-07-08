@@ -104,7 +104,7 @@ record(ai, "$(s):$(ta):$(ss):TiltRBV") {
 
 
 record(calc, "$(s):$(ta):$(ss):AtTilt") {
-   field(INPA, "$(s):$(ta):$(ss):TiltRBV")
+   field(INPA, "$(s):$(ta):$(ss):TiltRBV CPP MS")
    field(INPB, "$(s):$(ta):$(ss):Tilt:Set CPP MS")
    field(INPC, "0.1")
    field(CALC, "ABS(A-B)<C")
