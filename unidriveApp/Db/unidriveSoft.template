@@ -4,19 +4,23 @@ record(bo, "$(s):$(ta):$(ss):Simulate") {
    field(OSV, "MAJOR")
    field(DOL, "0")
    info(autosaveFields, "VAL")
+   field(ASG, "BEAMLINE")
 }
 
 record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
    field(EGU, "rpm")
+   field(ASG, "BEAMLINE")
 }
 
 record(longout, "$(s):$(ta):$(ss):SpeedConstraint") {
    field(DOL, "0")
+   field(ASG, "BEAMLINE")
 }
 
 record(bo, "$(s):$(ta):$(ss):WarmupMode") {
    field(ZNAM, "Normal")
    field(ONAM, "Warmup")
+   field(ASG, "BEAMLINE")
 }
 
 record(bo, "$(s):$(ta):$(ss):WarmupSave") {
@@ -218,7 +222,7 @@ record(calc, "$(s):$(ta):$(ss):HardwareHrs") {
    field(INPA, "$(s):$(ta):$(ss):UD:RunTimeYD")
    field(INPB, "$(s):$(ta):$(ss):UD:RunTimeHM CPP")
    field(EGU, "h")
-   field(CALC, "(A-Floor(A)*24+floor(A)*24*365+B")
+   field(CALC, "(A-Floor(A))*24+floor(A)*24*365+B")
 }
  
 record(ai, "$(s):$(ta):$(ss):StartHrs") {
@@ -231,6 +235,7 @@ record(ao, "$(s):$(ta):$(ss):EnterHrs") {
    field(EGU, "h")
    field(PREC, "1")
    field(FLNK, "$(s):$(ta):$(ss):StartRunTimer")
+   field(ASG, "BEAMLINE")
 }
 
 record(calcout, "$(s):$(ta):$(ss):StartRunTimer") {
@@ -244,7 +249,7 @@ record(calcout, "$(s):$(ta):$(ss):StartRunTimer") {
 record(calc, "$(s):$(ta):$(ss):RunTime") {
    field(EGU, "h")
    field(INPA, "$(s):$(ta):$(ss):HardwareHrs CPP")
-   field(INPB, record(ai, "$(s):$(ta):$(ss):StartHrs CPP") 
+   field(INPB, "$(s):$(ta):$(ss):StartHrs CPP") 
    field(CALC, "A-B")
    field(PREC, "1")
 }

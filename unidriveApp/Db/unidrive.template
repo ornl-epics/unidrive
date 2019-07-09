@@ -24,6 +24,7 @@ record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
    field(OUT, "@asynMask(modW16,16489,32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
@@ -67,6 +68,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
    field(FVST, "Prc")
    field(FLNK, "$(s):$(ta):$(ss):UD:RefSel.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
@@ -95,6 +97,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Ramp PP")
    info(archive, "Monitor, 00:00:01, VAL")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:SkipRef1") {
@@ -122,6 +125,7 @@ record(ao, "$(s):$(ta):$(ss):UD:SkipRef1Set") {
    field(OUT, "@asynMask(modW6,129,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:SkipRef1.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
@@ -138,6 +142,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
    field(OUT, "@asynMask(modW6,203,3,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RampMode.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
@@ -182,6 +187,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Accel1Set") {
    field(OUT, "@asynMask(modW16,16594,32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:Accel1.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Decel1") {
@@ -211,6 +217,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Decel1Set") {
    field(OUT, "@asynMask(modW16,16604,32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:Decel1.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
@@ -290,6 +297,7 @@ record(bo, "$(s):$(ta):$(ss):UD:MarkerFlagSet") {
    field(ZNAM, "Reset")
    field(FLNK, "$(s):$(ta):$(ss):UD:MarkerFlag.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
@@ -322,6 +330,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
    field(TWST, "15V")
    field(FLNK, "$(s):$(ta):$(ss):UD:SuppV.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Current") {
@@ -355,6 +364,7 @@ record(ao, "$(s):$(ta):$(ss):UD:KpSet") {
    field(OUT, "@asynMask(modW6,412,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Kp.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:Ki") {
@@ -374,6 +384,7 @@ record(ao, "$(s):$(ta):$(ss):UD:KiSet") {
    field(OUT, "@asynMask(modW6,413,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Ki.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RatedFreq") {
@@ -401,6 +412,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedFreqSet") {
    field(OUT, "@asynMask(modW6,505,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedFreq.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RatedCurr") {
@@ -430,6 +442,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedCurrSet") {
    field(OUT, "@asynMask(modW16,16890,32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedCurr.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RatedSpd") {
@@ -459,6 +472,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedSpdSet") {
    field(OUT, "@asynMask(modW16,16891,32,1000)INT32_BE")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedSpd.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RatedVolt") {
@@ -478,6 +492,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedVoltSet") {
    field(OUT, "@asynMask(modW6,508,16,1000)INT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedVolt.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RatedPF") {
@@ -505,6 +520,7 @@ record(ao, "$(s):$(ta):$(ss):UD:RatedPFSet") {
    field(OUT, "@asynMask(modW6,509,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:RatedPF.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(longin, "$(s):$(ta):$(ss):UD:MotorPoles") {
@@ -524,6 +540,7 @@ record(longout, "$(s):$(ta):$(ss):UD:MotorPolesSet") {
    field(OUT, "@asyn(modW6,510,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:MotorPoles.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:MaxSFreq") {
@@ -567,6 +584,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
    field(FVST, "16 kHz")
    field(FLNK, "$(s):$(ta):$(ss):UD:MaxSFreq.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
@@ -590,6 +608,7 @@ record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
    field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    info(archive, "Monitor, 00:00:01, VAL")
+   field(ASG, "BEAMLINE")
 }
 
 record(calc, "$(s):$(ta):$(ss):UD:Sim:YD") {
@@ -660,6 +679,7 @@ record(bo, "$(s):$(ta):$(ss):UD:RunFwdSet") {
    field(ZNAM, "Other")
    field(FLNK, "$(s):$(ta):$(ss):UD:RunFwd.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(mbbi, "$(s):$(ta):$(ss):UD:AI3Mode") {
@@ -719,6 +739,7 @@ record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
    field(NIST, "th.diSp")
    field(FLNK, "$(s):$(ta):$(ss):UD:AI3Mode.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:DI5Dest") {
@@ -750,6 +771,7 @@ record(ao, "$(s):$(ta):$(ss):UD:DI5DestSet") {
    field(OUT, "@asynMask(modW6,824,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:DI5Dest.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:DI6Dest") {
@@ -781,6 +803,7 @@ record(ao, "$(s):$(ta):$(ss):UD:DI6DestSet") {
    field(OUT, "@asynMask(modW6,825,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:DI6Dest.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
@@ -943,6 +966,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0011Set") {
    field(OUT, "@asynMask(modW6,1100,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0011.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0012") {
@@ -970,6 +994,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0012Set") {
    field(OUT, "@asynMask(modW6,1101,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0012.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0013") {
@@ -997,6 +1022,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0013Set") {
    field(OUT, "@asynMask(modW6,1102,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0013.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0014") {
@@ -1024,6 +1050,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0014Set") {
    field(OUT, "@asynMask(modW6,1103,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0014.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0015") {
@@ -1051,6 +1078,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0015Set") {
    field(OUT, "@asynMask(modW6,1104,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0015.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0017") {
@@ -1078,6 +1106,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0017Set") {
    field(OUT, "@asynMask(modW6,1106,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0017.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
 record(ai, "$(s):$(ta):$(ss):UD:Param0016") {
@@ -1105,5 +1134,6 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
    field(OUT, "@asynMask(modW6,1105,16,1000)UINT16")
    field(FLNK, "$(s):$(ta):$(ss):UD:Param0016.PROC CA")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
 }
    
