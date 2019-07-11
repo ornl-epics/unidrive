@@ -637,6 +637,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
    info(archive, "Monitor, 00:00:01, VAL")
+   field(FLNK, "$(s):$(ta):$(ss):HardwareHrs")
 }
 
 record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
