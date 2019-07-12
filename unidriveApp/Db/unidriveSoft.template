@@ -10,12 +10,15 @@ record(bo, "$(s):$(ta):$(ss):Simulate") {
 record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
    field(EGU, "rpm")
    field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   field(PINI, "YES")
 }
 
 record(longout, "$(s):$(ta):$(ss):SpeedConstraint") {
    field(DOL, "0")
    field(ASG, "BEAMLINE")
    info(autosaveFields, "VAL")
+   field(PINI, "YES")
 }
 
 record(bo, "$(s):$(ta):$(ss):WarmupMode") {
