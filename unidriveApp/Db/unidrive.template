@@ -263,16 +263,18 @@ record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
    field(SCAN, ".1 second")
    field(OROC, "1")
    field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed PP")
+   info(autosaveFields, "VAL")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Sim:Speed") {
    field(EGU, "rpm")
    field(FLNK, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
+   info(autosaveFields, "VAL")
 }
 
 record(calc, "$(s):$(ta):$(ss):UD:Sim:AtSpeed") {
    field(INPA, "$(s):$(ta):$(ss):UD:Sim:Speed")
-   field(INPB, "$(s):$(ta):$(ss):UD:Preset1Set")
+   field(INPB, "$(s):$(ta):$(ss):UD:Sim:Ramp")
    field(CALC, "ABS(A-B)<1.0")
 }
 
