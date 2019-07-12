@@ -254,6 +254,8 @@ record(calc, "$(s):$(ta):$(ss):RunTime") {
    field(EGU, "h")
    field(INPA, "$(s):$(ta):$(ss):HardwareHrs")
    field(INPB, "$(s):$(ta):$(ss):StartHrs") 
+   field(HIGH, "10000")
+   field(HSV, "MAJOR")
    field(CALC, "A-B")
    field(PREC, "1")
 }
