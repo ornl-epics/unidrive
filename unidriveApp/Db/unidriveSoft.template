@@ -118,11 +118,12 @@ record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
    field(LNK6, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
 }
 
-record(calc, "$(s):$(ta):$(ss):DoWarmup") {
+record(calcout, "$(s):$(ta):$(ss):DoWarmup") {
    field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")	# for validity test
    field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
    field(CALC, "B<7?(A<(1000*B-10)?1:6):8")
-   field(FLNK, "$(s):$(ta):$(ss):DoWarmupSeq")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):DoWarmupSeq.PROC PP")
 }
 
 record(seq, "$(s):$(ta):$(ss):DoWarmupSeq") {
