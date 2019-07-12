@@ -113,9 +113,9 @@ record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
    field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
    field(DO4, "1")
    field(LNK4, "$(s):$(ta):$(ss):WarmupTimer.A PP")
-   field(LNK5, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
-   field(DO6, "1")
-   field(LNK6, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(DO5, "1")
+   field(LNK5, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK6, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):DoWarmup") {
