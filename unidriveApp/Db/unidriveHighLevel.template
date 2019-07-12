@@ -91,6 +91,7 @@ substitute "OUT=$(s):$(ta):$(ss):Speed:Set"
 substitute "IN=$(s):$(ta):$(ss):AtSpeedHL"
 substitute "TO=36000"
 substitute "ST=15"
+substitute "HI=7000"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
