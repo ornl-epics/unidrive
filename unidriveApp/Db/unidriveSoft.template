@@ -196,6 +196,7 @@ record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
    field(INPA, "0")
    field(INPB, "$(s):$(ta):$(ss):Simulate") 
    field(CALC, "A?0:B?VAL+100:VAL+1;A:=0")
+   info(autosaveFields, "VAL")
 }
 
 record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {
