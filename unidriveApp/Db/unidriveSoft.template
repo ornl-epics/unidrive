@@ -90,8 +90,6 @@ record(calcout, "$(s):$(ta):$(ss):DriveSpeed") {
 }
 
 record(seq, "$(s):$(ta):$(ss):DriveSpeedSeq") {
-   field(SELM, "Mask")
-   field(SELL, "$(s):$(ta):$(ss):EnterNormal")
    field(DO1, "0")
    field(LNK1, "$(s):$(ta):$(ss):NewSpeedFlag PP")
    field(DOL2, "$(s):$(ta):$(ss):SpeedDesired")
