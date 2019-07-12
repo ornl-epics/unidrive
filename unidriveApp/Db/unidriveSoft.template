@@ -66,7 +66,7 @@ record(seq, "$(s):$(ta):$(ss):SpeedModeScanSeq") {
 
 record(calc, "$(s):$(ta):$(ss):EnterNormal") {
    field(INPA, "$(s):$(ta):$(ss):WarmupSave")
-   field(CALC, "A?7:4")
+   field(CALC, "A?15:8")
    field(FLNK, "$(s):$(ta):$(ss):EnterNormalSeq")
 }
 
@@ -78,8 +78,10 @@ record(seq, "$(s):$(ta):$(ss):EnterNormalSeq") {
    field(LNK1, "$(s):$(ta):$(ss):WarmupSave PP")
    field(DO2, "1")
    field(LNK2, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):WarmupTimer.A PP")
    # both cases go here
-   field(LNK3, "$(s):$(ta):$(ss):DriveSpeed.PROC PP")
+   field(LNK4, "$(s):$(ta):$(ss):DriveSpeed.PROC PP")
 }
 
 record(calcout, "$(s):$(ta):$(ss):DriveSpeed") {
