@@ -251,16 +251,17 @@ record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
 }
 
 record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
+   # factor of 20 CALC is just to speed it up to close to observed hardware 
+   # rate.
    field(EGU, "rpm/s")
    field(INPA, "$(s):$(ta):$(ss):UD:Accel1 CPP")
-   field(CALC, "A/60.0")
+   field(CALC, "20*A/60.0")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):UD:Sim:Ramp.OROC")
 }
 
 record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
-   # SCAN being .1 second speeds up time by 10 in simulation mode
-   field(SCAN, ".1 second")
+   field(SCAN, "1 second")
    field(OROC, "1")
    field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed PP")
    info(autosaveFields, "VAL")
