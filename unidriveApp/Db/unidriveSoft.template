@@ -15,6 +15,7 @@ record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
 record(longout, "$(s):$(ta):$(ss):SpeedConstraint") {
    field(DOL, "0")
    field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
 }
 
 record(bo, "$(s):$(ta):$(ss):WarmupMode") {
@@ -28,9 +29,11 @@ record(bo, "$(s):$(ta):$(ss):WarmupMode") {
 record(bo, "$(s):$(ta):$(ss):WarmupSave") {
    field(ZNAM, "Normal")
    field(ONAM, "Warmup")
+   info(autosaveFields, "VAL")
 }
 
 record(bo, "$(s):$(ta):$(ss):NewSpeedFlag") {
+   field(DOL, "1")
    field(ZNAM, "No")
    field(ONAM, "Yes")
 }
