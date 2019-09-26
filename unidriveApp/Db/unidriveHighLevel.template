@@ -97,7 +97,7 @@ include "putCallback.template"
 record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Tilt:Reqd")
-   field(OUT, "BL104:Mot:vs_tilt PP")
+   field(OUT, "$(s):Mot:vs_tilt PP")
 }
 
 record(ai, "$(s):$(ta):$(ss):TiltRBV") {
@@ -119,4 +119,5 @@ substitute "OUT=$(s):$(ta):$(ss):Tilt:Set"
 substitute "IN=$(s):$(ta):$(ss):AtTilt"
 substitute "TO=36000"
 substitute "ST=15"
+substitute "HI=4"
 include "putCallback.template"
