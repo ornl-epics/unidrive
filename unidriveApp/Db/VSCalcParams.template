@@ -1,12 +1,14 @@
-record(ai, "$(s):$(ta):$(ss):Offset") {
+record(ao, "$(s):$(ta):$(ss):Offset") {
    field(ASG, "BEAMLINE")
-   info(autosaveFields, "VAL")
    field(PREC, "2")
+   field(PINI, "YES")
+   info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:10, VAL")
 }
 
-record(ai, "$(s):$(ta):$(ss):Slope") {
+record(ao, "$(s):$(ta):$(ss):Slope") {
    field(ASG, "BEAMLINE")
+   field(PINI, "YES")
    info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:10, VAL")
 }

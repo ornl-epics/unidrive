@@ -32,7 +32,7 @@ record(calc, "$(s):$(ta):$(ss):WavelengthCalc") {
    field(INPB, "$(s):$(ta):$(ss):TiltRBV CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Offset NPP MS")
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
-   field(CALC, "(C-D*B)/A")
+   field(CALC, "(A==0)?0:(C-D*B)/A")
    field(EGU, "A")
 }
 

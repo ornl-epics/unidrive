@@ -225,7 +225,8 @@ record(calcout, "$(s):$(ta):$(ss):HardwareHrs") {
    field(INPB, "$(s):$(ta):$(ss):UD:RunTimeHM")
    field(IVOA, "Don't drive outputs")
    field(EGU, "h")
-   field(CALC, "(A-Floor(A))*24+floor(A)*24*365+floor(B)+(B-floor(B))*5/3")
+#   field(CALC, "(A-Floor(A))*24+floor(A)*24*365+floor(B)+(B-floor(B))*5/3")
+   field(CALC, "(A-Floor(A))*1000*24+floor(A)*24*365+floor(B)+(B-floor(B))*5/3")
    field(OUT, "$(s):$(ta):$(ss):RunTime.PROC PP")
 }
  
