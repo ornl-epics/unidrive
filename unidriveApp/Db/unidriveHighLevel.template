@@ -103,6 +103,7 @@ record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
 
 record(ai, "$(s):$(ta):$(ss):TiltRBV") {
    field(INP, "$(s):Mot:vs_tilt.RBV CPP MS")
+   info(archive, "Monitor, 00:00:10, VAL")
 }
 
 
