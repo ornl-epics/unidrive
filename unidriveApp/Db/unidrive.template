@@ -1141,3 +1141,66 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
    field(ASG, "BEAMLINE")
 }
    
+record(ai, "$(s):$(ta):$(ss):UD:FilterHour") {
+   field(DESC, "param 0618 time between filter changes")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(PREC, "2")
+   field(INP, "@asynMask(modR3,17001,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:FilterHourSet") {
+   field(DESC, "param 0618 time between filter changes")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(DRVH, "100")
+   field(OUT, "@asynMask(modW16,17001,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:FilterHour")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:FilterChg") {
+   field(DESC, "param 0619 Filter change required/done")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,618,1,1000)UINT16")
+   field(SCAN, "10 second")
+   field(ZNAM, "Filter Change Done")
+   field(ONAM, "Filter Change Required")
+   field(OSV, "MAJOR")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):UD:FilterChgSet") {
+   field(DESC, "param 0619 Filter change required/done")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,618,1,1000)UINT16")
+   field(ONAM, "ON")
+   field(ZNAM, "OFF")
+   field(FLNK, "$(s):$(ta):$(ss):UD:FilterChg PP")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:FilterTimeDue") {
+   field(DESC, "param 0627 time before filter change due")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(PREC, "1")
+   field(LOW, "0")
+   field(LSV, "MINOR")
+   field(INP, "@asynMask(modR3,17010,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM")
+   info(archive, "Monitor, 00:00:01, VAL")
+}

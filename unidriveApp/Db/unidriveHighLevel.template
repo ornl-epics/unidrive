@@ -5,9 +5,9 @@ record(calc, "$(s):$(ta):$(ss):AlarmSum") {
    field(INPD, "$(s):$(ta):$(ss):Speed:Fault CPP MS")
    field(INPE, "$(s):$(ta):$(ss):Tilt:Fault CPP MS")
    field(INPF, "$(s):$(ta):$(ss):UD:DriveOK.SEVR CPP MS")
-   field(INPG, "$(s):$(ta):$(ss):RunTime CPP MS")
-#   field(CALC, "!A||B||C||D||E||F>2||G>10000")
-   field(CALC, "!A||B||C||D||E||F>2")
+#   field(INPG, "$(s):$(ta):$(ss):RunTime CPP MS")
+   field(INPG, "$(s):$(ta):$(ss):UD:FilterChg CPP MS")
+   field(CALC, "!A||B||C||D||E||F>2||G")
    field(HIHI, "0.5")
    field(HHSV, "MAJOR")
 }

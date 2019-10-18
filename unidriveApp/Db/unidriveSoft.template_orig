@@ -174,7 +174,6 @@ record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
    field(CALC, "A<=(B*1000)?A:(B*1000)")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
-   field(FLNK, "$(s):$(ta):$(ss):PresetSeq PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
@@ -335,39 +334,3 @@ record(seq, "$(s):$(ta):$(ss):ZeroTimerBr") {
    # No actions for zerotimer <= 5
 }
    
-# enter a filter change hours .
-record(ao, "$(s):$(ta):$(ss):FilterHourSet") {
-   field(EGU, "h")
-   field(PREC, "1")
-   field(FLNK, "$(s):$(ta):$(ss):FilterChgCalc")
-   field(PINI, "YES")
-   field(ASG, "BEAMLINE")
-   info(autosaveFields, "VAL")
-}
-record(calcout, "$(s):$(ta):$(ss):FilterChgCalc") {
-   field(INPA, "$(s):$(ta):$(ss):FilterHourSet CP MS")
-   field(CALC, "A/100")
-   field(OUT, "$(s):$(ta):$(ss):UD:FilterHourSet PP")
-}
-
-record(seq, "$(s):$(ta):$(ss):PresetSeq") {
-   field(DLY1, "1")
-   field(DO1, "1")
-   field(LNK1, "$(s):$(ta):$(ss):UD:Preset1Set.PROC PP")
-}
-
-record(calcout, "$(s):$(ta):$(ss):CheckWarmup") {
-   field(INPA, "$(s):$(ta):$(ss):
-}
-
-#record(sseq, "$(s):$(ta):$(ss):LambdaSeq") {
-#  field(WAIT1, "Wait")
-#  field(WAIT2, "Wait")
-#  field(DLY1, "0")
-#  field(DOL1, "1")
-#  field(LNK1, "$(s):$(ta):$(ss):SpeedMode.VAL CA")
-#  field(DLY2, "0")
-#  field(DOL2, "1")
-#  field(LNK2, ".PROC CA")
-#}
-
