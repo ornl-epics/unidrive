@@ -356,10 +356,6 @@ record(seq, "$(s):$(ta):$(ss):PresetSeq") {
    field(LNK1, "$(s):$(ta):$(ss):UD:Preset1Set.PROC PP")
 }
 
-record(calcout, "$(s):$(ta):$(ss):CheckWarmup") {
-   field(INPA, "$(s):$(ta):$(ss):
-}
-
 #record(sseq, "$(s):$(ta):$(ss):LambdaSeq") {
 #  field(WAIT1, "Wait")
 #  field(WAIT2, "Wait")
