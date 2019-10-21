@@ -1143,7 +1143,7 @@ record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
    
 record(ai, "$(s):$(ta):$(ss):UD:FilterHour") {
    field(DESC, "param 0618 time between filter changes")
-#   field(SCAN, "10 second")
+   field(SCAN, "10 second")
    field(DTYP, "asynInt32")
    field(EGU, "h")
    field(PREC, "2")
@@ -1158,14 +1158,13 @@ record(ao, "$(s):$(ta):$(ss):UD:FilterHourSet") {
    field(DTYP, "asynInt32")
    field(EGU, "h")
    field(LINR, "SLOPE")
-   field(PINI, "YES")
    field(PREC, "2")
    field(ESLO, "0.01")
    field(EOFF, "0.0")
    field(DRVH, "100")
    field(OUT, "@asynMask(modW16,17001,32,1000)INT32_BE")
-   field(FLNK, "$(s):$(ta):$(ss):UD:FilterHour PP")
-   info(autosaveFields, "VAL")
+#   field(FLNK, "$(s):$(ta):$(ss):UD:FilterHour PP")
+#   info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
