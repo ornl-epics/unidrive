@@ -48,6 +48,8 @@ substitute "OUT=$(s):$(ta):$(ss):Lambda:Set"
 substitute "IN=$(s):$(ta):$(ss):AtLambda"
 substitute "TO=36000"
 substitute "ST=15"
+substitute "HI=$(HILD)"
+substitute "LO=$(LOLD)"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
@@ -67,6 +69,8 @@ substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
 substitute "IN=$(s):$(ta):$(ss):AtLambda"
 substitute "TO=36000"
 substitute "ST=15"
+substitute "HI=$(HIDL)"
+substitute "LO=$(LODL)"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):Speed:Set") {
@@ -92,7 +96,8 @@ substitute "OUT=$(s):$(ta):$(ss):Speed:Set"
 substitute "IN=$(s):$(ta):$(ss):AtSpeedHL"
 substitute "TO=36000"
 substitute "ST=15"
-substitute "HI=7000"
+substitute "HI=$(HISP)"
+substitute "LO=0"
 include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
@@ -122,4 +127,5 @@ substitute "IN=$(s):$(ta):$(ss):AtTilt"
 substitute "TO=36000"
 substitute "ST=15"
 substitute "HI=4"
+substitute "LO=-4"
 include "putCallback.template"
