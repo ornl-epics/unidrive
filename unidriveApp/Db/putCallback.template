@@ -52,6 +52,8 @@ record(bi, "$(P):$(C):Fault") {
    field(ZNAM, "OK")
    field(ONAM, "Fault")
    field(OSV, "MAJOR")
+   field(VAL, "0")
+   field(PINI, "YES")
 }
 
 record(busy, "$(P):$(C):Busy") {
