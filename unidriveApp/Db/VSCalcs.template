@@ -6,7 +6,7 @@
 # all beamlines
 #
 record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
-   field(INPA, "$(s):$(ta):$(ss):Lambda:Set NPP MS")
+   field(INPA, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
    field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Offset NPP MS")
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
