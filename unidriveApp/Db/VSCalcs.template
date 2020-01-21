@@ -17,7 +17,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
 }
 
 record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
-   field(INPA, "$(s):$(ta):$(ss):DLambda:Set NPP MS")
+   field(INPA, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
    field(INPB, "0")		# c5
    field(CALC, "(17.0-2.25/A)/2.4+B")
    field(IVOA, "Don't drive outputs")
