@@ -10,7 +10,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
    field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Offset NPP MS")
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
-   field(CALC, "(C-D*B)/A")
+   field(CALC, "A=0?0:(C-D*B)/A")
    field(IVOA, "Don't drive outputs")
    field(EGU, "rpm")
    field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
@@ -19,7 +19,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
 record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
    field(INPA, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
    field(INPB, "0")		# c5
-   field(CALC, "(17.0-2.25/A)/2.4+B")
+   field(CALC, "A=0?0:((17.0-2.25/A)/2.4+B)")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):Tilt:Req PP")
 }
