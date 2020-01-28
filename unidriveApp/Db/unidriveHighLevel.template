@@ -10,6 +10,7 @@ record(calc, "$(s):$(ta):$(ss):AlarmSum") {
    field(CALC, "!A||B||C||D||E||F>2||G==0")
    field(HIHI, "0.5")
    field(HHSV, "MAJOR")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 # used for display control only
@@ -24,6 +25,7 @@ record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Lambda:Reqd")
    field(FLNK, "$(s):$(ta):$(ss):Lambda:SetFan")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(fanout, "$(s):$(ta):$(ss):Lambda:SetFan") {
@@ -37,8 +39,10 @@ record(calc, "$(s):$(ta):$(ss):AtLambda") {
    field(INPC, "0.1")
    field(INPD, "$(s):$(ta):$(ss):WavelengthCalc CPP MS")
    field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
-   field(INPF, "5.0")
-   field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
+   field(INPF, "0.2")
+   field(INPG, "$(s):$(ta):$(ss):AtSpeedHL")
+#   field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
+   field(CALC, "(ABS(A-B)<C)&&G")
 }
 
 substitute "P=$(s):$(ta):$(ss)"
@@ -56,6 +60,7 @@ record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
    field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
    alias("$(s):$(ta):$(ss):DLambda:Reqd")
+  info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(fanout, "$(s):$(ta):$(ss):DLambda:SetFan") {
@@ -78,13 +83,14 @@ record(ao, "$(s):$(ta):$(ss):Speed:Set") {
    alias("$(s):$(ta):$(ss):Speed:Reqd")
    field(OUT, "$(s):$(ta):$(ss):SpeedDesired PP")
    info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
    field(INPA, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS")
    field(INPB, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Speed:Set CPP MS")
-   field(INPD, "2.0")
+   field(INPD, "5")
    field(INPE, "$(s):$(ta):$(ss):UD:ZeroSpeed CPP MS")
    field(CALC, "(A&&(ABS(B-C)<D))||(E&&(ABS(C)<D))")
 }
@@ -104,6 +110,7 @@ record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Tilt:Reqd")
    field(OUT, "$(s):Mot:vs_tilt PP")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(ai, "$(s):$(ta):$(ss):TiltRBV") {
