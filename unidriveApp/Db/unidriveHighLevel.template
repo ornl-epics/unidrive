@@ -25,6 +25,8 @@ record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Lambda:Reqd")
    field(FLNK, "$(s):$(ta):$(ss):Lambda:SetFan")
+   field(PREC, "2")
+   info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -60,7 +62,9 @@ record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
    field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
    alias("$(s):$(ta):$(ss):DLambda:Reqd")
-  info(archive, "Monitor, 00:00:01, VAL")
+   field(PREC, "3")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(fanout, "$(s):$(ta):$(ss):DLambda:SetFan") {
@@ -82,6 +86,7 @@ record(ao, "$(s):$(ta):$(ss):Speed:Set") {
    field(EGU, "rpm")
    alias("$(s):$(ta):$(ss):Speed:Reqd")
    field(OUT, "$(s):$(ta):$(ss):SpeedDesired PP")
+   field(PREC, "2")
    info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:01, VAL")
 }
@@ -110,6 +115,7 @@ record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
    field(EGU, "A")
    alias("$(s):$(ta):$(ss):Tilt:Reqd")
    field(OUT, "$(s):Mot:vs_tilt PP")
+   field(PREC, "2")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
