@@ -14,6 +14,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
    field(IVOA, "Don't drive outputs")
    field(EGU, "rpm")
    field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
+   field(ADEL, "0.2")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -23,6 +24,7 @@ record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
    field(CALC, "(17.0-2.25/A)/2.4+B")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):Tilt:Req PP")
+   field(ADEL, "0.05")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -36,6 +38,7 @@ record(calc, "$(s):$(ta):$(ss):WavelengthCalc") {
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
    field(CALC, "(A==0)?0:(C-D*B)/A")
    field(EGU, "A")
+   field(ADEL, "0.05")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -46,6 +49,7 @@ record(calc, "$(s):$(ta):$(ss):DLambdaCalc") {
    field(INPA, "$(s):$(ta):$(ss):TiltRBV CPP MS")
    field(INPB, "0") 		# c5
    field(CALC, "2.25/(17-2.4*(A-B))")
+   field(ADEL, "0.01")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 

@@ -247,6 +247,7 @@ record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
    field(INP, "@asynMask(modR3,16685,-32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   field(ADEL, "0.2")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -347,6 +348,7 @@ record(ai, "$(s):$(ta):$(ss):UD:Current") {
    field(INP, "@asynMask(modR3,16784,32,1000)INT32_BE")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "6.0")
+   field(ADEL, "0.05")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -639,7 +641,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
    field(INP, "@asynMask(modR3,621,16,1000)UINT16")
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
-   info(archive, "Monitor, 00:00:01, VAL")
+#   info(archive, "Monitor, 00:00:01, VAL")
    field(FLNK, "$(s):$(ta):$(ss):HardwareHrs")
 }
 
@@ -655,7 +657,7 @@ record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
    field(SIML, "$(s):$(ta):$(ss):Simulate")
    field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM PP")
    field(FLNK, "$(s):$(ta):$(ss):UD:RunTimeYD")
-   info(archive, "Monitor, 00:00:01, VAL")
+#   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
