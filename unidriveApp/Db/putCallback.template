@@ -54,7 +54,6 @@ record(bi, "$(P):$(C):Fault") {
    field(OSV, "MAJOR")
    field(VAL, "0")
    field(PINI, "YES")
-   info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(busy, "$(P):$(C):Busy") {

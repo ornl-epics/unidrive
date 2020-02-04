@@ -6,20 +6,22 @@
 # all beamlines
 #
 record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
-   field(INPA, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):TiltCalc CPP MS")
+   field(INPA, "$(s):$(ta):$(ss):Lambda:Set NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):TiltCalc NPP MS")
    field(INPC, "$(s):$(ta):$(ss):Offset NPP MS")
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
-   field(CALC, "(C-D*B)/A")
-   field(IVOA, "Don't drive outputs")
+# 02/03/2020 
+#   field(CALC, "(C-D*B)/A")
+   field(CALC, "A==0?0:(C-D*B)/A")
+#   field(IVOA, "Don't drive outputs")
    field(EGU, "rpm")
-   field(OUT, "$(s):$(ta):$(ss):Speed:Req PP")
+   field(OUT, "$(s):$(ta):$(ss):Speed:Req CA")
    field(ADEL, "0.2")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(calcout, "$(s):$(ta):$(ss):TiltCalc") {
-   field(INPA, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
+   field(INPA, "$(s):$(ta):$(ss):DLambda:Set NPP MS")
    field(INPB, "0")		# c5
    field(CALC, "(17.0-2.25/A)/2.4+B")
    field(IVOA, "Don't drive outputs")

@@ -31,17 +31,17 @@ record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
 }
 
 record(fanout, "$(s):$(ta):$(ss):Lambda:SetFan") {
-   field(LNK1, "$(s):$(ta):$(ss):TiltCalc")
-   field(LNK2, "$(s):$(ta):$(ss):SpeedCalc")
+   field(LNK1, "$(s):$(ta):$(ss):TiltCalc PP")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedCalc PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):AtLambda") {
    field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
    field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
-   field(INPC, "0.1")
+   field(INPC, "0.002")
    field(INPD, "$(s):$(ta):$(ss):WavelengthCalc CPP MS")
    field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
-   field(INPF, "0.2")
+   field(INPF, "0.02")
    field(INPG, "$(s):$(ta):$(ss):AtSpeedHL")
 #   field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
    field(CALC, "(ABS(A-B)<C)&&G")
@@ -63,14 +63,14 @@ record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
    alias("$(s):$(ta):$(ss):DLambda:Reqd")
    field(PREC, "3")
-   field(PINI, "YES")
+#   field(PINI, "YES")
    info(autosaveFields, "VAL")
    info(archive, "Monitor, 00:00:01, VAL")
 }
 
 record(fanout, "$(s):$(ta):$(ss):DLambda:SetFan") {
-   field(LNK1, "$(s):$(ta):$(ss):TiltCalc")
-   field(LNK2, "$(s):$(ta):$(ss):Lambda:Req")
+   field(LNK1, "$(s):$(ta):$(ss):TiltCalc PP")
+   field(LNK2, "$(s):$(ta):$(ss):Lambda:Req PP")
 }
 
 substitute "P=$(s):$(ta):$(ss)"
@@ -96,7 +96,7 @@ record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
    field(INPA, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS")
    field(INPB, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
    field(INPC, "$(s):$(ta):$(ss):Speed:Set CPP MS")
-   field(INPD, "5")
+   field(INPD, "5.0")
    field(INPE, "$(s):$(ta):$(ss):UD:ZeroSpeed CPP MS")
    field(CALC, "(A&&(ABS(B-C)<D))||(E&&(ABS(C)<D))")
 }
@@ -122,7 +122,7 @@ record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
 
 record(ai, "$(s):$(ta):$(ss):TiltRBV") {
    field(INP, "$(s):Mot:vs_tilt.RBV CPP MS")
-   field(ADEL, "0.05")
+   field(ADEL, "0.1")
    info(archive, "Monitor, 00:00:10, VAL")
 }
 
