@@ -175,7 +175,7 @@ record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
    field(CALC, "A<=(B*1000)?A:(B*1000)")
    field(IVOA, "Don't drive outputs")
    field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set CA")
-#   field(FLNK, "$(s):$(ta):$(ss):PresetSeq")
+   field(FLNK, "$(s):$(ta):$(ss):PresetSeq")
 }
 
 record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
