@@ -1,16 +1,28 @@
 record(calc, "$(s):$(ta):$(ss):AlarmSum") {
-   field(INPA, "$(s):$(ta):$(ss):UD:DriveOK CPP MS")
-   field(INPB, "$(s):$(ta):$(ss):DLambda:Fault CPP MS")
-   field(INPC, "$(s):$(ta):$(ss):Lambda:Fault CPP MS")
-   field(INPD, "$(s):$(ta):$(ss):Speed:Fault CPP MS")
-   field(INPE, "$(s):$(ta):$(ss):Tilt:Fault CPP MS")
-   field(INPF, "$(s):$(ta):$(ss):UD:DriveOK.SEVR CPP MS")
-   field(INPG, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
-#   field(INPH, "$(s):$(ta):$(ss):UD:FilterChg CPP MS")
-   field(CALC, "!A||B||C||D||E||F>2||G==0")
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveOK CP MS")
+   field(INPB, "$(s):$(ta):$(ss):DLambda:Fault CP MS")
+   field(INPC, "$(s):$(ta):$(ss):Lambda:Fault CP MS")
+   field(INPD, "$(s):$(ta):$(ss):Speed:Fault CP MS")
+   field(INPE, "$(s):$(ta):$(ss):Tilt:Fault CP MS")
+   field(INPF, "$(s):$(ta):$(ss):UD:DriveOK.SEVR CP MS")
+   field(INPG, "$(s):$(ta):$(ss):UD:SpeedFbk CP MS")
+#   field(INPH, "$(s):$(ta):$(ss):UD:FilterChg CP MS")
+   field(INPH, "$(s):$(ta):$(ss):AlarmDisable CP")
+   field(CALC, "H?0:(!A||B||C||D||E||F>2||G==0)")
    field(HIHI, "0.5")
    field(HHSV, "MAJOR")
    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):AlarmDisable")
+{
+    field(DESC, "Disable Global Alarm")
+    field (ONAM, "AlarmDisabled")
+    field (ZNAM, "AlarmEnabled")
+    field (OSV, "MINOR")
+    info(archive, "Monitor, 00:01:00")
+    field(PINI, "YES")
+    field(VAL, "0")
 }
 
 # used for display control only
