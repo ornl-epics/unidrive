@@ -46,7 +46,7 @@ record(fanout, "$(s):$(ta):$(ss):Lambda:SetFan") {
    field(LNK1, "$(s):$(ta):$(ss):TiltCalc PP")
    field(LNK2, "$(s):$(ta):$(ss):SpeedCalc PP")
 # 02/06/2020 Lambda:Req --> SpeedCalc doesn't drive OUT 
-   field(LNK3, "$(s):$(ta):$(ss):LambdaSeq PP")
+#   field(LNK3, "$(s):$(ta):$(ss):LambdaSeq PP")
 }
 
 record(calc, "$(s):$(ta):$(ss):AtLambda") {
@@ -74,8 +74,7 @@ include "putCallback.template"
 
 record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
    field(EGU, "A")
-# 02/20/2020 temporarily comment out
-#   field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
+   field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
    alias("$(s):$(ta):$(ss):DLambda:Reqd")
    field(PREC, "3")
 #   field(PINI, "YES")
