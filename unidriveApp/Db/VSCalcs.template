@@ -7,8 +7,7 @@
 #
 record(calcout, "$(s):$(ta):$(ss):SpeedCalc") {
    field(INPA, "$(s):$(ta):$(ss):Lambda:Set NPP MS")
-#   field(INPB, "$(s):$(ta):$(ss):TiltCalc NPP MS")
-   field(INPB, "0")
+   field(INPB, "$(s):$(ta):$(ss):TiltCalc NPP MS")
    field(INPC, "$(s):$(ta):$(ss):Offset NPP MS")
    field(INPD, "$(s):$(ta):$(ss):Slope NPP MS")
 # 02/03/2020 
