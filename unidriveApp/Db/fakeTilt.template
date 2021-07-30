@@ -1,0 +1,5 @@
+#
+record(ao, "$(s):Mot:vs_tilt") {
+   field(OROC, "0.1")
+   field(SCAN, "1 second")
+}

@@ -1,0 +1,1208 @@
+
+record(ai, "$(s):$(ta):$(ss):UD:MaxRef") {
+   field(DESC, "param 0106")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MaxRefSet")
+   field(INP, "@asynMask(modR3,16489,32,1000)INT32_BE")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:MaxRefSet") {
+   field(DESC, "param 0106")
+   field(DTYP, "asynInt32")
+   field(DOL, "7000.0")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16489,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MaxRef.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbi, "$(s):$(ta):$(ss):UD:RefSel") {
+   field(DESC, "param 0114")
+   field(SCAN, "10 second")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,113,7,1000)UINT16")
+   field(ZRVL, "0")
+   field(ZRST, "A1.A2")
+   field(ONVL, "1")
+   field(ONST, "A1.Pr")
+   field(TWVL, "2")
+   field(TWST, "A2.Pr")
+   field(THVL, "3")
+   field(THST, "Pr")
+   field(FRVL, "4")
+   field(FRST, "Pad")
+   field(FVVL, "5")
+   field(FVST, "Prc")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RefSelSet")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):UD:RefSelSet") {
+   field(DESC, "param 0114")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,113,7,1000)UINT16")
+   field(DOL, "3")
+   field(PINI, "YES")
+   field(ZRVL, "0")
+   field(ZRST, "A1.A2")
+   field(ONVL, "1")
+   field(ONST, "A1.Pr")
+   field(TWVL, "2")
+   field(TWST, "A2.Pr")
+   field(THVL, "3")
+   field(THST, "Pr")
+   field(FRVL, "4")
+   field(FRST, "Pad")
+   field(FVVL, "5")
+   field(FVST, "Prc")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RefSel.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Preset1") {
+   field(DESC, "param 0121")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16504,-32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Preset1Set")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Preset1Set") {
+   field(DESC, "param 0121")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16504,-32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Preset1.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Ramp PP")
+   info(archive, "Monitor, 00:00:01, VAL")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:SkipRef1") {
+   field(DESC, "param 0130")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,129,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:SkipRef1Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:SkipRef1Set") {
+   field(DESC, "param 0130")
+   field(DTYP, "asynInt32")
+   field(DOL, "0.0")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,129,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:SkipRef1.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):UD:RampModeSet") {
+   field(DESC, "param 0204")
+   field(DTYP, "asynInt32")
+   field(DOL, "0")
+   field(PINI, "YES")
+   field(ZRST, "Fast Ramp")
+   field(ZRVL, "0")
+   field(ONST, "Standard")
+   field(ONVL, "1")
+   field(TWST, "Boost")
+   field(TWVL, "2")
+   field(OUT, "@asynMask(modW6,203,3,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RampMode.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbi, "$(s):$(ta):$(ss):UD:RampMode") {
+   field(DESC, "param 0204")
+   field(DTYP, "asynInt32")
+   field(SCAN, "10 second")
+   field(ZRST, "Fast Ramp")
+   field(ZRVL, "0")
+   field(ONST, "Standard")
+   field(ONVL, "1")
+   field(TWST, "Boost")
+   field(TWVL, "2")
+   field(INP, "@asynMask(modR3_1,203,3,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RampModeSet")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Accel1") {
+   field(DESC, "param 0211")
+   field(SCAN, "10 second")
+   field(EGU, "rpm/m")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16594,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Accel1Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Accel1Set") {
+   field(DESC, "param 0211")
+   field(DTYP, "asynInt32")
+   field(EGU, "rpm/m")
+   field(DOL, "70.000")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16594,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Accel1.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Decel1") {
+   field(DESC, "param 0221")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "rpm/m")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16604,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Decel1Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Decel1Set") {
+   field(DESC, "param 0221")
+   field(DTYP, "asynInt32")
+   field(DOL, "69.998")
+   field(EGU, "rpm/m")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16604,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Decel1.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:FinalSpeed") {
+   field(DESC, "param 0301")
+   field(SCAN, "1 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(EGU, "rpm")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16684,-32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:SpeedFbk") {
+   field(DESC, "param 0302")
+   field(SCAN, "1 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "rpm")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16685,-32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   field(ADEL, "0.2")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(calcout, "$(s):$(ta):$(ss):UD:Sim:Accel") {
+   # factor of 20 CALC is just to speed it up to close to observed hardware 
+   # rate.
+   field(EGU, "rpm/s")
+   field(INPA, "$(s):$(ta):$(ss):UD:Accel1 CPP")
+   field(CALC, "20*A/60.0")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Ramp.OROC")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Sim:Ramp") {
+   field(SCAN, "1 second")
+   field(OROC, "1")
+   field(OUT, "$(s):$(ta):$(ss):UD:Sim:Speed PP")
+   info(autosaveFields, "VAL")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Sim:Speed") {
+   field(EGU, "rpm")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
+   info(autosaveFields, "VAL")
+}
+
+record(calc, "$(s):$(ta):$(ss):UD:Sim:AtSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):UD:Sim:Speed")
+   field(INPB, "$(s):$(ta):$(ss):UD:Sim:Ramp")
+   field(CALC, "ABS(A-B)<1.0")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:MarkerFlag") {
+   field(DESC, "param 0332")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,331,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ONAM, "Set")
+   field(ZNAM, "Reset")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MarkerFlagSet") 
+}
+
+record(bo, "$(s):$(ta):$(ss):UD:MarkerFlagSet") {
+   field(DESC, "param 0332")
+   field(DTYP, "asynUInt32Digital")
+   field(DOL, "1")
+   field(PINI, "YES")
+   field(OUT, "@asynMask(modW6,331,1,1000)UINT16")
+   field(ONAM, "Set")
+   field(ZNAM, "Reset")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MarkerFlag.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbi, "$(s):$(ta):$(ss):UD:SuppV") {
+   field(DESC, "param 0336")
+   field(SCAN, "10 second")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,335,3,1000)UINT16")
+   field(ZRVL, "0")
+   field(ZRST, "5V")
+   field(ONVL, "1")
+   field(ONST, "8v")
+   field(TWVL, "2")
+   field(TWST, "15V")
+   field(THVL, "3")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:SuppVSet")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):UD:SuppVSet") {
+   field(DESC, "param 0336")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,335,3,1000)UINT16")
+   field(DOL, "1")
+   field(PINI, "YES")
+   field(ZRVL, "0")
+   field(ZRST, "5V")
+   field(ONVL, "1")
+   field(ONST, "8V")
+   field(TWVL, "2")
+   field(TWST, "15V")
+   field(FLNK, "$(s):$(ta):$(ss):UD:SuppV.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Current") {
+   field(DESC, "param 0401")
+   field(SCAN, "1 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16784,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "6.0")
+   field(ADEL, "0.05")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Kp") {
+   field(DESC, "param 0413")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(INP, "@asynMask(modR3,412,16,1000)INT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:KpSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:KpSet") {
+   field(DESC, "param 0413")
+   field(DTYP, "asynInt32")
+   field(DOL, "35")
+   field(PINI, "YES")
+   field(OUT, "@asynMask(modW6,412,16,1000)INT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Kp.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:Ki") {
+   field(DESC, "param 0414")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(INP, "@asynMask(modR3,413,16,1000)INT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:KiSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:KiSet") {
+   field(DESC, "param 0414")
+   field(DTYP, "asynInt32")
+   field(DOL, "222")
+   field(PINI, "YES")
+   field(OUT, "@asynMask(modW6,413,16,1000)INT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Ki.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RatedFreq") {
+   field(DESC, "param 0506")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,505,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedFreqSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:RatedFreqSet") {
+   field(DESC, "param 0506")
+   field(DTYP, "asynInt32")
+   field(DOL, "170.0")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "1")
+   field(ESLO, "0.1")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,505,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RatedFreq.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RatedCurr") {
+   field(DESC, "param 0507")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "A")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16890,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedCurrSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:RatedCurrSet") {
+   field(DESC, "param 0507")
+   field(DTYP, "asynInt32")
+   field(EGU, "A")
+   field(DOL, "10.50")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16890,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RatedCurr.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RatedSpd") {
+   field(DESC, "param 0508")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "rpm")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,16891,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedSpdSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:RatedSpdSet") {
+   field(DESC, "param 0508")
+   field(DTYP, "asynInt32")
+   field(EGU, "rpm")
+   field(DOL, "10000")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW16,16891,32,1000)INT32_BE")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RatedSpd.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RatedVolt") {
+   field(DESC, "param 0509")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(INP, "@asynMask(modR3,508,16,1000)INT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedVoltSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:RatedVoltSet") {
+   field(DESC, "param 0509")
+   field(DTYP, "asynInt32")
+   field(DOL, "170.0")
+   field(PINI, "YES")
+   field(OUT, "@asynMask(modW6,508,16,1000)INT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RatedVolt.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RatedPF") {
+   field(DESC, "param 0510")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,509,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:RatedPFSet")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:RatedPFSet") {
+   field(DESC, "param 0510")
+   field(DTYP, "asynInt32")
+   field(DOL, "0.9")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,509,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RatedPF.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(longin, "$(s):$(ta):$(ss):UD:MotorPoles") {
+   field(DESC, "param 0511")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3_1,510,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MotorPolesSet")
+}
+
+record(longout, "$(s):$(ta):$(ss):UD:MotorPolesSet") {
+   field(DESC, "param 0511")
+   field(DTYP, "asynInt32")
+   field(DOL, "1")
+   field(PINI, "YES")
+   field(OUT, "@asyn(modW6,510,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MotorPoles.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbi, "$(s):$(ta):$(ss):UD:MaxSFreq") {
+   field(DESC, "param 0518")
+   field(SCAN, "10 second")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3_1,517,7,1000)UINT16")
+   field(ZRVL, "0")
+   field(ZRST, "3 kHz")
+   field(ONVL, "1")
+   field(ONST, "4 kHz")
+   field(TWVL, "2")
+   field(TWST, "6 kHz")
+   field(THVL, "3")
+   field(THST, "8 kHz")
+   field(FRVL, "4")
+   field(FRST, "12 kHz")
+   field(FVVL, "5")
+   field(FVST, "16 kHz")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:MaxSFreqSet")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):UD:MaxSFreqSet") {
+   field(DESC, "param 0518")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,517,7,1000)UINT16")
+   field(DOL, "4")
+   field(PINI, "YES")
+   field(ZRVL, "0")
+   field(ZRST, "3 kHz")
+   field(ONVL, "1")
+   field(ONST, "4 kHz")
+   field(TWVL, "2")
+   field(TWST, "6 kHz")
+   field(THVL, "3")
+   field(THST, "8 kHz")
+   field(FRVL, "4")
+   field(FRST, "12 kHz")
+   field(FVVL, "5")
+   field(FVST, "16 kHz")
+   field(FLNK, "$(s):$(ta):$(ss):UD:MaxSFreq.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:DriveEnabled") {
+   field(DESC, "param 0615")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,614,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ONAM, "Enabled")
+   field(ZNAM, "Disabled")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnable")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):UD:DriveEnable") {
+   field(DESC, "param 0615")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,614,1,1000)UINT16")
+   field(ONAM, "Enabled")
+   field(ZNAM, "Disabled")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DriveEnabled.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   info(archive, "Monitor, 00:00:01, VAL")
+   field(ASG, "BEAMLINE")
+}
+
+record(calc, "$(s):$(ta):$(ss):UD:Sim:YD") {
+   field(INPA, "1")
+   field(INPB, "90")
+   field(PREC, "3")
+   field(CALC, "A+B/1000.0")
+   info(autosaveFields, "A B")
+}
+record(calc, "$(s):$(ta):$(ss):UD:Sim:HM") {
+   field(INPA, "3")
+   field(INPB, "23")
+   field(CALC, "A+B/100.0")
+   field(PREC, "2")
+   info(autosaveFields, "A B")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RunTimeYD") {
+   field(DESC, "param 0622 run time years.days")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "3")
+   field(ESLO, "0.001")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,621,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
+#   info(archive, "Monitor, 00:00:01, VAL")
+   field(FLNK, "$(s):$(ta):$(ss):HardwareHrs")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:RunTimeHM") {
+   field(DESC, "param 0623 run time hours.mins")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,622,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM PP")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RunTimeYD")
+#   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:RunFwd") {
+   field(DESC, "param 0630")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,629,1,1000)UINT16")
+   field(SCAN, "10 second")
+   field(ONAM, "Forward")
+   field(ZNAM, "Other")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1")
+}
+
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
+record(bo, "$(s):$(ta):$(ss):UD:RunFwdSet") {
+   field(DESC, "param 0630")
+   field(DTYP, "asynUInt32Digital")
+   field(DOL, "1")
+   field(PINI, "YES")
+   field(OUT, "@asynMask(modW6,629,1,1000)UINT16")
+   field(ONAM, "Forward")
+   field(ZNAM, "Other")
+   field(FLNK, "$(s):$(ta):$(ss):UD:RunFwd.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(mbbi, "$(s):$(ta):$(ss):UD:AI3Mode") {
+   field(DESC, "param 0715")
+   field(SCAN, "10 second")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,714,15,1000)UINT16")
+   field(ZRVL, "0")
+   field(ZRST, "0-20")
+   field(ONVL, "1")
+   field(ONST, "20-0")
+   field(TWVL, "2")
+   field(TWST, "4-20.tr")
+   field(THVL, "3")
+   field(THST, "20-4.tr")
+   field(FRVL, "4")
+   field(FRST, "4-20")
+   field(FVVL, "5")
+   field(FVST, "20-4")
+   field(SXVL, "6")
+   field(SXST, "VOLt")
+   field(SVVL, "7")
+   field(SVST, "th.SC")
+   field(EIVL, "8")
+   field(EIST, "th")
+   field(NIVL, "9")
+   field(NIST, "th.diSp")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:AI3ModeSet")
+}
+
+record(mbbo, "$(s):$(ta):$(ss):UD:AI3ModeSet") {
+   field(DESC, "param 0715")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,714,15,1000)UINT16")
+   field(DOL, "6")
+   field(PINI, "YES")
+   field(ZRVL, "0")
+   field(ZRST, "0-20")
+   field(ONVL, "1")
+   field(ONST, "20-0")
+   field(TWVL, "2")
+   field(TWST, "4-20.tr")
+   field(THVL, "3")
+   field(THST, "20-4.tr")
+   field(FRVL, "4")
+   field(FRST, "4-20")
+   field(FVVL, "5")
+   field(FVST, "20-4")
+   field(SXVL, "6")
+   field(SXST, "VOLt")
+   field(SVVL, "7")
+   field(SVST, "th.SC")
+   field(EIVL, "8")
+   field(EIST, "th")
+   field(NIVL, "9")
+   field(NIST, "th.diSp")
+   field(FLNK, "$(s):$(ta):$(ss):UD:AI3Mode.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:DI5Dest") {
+   field(DESC, "param 0825")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,824,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1.45")
+}
+
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
+record(ao, "$(s):$(ta):$(ss):UD:DI5DestSet") {
+   field(DESC, "param 0825")
+   field(DTYP, "asynInt32")
+   field(DOL, "1.45")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,824,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DI5Dest.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:DI6Dest") {
+   field(DESC, "param 0826")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,825,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1.46")
+}
+
+#
+# Legacy set this at init, so I am too.  Tests show that changes to this 
+# register are overwritten from elsewhere, so this is probably ineffective.
+#
+record(ao, "$(s):$(ta):$(ss):UD:DI6DestSet") {
+   field(DESC, "param 0826")
+   field(DTYP, "asynInt32")
+   field(DOL, "1.46")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,825,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:DI6Dest.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:AtSpeed") {
+   field(DESC, "param 1006")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,1005,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ZNAM, "Not At Speed")
+   field(ONAM, "At Speed")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:AtSpeed")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:DriveOK") {
+   field(DESC, "param 1001")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,1000,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ZNAM, "Trip")
+   field(ONAM, "OK")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "1")
+   field(SIMS, "INVALID")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:DriveActive") {
+   field(DESC, "param 1002")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,1001,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ZNAM, "Inverter Off")
+   field(ONAM, "Inverter On")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:DriveEnabled")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:ZeroSpeed") {
+   field(DESC, "param 1003")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,1002,1,1000)UINT16")
+   field(SCAN, "1 second")
+   field(ZNAM, "Turning")
+   field(ONAM, "Zero Speed")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(calc, "$(s):$(ta):$(ss):UD:Sim:ZeroSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):UD:Sim:Speed CPP")
+   field(CALC, "ABS(A)<1.0")
+}
+
+#
+# simulation of trip queueing not implemented
+#
+record(longin, "$(s):$(ta):$(ss):UD:Trip0") {
+   field(DESC, "param 1020")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1019,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   # archiving trip0 should be sufficient
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip1") {
+   field(DESC, "param 1021")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1020,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip2") {
+   field(DESC, "param 1022")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1021,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip3") {
+   field(DESC, "param 1023")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1022,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip4") {
+   field(DESC, "param 1024")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1023,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip5") {
+   field(DESC, "param 1025")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1024,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip6") {
+   field(DESC, "param 1026")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1025,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip7") {
+   field(DESC, "param 1027")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1026,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip8") {
+   field(DESC, "param 1028")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1027,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+record(longin, "$(s):$(ta):$(ss):UD:Trip9") {
+   field(DESC, "param 1029")
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn(modR3,1028,1000)UINT16")
+   field(SCAN, "10 second")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+}
+
+#
+# No menu 0 registers are used in this application, so I'm not sure what the
+# point of these Param00xx configurations is.  They were in legacy 
+# initialization.
+#
+record(ai, "$(s):$(ta):$(ss):UD:Param0011") {
+   field(DESC, "param 1101")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1100,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0011Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0011Set") {
+   field(DESC, "param 1101")
+   field(DTYP, "asynInt32")
+   field(DOL, "6.42")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1100,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0011.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0012") {
+   field(DESC, "param 1102")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1101,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0012Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0012Set") {
+   field(DESC, "param 1102")
+   field(DTYP, "asynInt32")
+   field(DOL, "1.21")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1101,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0012.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0013") {
+   field(DESC, "param 1103")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1102,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0013Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0013Set") {
+   field(DESC, "param 1103")
+   field(DTYP, "asynInt32")
+   field(DOL, "11.40")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1102,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0013.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0014") {
+   field(DESC, "param 1104")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1103,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0014Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0014Set") {
+   field(DESC, "param 1104")
+   field(DTYP, "asynInt32")
+   field(DOL, "3.02")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1103,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0014.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0015") {
+   field(DESC, "param 1105")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1104,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0015Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0015Set") {
+   field(DESC, "param 1105")
+   field(DTYP, "asynInt32")
+   field(DOL, "6.23")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1104,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0015.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0017") {
+   field(DESC, "param 1107")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1106,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0017Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0017Set") {
+   field(DESC, "param 1107")
+   field(DTYP, "asynInt32")
+   field(DOL, "4.01")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1106,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0017.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:Param0016") {
+   field(DESC, "param 1106")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(INP, "@asynMask(modR3,1105,16,1000)UINT16")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Param0016Set")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:Param0016Set") {
+   field(DESC, "param 1101")
+   field(DTYP, "asynInt32")
+   field(DOL, "6.22")
+   field(PINI, "YES")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(OUT, "@asynMask(modW6,1105,16,1000)UINT16")
+   field(FLNK, "$(s):$(ta):$(ss):UD:Param0016.PROC CA")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+   
+record(ai, "$(s):$(ta):$(ss):UD:FilterHour") {
+   field(DESC, "param 0618 time between filter changes")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(PREC, "2")
+   field(INP, "@asynMask(modR3,17001,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:YD")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ao, "$(s):$(ta):$(ss):UD:FilterHourSet") {
+   field(DESC, "param 0618 time between filter changes")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(LINR, "SLOPE")
+   field(PREC, "2")
+   field(ESLO, "0.01")
+   field(EOFF, "0.0")
+   field(DRVH, "100")
+   field(OUT, "@asynMask(modW16,17001,32,1000)INT32_BE")
+#   field(FLNK, "$(s):$(ta):$(ss):UD:FilterHour PP")
+#   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(s):$(ta):$(ss):UD:FilterChg") {
+   field(DESC, "param 0619 Filter change required/done")
+   field(DTYP, "asynUInt32Digital")
+   field(INP, "@asynMask(modR3,618,1,1000)UINT16")
+   field(SCAN, "10 second")
+   field(ZNAM, "Filter Change Done")
+   field(ONAM, "Filter Change Required")
+   field(OSV, "MAJOR")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):UD:FilterChgSet") {
+   field(DESC, "param 0619 Filter change required/done")
+   field(DTYP, "asynUInt32Digital")
+   field(OUT, "@asynMask(modW6,618,1,1000)UINT16")
+   field(ONAM, "ON")
+   field(ZNAM, "OFF")
+   field(FLNK, "$(s):$(ta):$(ss):UD:FilterChg PP")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(ASG, "BEAMLINE")
+}
+
+record(ai, "$(s):$(ta):$(ss):UD:FilterTimeDue") {
+   field(DESC, "param 0627 time before filter change due")
+   field(SCAN, "10 second")
+   field(DTYP, "asynInt32")
+   field(EGU, "h")
+   field(PREC, "1")
+   field(LOW, "0")
+   field(LSV, "MINOR")
+   field(INP, "@asynMask(modR3,17010,32,1000)INT32_BE")
+   field(SIML, "$(s):$(ta):$(ss):Simulate")
+   field(SIOL, "$(s):$(ta):$(ss):UD:Sim:HM")
+   info(archive, "Monitor, 00:00:01, VAL")
+}

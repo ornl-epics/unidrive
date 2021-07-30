@@ -1,0 +1,336 @@
+record(bo, "$(s):$(ta):$(ss):Simulate") {
+   field(ONAM, "Simulate")
+   field(ZNAM, "Normal")
+   field(OSV, "MAJOR")
+   field(DOL, "0")
+   info(autosaveFields, "VAL")
+   field(ASG, "BEAMLINE")
+}
+
+record(ao, "$(s):$(ta):$(ss):SpeedDesired") {
+   field(EGU, "rpm")
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   field(PINI, "YES")
+}
+
+record(longout, "$(s):$(ta):$(ss):SpeedConstraint") {
+   field(DOL, "0")
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   field(PINI, "YES")
+}
+
+record(bo, "$(s):$(ta):$(ss):WarmupMode") {
+   field(ZNAM, "Normal")
+   field(ONAM, "Warmup")
+   field(ASG, "BEAMLINE")
+   info(autosaveFields, "VAL")
+   field(PINI, "YES")
+}
+
+record(bo, "$(s):$(ta):$(ss):WarmupSave") {
+   field(ZNAM, "Normal")
+   field(ONAM, "Warmup")
+   info(autosaveFields, "VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):NewSpeedFlag") {
+   field(DOL, "1")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedCommand") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
+   field(CALC, "1")
+   field(IVOA, "Don't drive outputs")  
+   field(OUT, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedModeScan") {
+   field(SCAN, "1 second")
+   field(INPA, "$(s):$(ta):$(ss):WarmupMode")
+   field(CALC, "A?1:6")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedModeScanSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):SpeedModeScanSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):SpeedModeScan")
+   field(LNK1, "$(s):$(ta):$(ss):EnterWarmup.PROC PP")
+   field(DO2, "7")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
+   field(LNK3, "$(s):$(ta):$(ss):EnterNormal.PROC PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):EnterNormal") {
+   field(INPA, "$(s):$(ta):$(ss):WarmupSave")
+   field(CALC, "A?15:8")
+   field(FLNK, "$(s):$(ta):$(ss):EnterNormalSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):EnterNormalSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):EnterNormal")
+   # begin was warming up
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):WarmupSave PP")
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   # both cases go here
+   field(LNK4, "$(s):$(ta):$(ss):DriveSpeed.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):DriveSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):NewSpeedFlag")
+   field(CALC, "A")
+   field(OOPT, "When Non-zero")
+   field(OUT, "$(s):$(ta):$(ss):DriveSpeedSeq.PROC PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):DriveSpeedSeq") {
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(DOL2, "$(s):$(ta):$(ss):SpeedDesired")
+   field(LNK2, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+}
+   
+record(calc, "$(s):$(ta):$(ss):EnterWarmup") {
+   field(INPA, "$(s):$(ta):$(ss):WarmupSave")
+   field(CALC, "A?1:62")
+   field(FLNK, "$(s):$(ta):$(ss):EnterWarmupSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):EnterWarmupSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):EnterWarmup") 
+   # begin continue in warmup mode
+   field(LNK1, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
+   # begin switch to warmup mode
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):WarmupSave PP")
+   field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintInit.PROC PP")
+   field(DO4, "1")
+   field(LNK4, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   field(DO5, "1")
+   field(LNK5, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK6, "$(s):$(ta):$(ss):DoWarmup.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):DoWarmup") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")	# for validity test
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint")
+   field(CALC, "B<7?(A<(1000*B-10)?1:6):8")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):DoWarmupSeq.PROC PP")
+}
+
+record(seq, "$(s):$(ta):$(ss):DoWarmupSeq") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):DoWarmup")
+   # begin actions for speeds less than constrained
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   # begin actions for speeds greater than constrained
+   field(LNK2, "$(s):$(ta):$(ss):WarmupTimer.PROC PP")
+   field(LNK3, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc.PROC PP")
+   # no action for constraint >= 7
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(INPB, "$(s):$(ta):$(ss):WarmupTimer NPP MS")
+   field(CALC, "((A==1&&B>=10800)||(A>1&&B>3600))?1:2")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseBr")
+}
+
+
+record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseBr") {
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):SpeedConstraintRaiseCalc")
+   field(LNK1, "$(s):$(ta):$(ss):SpeedConstraintRaise.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):CheckSpeed.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):CheckSpeed") {
+   field(INPA, "$(s):$(ta):$(ss):NewSpeedFlag")
+   field(CALC, "A")
+   field(OOPT, "When Non-zero")
+   field(OUT, "$(s):$(ta):$(ss):CheckSpeedSeq.PROC PP") 
+}
+
+record(seq, "$(s):$(ta):$(ss):CheckSpeedSeq") {
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedOutCalc.PROC PP")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedOutCalc") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedDesired CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):SpeedConstraint CPP MS")
+   field(CALC, "A<=(B*1000)?A:(B*1000)")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):UD:Preset1Set PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):SpeedConstraintRaise") {
+   field(INPA, "$(s):$(ta):$(ss):SpeedConstraint NPP MS")
+   field(CALC, "A+1")
+   field(FLNK, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq")
+}
+
+record(seq, "$(s):$(ta):$(ss):SpeedConstraintRaiseSeq") {
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):WarmupTimer.A PP")
+   field(DOL2, "$(s):$(ta):$(ss):SpeedConstraintRaise")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedConstraint PP")
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):NewSpeedFlag PP")
+   field(LNK4, "$(s):$(ta):$(ss):CheckSpeed.PROC PP")
+}
+
+# warmup timer increments 100 times faster in simulate mode
+record(calc, "$(s):$(ta):$(ss):WarmupTimer") {
+   field(INPA, "0")
+   field(INPB, "$(s):$(ta):$(ss):Simulate") 
+   field(CALC, "A?0:B?VAL+100:VAL+1;A:=0")
+   info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(s):$(ta):$(ss):SpeedConstraintInit") {
+   field(INPA, "$(s):$(ta):$(ss):UD:SpeedFbk NPP MS")
+   field(CALC, "MIN(7,(MAX(1,ceil(A/1000.0))))")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):SpeedConstraint PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtSpeedCalc") {
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveEnabled CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS") 
+   field(CALC, "A&&B")
+   field(FLNK, "$(s):$(ta):$(ss):AtSpeed")
+}
+
+record(bi, "$(s):$(ta):$(ss):AtSpeed") {
+   field(INP, "$(s):$(ta):$(ss):AtSpeedCalc NPP MS")
+   field(ZNAM, "Not At Speed")
+   field(ONAM, "At Speed")
+}
+
+record(calcout, "$(s):$(ta):$(ss):HardwareHrs") {
+   field(INPA, "$(s):$(ta):$(ss):UD:RunTimeYD")
+   field(INPB, "$(s):$(ta):$(ss):UD:RunTimeHM")
+   field(IVOA, "Don't drive outputs")
+   field(EGU, "h")
+#   field(CALC, "(A-Floor(A))*24+floor(A)*24*365+floor(B)+(B-floor(B))*5/3")
+   field(CALC, "(A-Floor(A))*1000*24+floor(A)*24*365+floor(B)+(B-floor(B))*5/3")
+   field(OUT, "$(s):$(ta):$(ss):RunTime.PROC PP")
+}
+ 
+record(ai, "$(s):$(ta):$(ss):StartHrs") {
+   field(EGU, "h")
+   info(autosaveFields, "VAL")
+}
+
+# enter a starting number of hours (it could be zero) to start the timer.
+record(ao, "$(s):$(ta):$(ss):EnterHrs") {
+   field(EGU, "h")
+   field(PREC, "1")
+   field(FLNK, "$(s):$(ta):$(ss):StartRunTimer")
+   field(ASG, "BEAMLINE")
+}
+
+record(calcout, "$(s):$(ta):$(ss):StartRunTimer") {
+   field(INPA, "$(s):$(ta):$(ss):HardwareHrs")
+   field(INPB, "$(s):$(ta):$(ss):EnterHrs")
+   field(CALC, "A-B")
+   field(IVOA, "Don't drive outputs")
+   field(OUT, "$(s):$(ta):$(ss):StartHrs PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):RunTime") {
+   field(EGU, "h")
+   field(INPA, "$(s):$(ta):$(ss):HardwareHrs")
+   field(INPB, "$(s):$(ta):$(ss):StartHrs") 
+   field(HIGH, "10000")
+   field(HSV, "MAJOR")
+   field(CALC, "A-B")
+   field(PREC, "1")
+}
+
+
+record(calc, "$(s):$(ta):$(ss):ZeroTimer") {
+   field(CALC, "A?0:VAL+1;A:=0")
+}
+
+record(calc, "$(s):$(ta):$(ss):ActiveScan") {
+   field(SCAN, "1 second")
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveActive NPP MS")
+   field(CALC, "A?1:2")
+   field(FLNK, "$(s):$(ta):$(ss):ActiveBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ActiveBr") {
+   field(SELM, "Specified")
+   field(SELL, "$(s):$(ta):$(ss):ActiveScan")
+   # begin drive active links
+   field(LNK1, "$(s):$(ta):$(ss):ZeroSpdTst.PROC PP")
+   # begin drive inactive links
+   field(LNK2, "$(s):$(ta):$(ss):ZeroSetTst.PROC PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroSetTst") {
+   field(INPA, "$(s):$(ta):$(ss):UD:Preset1 NPP MS")
+   field(INPB, "0.01")
+   field(CALC, "A>B?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroSetBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroSetBr") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):ZeroSetTst")
+   # begin speed set > 0 links
+   field(DO1, "1")
+   field(LNK1, "$(s):$(ta):$(ss):UD:DriveEnable PP")
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+   # begin speed set to 0 links
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroSpdTst") {
+   field(INPA, "$(s):$(ta):$(ss):UD:ZeroSpeed NPP MS")
+   field(CALC, "A?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroSpdBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroSpdBr") {
+   field(SELM, "Mask")
+   # begin zero-speed links
+   field(SELL, "$(s):$(ta):$(ss):ZeroSpdTst")
+   field(LNK1, "$(s):$(ta):$(ss):ZeroTimer.PROC PP")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimerTst.PROC PP")
+   # begin non-zero speed links
+   field(DO3, "1")
+   field(LNK3, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):ZeroTimerTst") {
+   field(INPA, "$(s):$(ta):$(ss):ZeroTimer NPP MS")
+   field(CALC, "A>5?3:4")
+   field(FLNK, "$(s):$(ta):$(ss):ZeroTimerBr")
+}
+
+record(seq, "$(s):$(ta):$(ss):ZeroTimerBr") {
+   field(SELM, "Mask")
+   field(SELL, "$(s):$(ta):$(ss):ZeroTimerTst")
+   # begin zerotimer > 5 links
+   field(DO1, "0")
+   field(LNK1, "$(s):$(ta):$(ss):UD:DriveEnable PP")
+   field(DO2, "1")
+   field(LNK2, "$(s):$(ta):$(ss):ZeroTimer.A PP")
+   # No actions for zerotimer <= 5
+}
+   

@@ -1,0 +1,160 @@
+record(calc, "$(s):$(ta):$(ss):AlarmSum") {
+   field(INPA, "$(s):$(ta):$(ss):UD:DriveOK CP MS")
+   field(INPB, "$(s):$(ta):$(ss):DLambda:Fault CP MS")
+   field(INPC, "$(s):$(ta):$(ss):Lambda:Fault CP MS")
+   field(INPD, "$(s):$(ta):$(ss):Speed:Fault CP MS")
+   field(INPE, "$(s):$(ta):$(ss):Tilt:Fault CP MS")
+   field(INPF, "$(s):$(ta):$(ss):UD:DriveOK.SEVR CP MS")
+   field(INPG, "$(s):$(ta):$(ss):UD:SpeedFbk CP MS")
+#   field(INPH, "$(s):$(ta):$(ss):UD:FilterChg CP MS")
+   field(INPH, "$(s):$(ta):$(ss):AlarmDisable CP")
+   field(CALC, "H?0:(!A||B||C||D||E||F>2||G==0)")
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(s):$(ta):$(ss):AlarmDisable")
+{
+    field(DESC, "Disable Global Alarm")
+    field (ONAM, "AlarmDisabled")
+    field (ZNAM, "AlarmEnabled")
+    field (OSV, "MINOR")
+    info(archive, "Monitor, 00:01:00")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+# used for display control only
+record(mbbo, "$(s):$(ta):$(ss):SpeedMode") {
+   field(ZRST, "Speed")
+   field(ONST, "Lambda")
+   field(DOL, "1")
+   info(autosaveFields, "VAL")
+}
+
+record(ao, "$(s):$(ta):$(ss):Lambda:Set") {
+   field(EGU, "A")
+   alias("$(s):$(ta):$(ss):Lambda:Reqd")
+   field(FLNK, "$(s):$(ta):$(ss):Lambda:SetFan")
+   field(PREC, "2")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(fanout, "$(s):$(ta):$(ss):Lambda:SetFan") {
+   field(LNK1, "$(s):$(ta):$(ss):TiltCalc PP")
+   field(LNK2, "$(s):$(ta):$(ss):SpeedCalc PP")
+# 02/06/2020 Lambda:Req --> SpeedCalc doesn't drive OUT 
+#   field(LNK3, "$(s):$(ta):$(ss):LambdaSeq PP")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtLambda") {
+   field(INPA, "$(s):$(ta):$(ss):DLambdaCalc CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):DLambda:Set CPP MS")
+   field(INPC, "0.002")
+   field(INPD, "$(s):$(ta):$(ss):WavelengthCalc CPP MS")
+   field(INPE, "$(s):$(ta):$(ss):Lambda:Set CPP MS")
+   field(INPF, "0.02")
+   field(INPG, "$(s):$(ta):$(ss):AtSpeedHL")
+#   field(CALC, "(ABS(A-B)<C)&&(ABS(D-E)<F)")
+   field(CALC, "(ABS(A-B)<C)&&G")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Lambda"
+substitute "EGU=A"
+substitute "OUT=$(s):$(ta):$(ss):Lambda:Set"
+substitute "IN=$(s):$(ta):$(ss):AtLambda"
+substitute "TO=36000"
+substitute "ST=15"
+substitute "HI=$(HILD)"
+substitute "LO=$(LOLD)"
+include "putCallback.template"
+
+record(ao, "$(s):$(ta):$(ss):DLambda:Set") {
+   field(EGU, "A")
+   field(FLNK, "$(s):$(ta):$(ss):DLambda:SetFan")
+   alias("$(s):$(ta):$(ss):DLambda:Reqd")
+   field(PREC, "3")
+#   field(PINI, "YES")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(fanout, "$(s):$(ta):$(ss):DLambda:SetFan") {
+   field(LNK1, "$(s):$(ta):$(ss):TiltCalc PP")
+   field(LNK2, "$(s):$(ta):$(ss):Lambda:Req PP")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=DLambda"
+substitute "OUT=$(s):$(ta):$(ss):DLambda:Set"
+substitute "IN=$(s):$(ta):$(ss):AtLambda"
+substitute "TO=36000"
+substitute "ST=15"
+substitute "HI=$(HIDL)"
+substitute "LO=$(LODL)"
+include "putCallback.template"
+
+record(ao, "$(s):$(ta):$(ss):Speed:Set") {
+   field(EGU, "rpm")
+   alias("$(s):$(ta):$(ss):Speed:Reqd")
+   field(OUT, "$(s):$(ta):$(ss):SpeedDesired PP")
+   field(PREC, "2")
+   info(autosaveFields, "VAL")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(calc, "$(s):$(ta):$(ss):AtSpeedHL") {
+   field(INPA, "$(s):$(ta):$(ss):UD:AtSpeed CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):UD:SpeedFbk CPP MS")
+   field(INPC, "$(s):$(ta):$(ss):Speed:Set CPP MS")
+   field(INPD, "5.0")
+   field(INPE, "$(s):$(ta):$(ss):UD:ZeroSpeed CPP MS")
+   field(CALC, "(A&&(ABS(B-C)<D))||(E&&(ABS(C)<D))")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Speed"
+substitute "EGU=RPM"
+substitute "OUT=$(s):$(ta):$(ss):Speed:Set"
+substitute "IN=$(s):$(ta):$(ss):AtSpeedHL"
+substitute "TO=36000"
+substitute "ST=15"
+substitute "HI=$(HISP)"
+substitute "LO=0"
+include "putCallback.template"
+
+record(ao, "$(s):$(ta):$(ss):Tilt:Set") {
+   field(EGU, "A")
+   alias("$(s):$(ta):$(ss):Tilt:Reqd")
+   field(OUT, "$(s):Mot:vs_tilt PP")
+   field(PREC, "2")
+   info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ai, "$(s):$(ta):$(ss):TiltRBV") {
+   field(INP, "$(s):Mot:vs_tilt.RBV CPP MS")
+   field(ADEL, "0.1")
+   info(archive, "Monitor, 00:00:10, VAL")
+}
+
+
+record(calc, "$(s):$(ta):$(ss):AtTilt") {
+   field(INPA, "$(s):$(ta):$(ss):TiltRBV CPP MS")
+   field(INPB, "$(s):$(ta):$(ss):Tilt:Set CPP MS")
+   field(INPC, "0.1")
+   field(CALC, "ABS(A-B)<C")
+}
+
+substitute "P=$(s):$(ta):$(ss)"
+substitute "C=Tilt"
+substitute "EGU=Deg"
+substitute "OUT=$(s):$(ta):$(ss):Tilt:Set"
+substitute "IN=$(s):$(ta):$(ss):AtTilt"
+substitute "TO=36000"
+substitute "ST=15"
+substitute "HI=4"
+substitute "LO=-4"
+include "putCallback.template"

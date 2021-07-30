@@ -1,0 +1,3334 @@
+<CTNetcfg Protocol="4">
+   <Node>
+      <name>UnidriveSP closed loop addr-(192_168_10_100)</name>
+      <address>(192.168.10.100)</address>
+      <listaccess>n</listaccess>
+      <Slot SlotName="Parameters in drive">
+         <number> 0 </number>
+         <Menu>
+			<name>menu_(00)</name>
+            <addrHigh> 0 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 12</description>
+               <name>0024</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+		 </Menu>
+		 <Menu>
+			<name>References_(01)</name>
+            <addrHigh> 1 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0100)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_I4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Frequency _ speed reference selected</description>
+               <name>Frequency _ speed reference selected_(0101)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Pre skip filter reference</description>
+               <name>Pre skip filter reference_(0102)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Pre ramp reference</description>
+               <name>Pre ramp reference_(0103)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference offset</description>
+               <name>Reference offset_(0104)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Jog reference</description>
+               <name>Jog reference_(0105)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Maximum reference clamp</description>
+               <name>Maximum reference clamp_(0106)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Minimum reference clamp</description>
+               <name>Minimum reference clamp_(0107)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Negative minimum reference clamp enable</description>
+               <name>Negative minimum reference clamp enable_(0108)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference offset select</description>
+               <name>Reference offset select_(0109)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Bipolar reference enable</description>
+               <name>Bipolar reference enable_(0110)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference enabled indicator</description>
+               <name>Reference enabled indicator_(0111)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reverse selected indicator</description>
+               <name>Reverse selected indicator_(0112)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Jog selected indicator</description>
+               <name>Jog selected indicator_(0113)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference selector</description>
+               <name>Reference selector_(0114)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference selector</description>
+               <name>Preset reference selector_(0115)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference selector timer</description>
+               <name>Preset reference selector timer_(0116)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Keypad control mode reference</description>
+               <name>Keypad control mode reference_(0117)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Precision reference coarse</description>
+               <name>Precision reference coarse_(0118)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Precision reference fine</description>
+               <name>Precision reference fine_(0119)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Precision reference update disable</description>
+               <name>Precision reference update disable_(0120)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 1</description>
+               <name>Preset reference 1_(0121)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 2</description>
+               <name>Preset reference 2_(0122)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 3</description>
+               <name>Preset reference 3_(0123)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 4</description>
+               <name>Preset reference 4_(0124)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 5</description>
+               <name>Preset reference 5_(0125)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 6</description>
+               <name>Preset reference 6_(0126)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 7</description>
+               <name>Preset reference 7_(0127)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 8</description>
+               <name>Preset reference 8_(0128)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference 1</description>
+               <name>Skip reference 1_(0129)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference band 1</description>
+               <name>Skip reference band 1_(0130)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference 2</description>
+               <name>Skip reference 2_(0131)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference band 2</description>
+               <name>Skip reference band 2_(0132)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference 3</description>
+               <name>Skip reference 3_(0133)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Skip reference band 3</description>
+               <name>Skip reference band 3_(0134)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference in reject zone</description>
+               <name>Reference in reject zone_(0135)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Analog reference 1</description>
+               <name>Analog reference 1_(0136)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Analog reference 2</description>
+               <name>Analog reference 2_(0137)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Percentage trim</description>
+               <name>Percentage trim_(0138)</name>
+               <addrLow> 38 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Velocity feed forward</description>
+               <name>Velocity feed forward_(0139)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Velocity feed forward select</description>
+               <name>Velocity feed forward select_(0140)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Analog reference 2 select</description>
+               <name>Analog reference 2 select_(0141)</name>
+               <addrLow> 41 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference select</description>
+               <name>Preset reference select_(0142)</name>
+               <addrLow> 42 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Keypad reference select</description>
+               <name>Keypad reference select_(0143)</name>
+               <addrLow> 43 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Precision reference select</description>
+               <name>Precision reference select_(0144)</name>
+               <addrLow> 44 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 1 select</description>
+               <name>Preset reference 1 select_(0145)</name>
+               <addrLow> 45 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 2 select</description>
+               <name>Preset reference 2 select_(0146)</name>
+               <addrLow> 46 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference 3 select</description>
+               <name>Preset reference 3 select_(0147)</name>
+               <addrLow> 47 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference timer reset flag</description>
+               <name>Reference timer reset flag_(0148)</name>
+               <addrLow> 48 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reference selected indicator</description>
+               <name>Reference selected indicator_(0149)</name>
+               <addrLow> 49 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Preset reference selected indicator</description>
+               <name>Preset reference selected indicator_(0150)</name>
+               <addrLow> 50 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Power-up keypad control mode reference</description>
+               <name>Power-up keypad control mode reference_(0151)</name>
+               <addrLow> 51 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Ramp_(02)</name>
+            <addrHigh> 2 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0200)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Post ramp reference</description>
+               <name>Post ramp reference_(0201)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Ramp enable</description>
+               <name>Ramp enable_(0202)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Ramp hold</description>
+               <name>Ramp hold_(0203)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Ramp mode select</description>
+               <name>Ramp mode select_(0204)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>S ramp enable</description>
+               <name>S ramp enable_(0206)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>S ramp acceleration limit</description>
+               <name>S ramp acceleration limit_(0207)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Standard ramp voltage</description>
+               <name>Standard ramp voltage_(0208)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate selector</description>
+               <name>Acceleration rate selector_(0210)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 1</description>
+               <name>Acceleration rate 1_(0211)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 2</description>
+               <name>Acceleration rate 2_(0212)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 3</description>
+               <name>Acceleration rate 3_(0213)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 4</description>
+               <name>Acceleration rate 4_(0214)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 5</description>
+               <name>Acceleration rate 5_(0215)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 6</description>
+               <name>Acceleration rate 6_(0216)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 7</description>
+               <name>Acceleration rate 7_(0217)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration rate 8</description>
+               <name>Acceleration rate 8_(0218)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Jog acceleration rate</description>
+               <name>Jog acceleration rate_(0219)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate selector</description>
+               <name>Deceleration rate selector_(0220)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 1</description>
+               <name>Deceleration rate 1_(0221)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 2</description>
+               <name>Deceleration rate 2_(0222)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 3</description>
+               <name>Deceleration rate 3_(0223)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 4</description>
+               <name>Deceleration rate 4_(0224)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 5</description>
+               <name>Deceleration rate 5_(0225)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 6</description>
+               <name>Deceleration rate 6_(0226)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 7</description>
+               <name>Deceleration rate 7_(0227)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration rate 8</description>
+               <name>Deceleration rate 8_(0228)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Jog deceleration rate</description>
+               <name>Jog deceleration rate_(0229)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration select bit 0</description>
+               <name>Acceleration select bit 0_(0232)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration select bit 1</description>
+               <name>Acceleration select bit 1_(0233)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Acceleration select bit 2</description>
+               <name>Acceleration select bit 2_(0234)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration select bit 0</description>
+               <name>Deceleration select bit 0_(0235)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration select bit 1</description>
+               <name>Deceleration select bit 1_(0236)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Deceleration select bit 2</description>
+               <name>Deceleration select bit 2_(0237)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Inertia compensation torque</description>
+               <name>Inertia compensation torque_(0238)</name>
+               <addrLow> 38 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Speed_loop_(03)</name>
+            <addrHigh> 3 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0300)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Final speed reference</description>
+               <name>Final speed reference_(0301)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed feedback</description>
+               <name>Speed feedback_(0302)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed error</description>
+               <name>Speed error_(0303)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller output</description>
+               <name>Speed controller output_(0304)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Zero speed threshold</description>
+               <name>Zero speed threshold_(0305)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>At speed lower limit</description>
+               <name>At speed lower limit_(0306)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>At speed upper limit</description>
+               <name>At speed upper limit_(0307)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Overspeed threshold</description>
+               <name>Overspeed threshold_(0308)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Absolute _at speed_ detect</description>
+               <name>Absolute _at speed_ detect_(0309)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller proportional gain (Kp1)</description>
+               <name>Speed controller proportional gain (Kp1)_(0310)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller integral gain (Ki1)</description>
+               <name>Speed controller integral gain (Ki1)_(0311)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller differential feedback gain (Kd1)</description>
+               <name>Speed controller differential feedback gain (Kd1)_(0312)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller proportional gain (Kp2)</description>
+               <name>Speed controller proportional gain (Kp2)_(0313)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller integral gain (Ki2)</description>
+               <name>Speed controller integral gain (Ki2)_(0314)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller differential feedback gain (Kd2)</description>
+               <name>Speed controller differential feedback gain (Kd2)_(0315)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller gain select</description>
+               <name>Speed controller gain select_(0316)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed controller set-up method</description>
+               <name>Speed controller set-up method_(0317)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor and load inertia</description>
+               <name>Motor and load inertia_(0318)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Compliance angle</description>
+               <name>Compliance angle_(0319)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Bandwidth</description>
+               <name>Bandwidth_(0320)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Damping factor</description>
+               <name>Damping factor_(0321)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Hard speed reference</description>
+               <name>Hard speed reference_(0322)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Hard speed reference selector</description>
+               <name>Hard speed reference selector_(0323)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Closed loop vector mode</description>
+               <name>Closed loop vector mode_(0324)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Speed feedback selector</description>
+               <name>Speed feedback selector_(0326)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder speed feedback</description>
+               <name>Drive encoder speed feedback_(0327)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder revolution counter</description>
+               <name>Drive encoder revolution counter_(0328)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder position</description>
+               <name>Drive encoder position_(0329)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder fine position</description>
+               <name>Drive encoder fine position_(0330)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder marker position reset disable</description>
+               <name>Drive encoder marker position reset disable_(0331)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder marker flag</description>
+               <name>Drive encoder marker flag_(0332)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder turn bits _ Linear encoder comms to sine wave ratio</description>
+               <name>Drive encoder turn bits _ Linear encoder comms to sine wave ratio_(0333)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder lines per revolution</description>
+               <name>Drive encoder lines per revolution_(0334)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder single turn comms bits _ Linear encoder comms bits _ Marker mode</description>
+               <name>Drive encoder single turn comms bits _ Linear encoder comms bits _ Marker mode_(0335)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder supply voltage</description>
+               <name>Drive encoder supply voltage_(0336)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder comms baud rate</description>
+               <name>Drive encoder comms baud rate_(0337)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder type</description>
+               <name>Drive encoder type_(0338)</name>
+               <addrLow> 38 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder termination select _ Rotary encoder select _ Comms only encoder mode</description>
+               <name>Drive encoder termination select _ Rotary encoder select _ Comms only encoder mode_(0339)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder error detection level</description>
+               <name>Drive encoder error detection level_(0340)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder auto configuration enable _ SSI binary format select</description>
+               <name>Drive encoder auto configuration enable _ SSI binary format select_(0341)</name>
+               <addrLow> 41 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder filter</description>
+               <name>Drive encoder filter_(0342)</name>
+               <addrLow> 42 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Maximum drive encoder reference</description>
+               <name>Maximum drive encoder reference_(0343)</name>
+               <addrLow> 43 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder reference scaling</description>
+               <name>Drive encoder reference scaling_(0344)</name>
+               <addrLow> 44 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder reference</description>
+               <name>Drive encoder reference_(0345)</name>
+               <addrLow> 45 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive encoder reference destination</description>
+               <name>Drive encoder reference destination_(0346)</name>
+               <addrLow> 46 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Re-initialise position feedback</description>
+               <name>Re-initialise position feedback_(0347)</name>
+               <addrLow> 47 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Position feedback initialised</description>
+               <name>Position feedback initialised_(0348)</name>
+               <addrLow> 48 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Full motor object electronic nameplate transfer</description>
+               <name>Full motor object electronic nameplate transfer_(0349)</name>
+               <addrLow> 49 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Position feedback lock</description>
+               <name>Position feedback lock_(0350)</name>
+               <addrLow> 50 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Current_loop_(04)</name>
+            <addrHigh> 4 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0400)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current magnitude</description>
+               <name>Current magnitude_(0401)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Active current</description>
+               <name>Active current_(0402)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Torque demand</description>
+               <name>Torque demand_(0403)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current demand</description>
+               <name>Current demand_(0404)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motoring current limit</description>
+               <name>Motoring current limit_(0405)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Regen current limit</description>
+               <name>Regen current limit_(0406)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Symmetrical current limit</description>
+               <name>Symmetrical current limit_(0407)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Torque reference</description>
+               <name>Torque reference_(0408)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Torque offset</description>
+               <name>Torque offset_(0409)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Torque offset select</description>
+               <name>Torque offset select_(0410)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Torque mode selector</description>
+               <name>Torque mode selector_(0411)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current demand filter 1</description>
+               <name>Current demand filter 1_(0412)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current controller Kp gain</description>
+               <name>Current controller Kp gain_(0413)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current controller Ki gain</description>
+               <name>Current controller Ki gain_(0414)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Thermal time constant</description>
+               <name>Thermal time constant_(0415)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Thermal protection mode</description>
+               <name>Thermal protection mode_(0416)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reactive current</description>
+               <name>Reactive current_(0417)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Overriding current limit</description>
+               <name>Overriding current limit_(0418)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Overload accumulator</description>
+               <name>Overload accumulator_(0419)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Percentage load</description>
+               <name>Percentage load_(0420)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Inertia compensation enable</description>
+               <name>Inertia compensation enable_(0422)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Current demand filter 2</description>
+               <name>Current demand filter 2_(0423)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>User current maximum scaling</description>
+               <name>User current maximum scaling_(0424)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Low speed thermal protection mode</description>
+               <name>Low speed thermal protection mode_(0425)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Machine_model_(05)</name>
+            <addrHigh> 5 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0500)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Output frequency</description>
+               <name>Output frequency_(0501)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Output voltage</description>
+               <name>Output voltage_(0502)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Output power</description>
+               <name>Output power_(0503)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>D_C bus voltage</description>
+               <name>D_C bus voltage_(0505)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Rated frequency</description>
+               <name>Rated frequency_(0506)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor rated current</description>
+               <name>Motor rated current_(0507)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Rated load rpm _ rated speed</description>
+               <name>Rated load rpm _ rated speed_(0508)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Rated voltage</description>
+               <name>Rated voltage_(0509)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Rated power factor</description>
+               <name>Rated power factor_(0510)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Number of motor poles</description>
+               <name>Number of motor poles_(0511)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Autotune</description>
+               <name>Autotune_(0512)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Dynamic flux optimise select</description>
+               <name>Dynamic flux optimise select_(0513)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Low frequency volatage boost</description>
+               <name>Low frequency volatage boost_(0515)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Rated rpm autotune</description>
+               <name>Rated rpm autotune_(0516)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Stator resistance</description>
+               <name>Stator resistance_(0517)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Maximum switching frequency</description>
+               <name>Maximum switching frequency_(0518)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Field gain reduction</description>
+               <name>Field gain reduction_(0521)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Transient inductance (sLs)</description>
+               <name>Transient inductance (sLs)_(0524)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Stator inductance (Ls)</description>
+               <name>Stator inductance (Ls)_(0525)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>High dynamic performance enable</description>
+               <name>High dynamic performance enable_(0526)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Filed weakening compensation disable</description>
+               <name>Filed weakening compensation disable_(0528)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor saturation breakpoint 1</description>
+               <name>Motor saturation breakpoint 1_(0529)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor saturation breakpoint 2</description>
+               <name>Motor saturation breakpoint 2_(0530)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Voltage controller gain</description>
+               <name>Voltage controller gain_(0531)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor torque per amp (Kt)</description>
+               <name>Motor torque per amp (Kt)_(0532)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Disable auto-switching frequency change</description>
+               <name>Disable auto-switching frequency change_(0535)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Motor pole pitch</description>
+               <name>Motor pole pitch_(0536)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Actual switching frequency</description>
+               <name>Actual switching frequency_(0537)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Spin start boost</description>
+               <name>Spin start boost_(0540)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Sequencer_(06)</name>
+            <addrHigh> 6 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0600)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Stop mode</description>
+               <name>Stop mode_(0601)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Mains loss mode</description>
+               <name>Mains loss mode_(0603)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Start _ stop logic select</description>
+               <name>Start _ stop logic select_(0604)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Hold zero speed</description>
+               <name>Hold zero speed_(0608)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Catch a spinning motor</description>
+               <name>Catch a spinning motor_(0609)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Enable stop key</description>
+               <name>Enable stop key_(0612)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Enable forward _ reverse key</description>
+               <name>Enable forward _ reverse key_(0613)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive enable</description>
+               <name>Drive enable_(0615)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Electricity cost per kWh</description>
+               <name>Electricity cost per kWh_(0616)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reset energy meter</description>
+               <name>Reset energy meter_(0617)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Time between filter changes</description>
+               <name>Time between filter changes_(0618)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Filter change required _ change done</description>
+               <name>Filter change required _ change done_(0619)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Powered-up time_ years_days</description>
+               <name>Powered-up time_ years_days_(0620)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Powered-up time_ hours_minutes</description>
+               <name>Powered-up time_ hours_minutes_(0621)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Run time_ years_days</description>
+               <name>Run time_ years_days_(0622)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Run time_ hours_mins</description>
+               <name>Run time_ hours_mins_(0623)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Energy meter_ MWh</description>
+               <name>Energy meter_ MWh_(0624)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Energy meter_ kWh</description>
+               <name>Energy meter_ kWh_(0625)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Running cost</description>
+               <name>Running cost_(0626)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_I2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Time before filter change due</description>
+               <name>Time before filter change due_(0627)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Select clock for trip log time sampling</description>
+               <name>Select clock for trip log time sampling_(0628)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Hardware enable</description>
+               <name>Hardware enable_(0629)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Run forward</description>
+               <name>Sequencing bit_ Run forward_(0630)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Jog forward</description>
+               <name>Sequencing bit_ Jog forward_(0631)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Run reverse</description>
+               <name>Sequencing bit_ Run reverse_(0632)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Forward _ reverse</description>
+               <name>Sequencing bit_ Forward _ reverse_(0633)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Run</description>
+               <name>Sequencing bit_ Run_(0634)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Forward limit switch</description>
+               <name>Forward limit switch_(0635)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Reverse limit switch</description>
+               <name>Reverse limit switch_(0636)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Jog reverse</description>
+               <name>Sequencing bit_ Jog reverse_(0637)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Sequencing bit_ Not stop</description>
+               <name>Sequencing bit_ Not stop_(0639)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Enable sequencer latching</description>
+               <name>Enable sequencer latching_(0640)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive event flags</description>
+               <name>Drive event flags_(0641)</name>
+               <addrLow> 41 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Control word</description>
+               <name>Control word_(0642)</name>
+               <addrLow> 42 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Control word enable</description>
+               <name>Control word enable_(0643)</name>
+               <addrLow> 43 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Active supply</description>
+               <name>Active supply_(0644)</name>
+               <addrLow> 44 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Force cooling fan to run at full speed</description>
+               <name>Force cooling fan to run at full speed_(0645)</name>
+               <addrLow> 45 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Nominal low voltage battery supply</description>
+               <name>Nominal low voltage battery supply_(0646)</name>
+               <addrLow> 46 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Disable mains_phase loss detection from input rectifier</description>
+               <name>Disable mains_phase loss detection from input rectifier_(0647)</name>
+               <addrLow> 47 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Mains loss ride through detection level</description>
+               <name>Mains loss ride through detection level_(0648)</name>
+               <addrLow> 48 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Disable multi-module drive module number storing on trip</description>
+               <name>Disable multi-module drive module number storing on trip_(0649)</name>
+               <addrLow> 49 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive comms state</description>
+               <name>Drive comms state_(0650)</name>
+               <addrLow> 50 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>External rectifier not active</description>
+               <name>External rectifier not active_(0651)</name>
+               <addrLow> 51 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Analog_IO_(07)</name>
+            <addrHigh> 7 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0700)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 level</description>
+               <name>T5_6 analog input 1 level_(0701)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 level</description>
+               <name>T7 analog input 2 level_(0702)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 level</description>
+               <name>T8 analog input 3 level_(0703)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Power circuit temperature 1</description>
+               <name>Power circuit temperature 1_(0704)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_I1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Power circuit temperature 2</description>
+               <name>Power circuit temperature 2_(0705)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_I1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Control board temperature</description>
+               <name>Control board temperature_(0706)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_I1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 offset trim</description>
+               <name>T5_6 analog input 1 offset trim_(0707)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 scaling</description>
+               <name>T5_6 analog input 1 scaling_(0708)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 invert</description>
+               <name>T5_6 analog input 1 invert_(0709)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 destination</description>
+               <name>T5_6 analog input 1 destination_(0710)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 mode</description>
+               <name>T7 analog input 2 mode_(0711)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 scaling</description>
+               <name>T7 analog input 2 scaling_(0712)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 invert</description>
+               <name>T7 analog input 2 invert_(0713)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 destination</description>
+               <name>T7 analog input 2 destination_(0714)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 mode</description>
+               <name>T8 analog input 3 mode_(0715)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 scaling</description>
+               <name>T8 analog input 3 scaling_(0716)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 invert</description>
+               <name>T8 analog input 3 invert_(0717)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 destination</description>
+               <name>T8 analog input 3 destination_(0718)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T9 analog output 1 source</description>
+               <name>T9 analog output 1 source_(0719)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T9 analog output 1 scaling</description>
+               <name>T9 analog output 1 scaling_(0720)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T9 analog output 1 mode</description>
+               <name>T9 analog output 1 mode_(0721)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T10 analog output 2 source</description>
+               <name>T10 analog output 2 source_(0722)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T10 analog output 2 scaling</description>
+               <name>T10 analog output 2 scaling_(0723)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T10 analog output 2 mode</description>
+               <name>T10 analog output 2 mode_(0724)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Calibrate T5_6 analog input 1 full scale</description>
+               <name>Calibrate T5_6 analog input 1 full scale_(0725)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 sample time</description>
+               <name>T5_6 analog input 1 sample time_(0726)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 current loop loss</description>
+               <name>T7 analog input 2 current loop loss_(0728)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 current loop loss</description>
+               <name>T8 analog input 3 current loop loss_(0729)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T5_6 analog input 1 offset</description>
+               <name>T5_6 analog input 1 offset_(0730)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T7 analog input 2 offset</description>
+               <name>T7 analog input 2 offset_(0731)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T8 analog input 3 offset</description>
+               <name>T8 analog input 3 offset_(0732)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T9 analog output 1 control</description>
+               <name>T9 analog output 1 control_(0733)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>IGBT junction temperature</description>
+               <name>IGBT junction temperature_(0734)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_I2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive thermal protection accumulator</description>
+               <name>Drive thermal protection accumulator_(0735)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Power circuit temperature 3</description>
+               <name>Power circuit temperature 3_(0736)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_I1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Digital_IO_(08)</name>
+            <addrHigh> 8 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(0800)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T24 digital I_O 1 state</description>
+               <name>T24 digital I_O 1 state_(0801)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T25 digital I_O 2 state</description>
+               <name>T25 digital I_O 2 state_(0802)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T26 digital I_O 3 state</description>
+               <name>T26 digital I_O 3 state_(0803)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T27 digital input 4 state</description>
+               <name>T27 digital input 4 state_(0804)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T28 digital input 5 state</description>
+               <name>T28 digital input 5 state_(0805)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T29 digital input 6 state</description>
+               <name>T29 digital input 6 state_(0806)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Relay state</description>
+               <name>Relay state_(0807)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T22 24V output state</description>
+               <name>T22 24V output state_(0808)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive enable indicator</description>
+               <name>Drive enable indicator_(0809)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive enable mode select</description>
+               <name>Drive enable mode select_(0810)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T24 digital I_O 1 invert</description>
+               <name>T24 digital I_O 1 invert_(0811)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T25 digital I_O 2 invert</description>
+               <name>T25 digital I_O 2 invert_(0812)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T26 digital I_O 3 invert</description>
+               <name>T26 digital I_O 3 invert_(0813)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T27 digital input 4 invert</description>
+               <name>T27 digital input 4 invert_(0814)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T28 digital input 5 invert</description>
+               <name>T28 digital input 5 invert_(0815)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T29 digital input 6 invert</description>
+               <name>T29 digital input 6 invert_(0816)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Relay source invert</description>
+               <name>Relay source invert_(0817)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T22 24V output source invert</description>
+               <name>T22 24V output source invert_(0818)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Digital I_O read word</description>
+               <name>Digital I_O read word_(0820)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T24 digital I_O 1 source_destination</description>
+               <name>T24 digital I_O 1 source_destination_(0821)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T25 digital I_O 2 source_destination</description>
+               <name>T25 digital I_O 2 source_destination_(0822)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T26 digital I_O 3 source_destination</description>
+               <name>T26 digital I_O 3 source_destination_(0823)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T27 digital input 4 destination</description>
+               <name>T27 digital input 4 destination_(0824)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T28 digital input 5 destination</description>
+               <name>T28 digital input 5 destination_(0825)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T29 digital input 6 destination</description>
+               <name>T29 digital input 6 destination_(0826)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Relay source</description>
+               <name>Relay source_(0827)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T22 24V output source</description>
+               <name>T22 24V output source_(0828)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Positive logic select</description>
+               <name>Positive logic select_(0829)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Open collector output</description>
+               <name>Open collector output_(0830)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T24 digital I_O 1 output select</description>
+               <name>T24 digital I_O 1 output select_(0831)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T25 digital I_O 2 output select</description>
+               <name>T25 digital I_O 2 output select_(0832)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T26 digital I_O 3 output select</description>
+               <name>T26 digital I_O 3 output select_(0833)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>T28 &amp; T29 digital input auto-selection disable</description>
+               <name>T28 &amp; T29 digital input auto-selection disable_(0839)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Status_(10)</name>
+            <addrHigh> 10 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(1000)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive healthy</description>
+               <name>Drive healthy_(1001)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive active</description>
+               <name>Drive active_(1002)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Zero speed</description>
+               <name>Zero speed_(1003)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Running at or below minimum speed</description>
+               <name>Running at or below minimum speed_(1004)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Below set speed</description>
+               <name>Below set speed_(1005)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>At speed</description>
+               <name>At speed_(1006)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Above set speed</description>
+               <name>Above set speed_(1007)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Load reached</description>
+               <name>Load reached_(1008)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive output is at current limit</description>
+               <name>Drive output is at current limit_(1009)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Regenerating</description>
+               <name>Regenerating_(1010)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Braking IGBT active</description>
+               <name>Braking IGBT active_(1011)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Braking resistor alarm</description>
+               <name>Braking resistor alarm_(1012)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Direction commanded</description>
+               <name>Direction commanded_(1013)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Direction running</description>
+               <name>Direction running_(1014)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Mains loss</description>
+               <name>Mains loss_(1015)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Under voltage active</description>
+               <name>Under voltage active_(1016)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Overload alarm</description>
+               <name>Overload alarm_(1017)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive over temperature alarm</description>
+               <name>Drive over temperature alarm_(1018)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive warning</description>
+               <name>Drive warning_(1019)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 0</description>
+               <name>Trip 0_(1020)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 1</description>
+               <name>Trip 1_(1021)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 2</description>
+               <name>Trip 2_(1022)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 3</description>
+               <name>Trip 3_(1023)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 4</description>
+               <name>Trip 4_(1024)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 5</description>
+               <name>Trip 5_(1025)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 6</description>
+               <name>Trip 6_(1026)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 7</description>
+               <name>Trip 7_(1027)</name>
+               <addrLow> 27 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 8</description>
+               <name>Trip 8_(1028)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 9</description>
+               <name>Trip 9_(1029)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Full power braking time</description>
+               <name>Full power braking time_(1030)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Full power braking period</description>
+               <name>Full power braking period_(1031)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>External trip</description>
+               <name>External trip_(1032)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive reset</description>
+               <name>Drive reset_(1033)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>No_ of auto-reset attempts</description>
+               <name>No_ of auto-reset attempts_(1034)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Auto reset delay</description>
+               <name>Auto reset delay_(1035)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Hold drive healthy until last attempt</description>
+               <name>Hold drive healthy until last attempt_(1036)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Action on trip detection</description>
+               <name>Action on trip detection_(1037)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>User trip</description>
+               <name>User trip_(1038)</name>
+               <addrLow> 38 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Braking energy overload accumulator</description>
+               <name>Braking energy overload accumulator_(1039)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Status word</description>
+               <name>Status word_(1040)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 0 time_ years_days</description>
+               <name>Trip 0 time_ years_days_(1041)</name>
+               <addrLow> 41 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 0 time_ hours_minutes</description>
+               <name>Trip 0 time_ hours_minutes_(1042)</name>
+               <addrLow> 42 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 1 time</description>
+               <name>Trip 1 time_(1043)</name>
+               <addrLow> 43 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 2 time</description>
+               <name>Trip 2 time_(1044)</name>
+               <addrLow> 44 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 3 time</description>
+               <name>Trip 3 time_(1045)</name>
+               <addrLow> 45 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 4 time</description>
+               <name>Trip 4 time_(1046)</name>
+               <addrLow> 46 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 5 time</description>
+               <name>Trip 5 time_(1047)</name>
+               <addrLow> 47 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 6 time</description>
+               <name>Trip 6 time_(1048)</name>
+               <addrLow> 48 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 7 time</description>
+               <name>Trip 7 time_(1049)</name>
+               <addrLow> 49 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 8 time</description>
+               <name>Trip 8 time_(1050)</name>
+               <addrLow> 50 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Trip 9 time</description>
+               <name>Trip 9 time_(1051)</name>
+               <addrLow> 51 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+         </Menu>
+         <Menu>
+            <name>Miscelleneous_(11)</name>
+            <addrHigh> 11 </addrHigh>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0</description>
+               <name>Parameter 0_(1100)</name>
+               <addrLow> 0 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_11 set up</description>
+               <name>Parameter 0_11 set up_(1101)</name>
+               <addrLow> 1 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_12 set up</description>
+               <name>Parameter 0_12 set up_(1102)</name>
+               <addrLow> 2 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_13 set up</description>
+               <name>Parameter 0_13 set up_(1103)</name>
+               <addrLow> 3 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_14 set up</description>
+               <name>Parameter 0_14 set up_(1104)</name>
+               <addrLow> 4 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_15 set up</description>
+               <name>Parameter 0_15 set up_(1105)</name>
+               <addrLow> 5 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_16 set up</description>
+               <name>Parameter 0_16 set up_(1106)</name>
+               <addrLow> 6 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_17 set up</description>
+               <name>Parameter 0_17 set up_(1107)</name>
+               <addrLow> 7 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_18 set up</description>
+               <name>Parameter 0_18 set up_(1108)</name>
+               <addrLow> 8 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_19 set up</description>
+               <name>Parameter 0_19 set up_(1109)</name>
+               <addrLow> 9 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_20 set up</description>
+               <name>Parameter 0_20 set up_(1110)</name>
+               <addrLow> 10 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_21 set up</description>
+               <name>Parameter 0_21 set up_(1111)</name>
+               <addrLow> 11 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_22 set up</description>
+               <name>Parameter 0_22 set up_(1112)</name>
+               <addrLow> 12 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_23 set up</description>
+               <name>Parameter 0_23 set up_(1113)</name>
+               <addrLow> 13 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_24 set up</description>
+               <name>Parameter 0_24 set up_(1114)</name>
+               <addrLow> 14 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_25 set up</description>
+               <name>Parameter 0_25 set up_(1115)</name>
+               <addrLow> 15 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_26 set up</description>
+               <name>Parameter 0_26 set up_(1116)</name>
+               <addrLow> 16 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_27 set up</description>
+               <name>Parameter 0_27 set up_(1117)</name>
+               <addrLow> 17 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_28 set up</description>
+               <name>Parameter 0_28 set up_(1118)</name>
+               <addrLow> 18 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_29 set up</description>
+               <name>Parameter 0_29 set up_(1119)</name>
+               <addrLow> 19 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter 0_30 set up</description>
+               <name>Parameter 0_30 set up_(1120)</name>
+               <addrLow> 20 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter scaling</description>
+               <name>Parameter scaling_(1121)</name>
+               <addrLow> 21 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter displayed at power-up</description>
+               <name>Parameter displayed at power-up_(1122)</name>
+               <addrLow> 22 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Serial address</description>
+               <name>Serial address_(1123)</name>
+               <addrLow> 23 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Serial mode</description>
+               <name>Serial mode_(1124)</name>
+               <addrLow> 24 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Baud rate</description>
+               <name>Baud rate_(1125)</name>
+               <addrLow> 25 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Minimum comms transmit delay</description>
+               <name>Minimum comms transmit delay_(1126)</name>
+               <addrLow> 26 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive derivative</description>
+               <name>Drive derivative_(1128)</name>
+               <addrLow> 28 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Software version</description>
+               <name>Software version_(1129)</name>
+               <addrLow> 29 </addrLow>
+               <datatype>VT_R4</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>User security code</description>
+               <name>User security code_(1130)</name>
+               <addrLow> 30 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>User drive mode</description>
+               <name>User drive mode_(1131)</name>
+               <addrLow> 31 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive Rated Current</description>
+               <name>Drive Rated Current_(1132)</name>
+               <addrLow> 32 </addrLow>
+               <datatype>VT_R8</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive voltage rating</description>
+               <name>Drive voltage rating_(1133)</name>
+               <addrLow> 33 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Software sub-version</description>
+               <name>Software sub-version_(1134)</name>
+               <addrLow> 34 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Number of modules</description>
+               <name>Number of modules_(1135)</name>
+               <addrLow> 35 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>SMARTCARD parameter data previously loaded</description>
+               <name>SMARTCARD parameter data previously loaded_(1136)</name>
+               <addrLow> 36 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>SMARTCARD data number</description>
+               <name>SMARTCARD data number_(1137)</name>
+               <addrLow> 37 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>SMARTCARD data type _ mode</description>
+               <name>SMARTCARD data type _ mode_(1138)</name>
+               <addrLow> 38 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>SMARTCARD data version</description>
+               <name>SMARTCARD data version_(1139)</name>
+               <addrLow> 39 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>SMARTCARD data checksum</description>
+               <name>SMARTCARD data checksum_(1140)</name>
+               <addrLow> 40 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Status mode timeout</description>
+               <name>Status mode timeout_(1141)</name>
+               <addrLow> 41 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Parameter cloning</description>
+               <name>Parameter cloning_(1142)</name>
+               <addrLow> 42 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Load defaults</description>
+               <name>Load defaults_(1143)</name>
+               <addrLow> 43 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Security status</description>
+               <name>Security status_(1144)</name>
+               <addrLow> 44 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Select motor 2 parameters</description>
+               <name>Select motor 2 parameters_(1145)</name>
+               <addrLow> 45 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Defaults previously loaded</description>
+               <name>Defaults previously loaded_(1146)</name>
+               <addrLow> 46 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive Onboard Applications Lite ladder program enable</description>
+               <name>Drive Onboard Applications Lite ladder program enable_(1147)</name>
+               <addrLow> 47 </addrLow>
+               <datatype>VT_UI1</datatype>
+               <accessrights>READWRITE</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive Onboard Applications Lite ladder program status</description>
+               <name>Drive Onboard Applications Lite ladder program status_(1148)</name>
+               <addrLow> 48 </addrLow>
+               <datatype>VT_I1</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive Onboard Applications Lite ladder programming events</description>
+               <name>Drive Onboard Applications Lite ladder programming events_(1149)</name>
+               <addrLow> 49 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Onboard Applications Lite ladder program maximum scan time</description>
+               <name>Onboard Applications Lite ladder program maximum scan time_(1150)</name>
+               <addrLow> 50 </addrLow>
+               <datatype>VT_UI2</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+            <Parameter>
+               <objecttype> 1 </objecttype>
+               <description>Drive Onboard PLC program first run</description>
+               <name>Drive Onboard PLC program first run_(1151)</name>
+               <addrLow> 51 </addrLow>
+               <datatype>VT_BOOL</datatype>
+               <accessrights>READ</accessrights>
+            </Parameter>
+         </Menu>
+      </Slot>
+   </Node>
+</CTNetcfg>
